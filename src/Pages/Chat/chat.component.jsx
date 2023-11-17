@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const ChatGPT = () => {
+const Chat = () => {
+
+
   const [inputWord, setInputWord] = useState('');
   const [response, setResponse] = useState('');
 
@@ -16,10 +18,11 @@ const ChatGPT = () => {
         max_tokens: 60,
       }, {
         headers: {
-          'Authorization': `Bearer YOUR_API_KEY`
+          'Authorization': `Bearer ${import.meta.env.VITE_GPT_SECRET_KEY}`
         }
       });
       setResponse(result.data.choices[0].text);
+      console.log(result.data.choices[0].text);
     } catch (error) {
       console.error('Error fetching response:', error);
     }
@@ -34,4 +37,4 @@ const ChatGPT = () => {
   );
 };
 
-export default ChatGPT;
+export default Chat;
