@@ -13,8 +13,8 @@ const Chat = () => {
 
   const handleSubmit = async () => {
     try {
-      const result = await axios.post('https://api.openai.com/v1/engines/gpt-4/completions', {
-        prompt: `Translate the Spanish word "${inputWord}" into English and provide its meaning, example usage, and classification (noun, verb, etc.).`,
+      const result = await axios.post('/translate', {
+        word:inputWord,
         max_tokens: 60,
       }, {
         headers: {
