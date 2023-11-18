@@ -6,7 +6,7 @@ const Chat = () => {
   const [response, setResponse] = useState({
     originalWord: '',
     englishTranslation: '',
-    spanishDefinition: '',
+    spanishDefinition: [],
     exampleSentences: [],
     classification: '',
     errorType: '',
@@ -15,6 +15,7 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('starting handleSubmit');
     const apiResponse = await fetch('http://localhost:5000/ask/', {
       method: 'POST',
       headers: {
@@ -43,7 +44,7 @@ const Chat = () => {
         <button type="submit">Ask</button>
       </form>
 
-      <AnswerBox data={response} />
+      <AnswerBox response={response} />
            
 
     </div>

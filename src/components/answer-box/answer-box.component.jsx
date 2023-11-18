@@ -1,6 +1,7 @@
-import {Box} from '@material-ui/core';
+import {  Box } from "@mui/material";
 
-const AnswerBox = ({data}) => {
+const AnswerBox = ({response}) => {
+    console.log(response);
     return (
         <Box>
         {response.errorMessage ? (
