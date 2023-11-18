@@ -37,12 +37,13 @@ const Chat = () => {
   return (
     <Paper
     sx={{
+      padding: 3,
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
       margin: "auto",
-      backgroundColor: "primary.main",
+      backgroundColor: "secondary.main",
     }}
     >
 
