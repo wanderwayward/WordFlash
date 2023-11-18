@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
+import AnswerBox from '../../components/answer-box/answer-box.component';
 
 const Chat = () => {
-
-
   const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
+  const [response, setResponse] = useState({
+    originalWord: '',
+    englishTranslation: '',
+    spanishDefinition: '',
+    exampleSentences: [],
+    classification: '',
+    errorType: '',
+    errorMessage: ''
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('/ask', {
+    const apiResponse = await fetch('http://localhost:5000/ask/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,11 +23,11 @@ const Chat = () => {
       body: JSON.stringify({ question }),
     });
 
-    if (response.ok) {
-      const data = await response.json();
-      setAnswer(data.answer);
+    if (apiResponse.ok) {
+      const data = await apiResponse.json();
+      setResponse(data.answer); 
     } else {
-      setAnswer('Error getting response');
+      setResponse({ ...response, errorMessage: 'Error getting response' });
     }
   };
 
@@ -35,7 +42,10 @@ const Chat = () => {
         />
         <button type="submit">Ask</button>
       </form>
-      {answer && <p>Response: {answer}</p>}
+
+      <AnswerBox data={response} />
+           
+
     </div>
   );
 }
