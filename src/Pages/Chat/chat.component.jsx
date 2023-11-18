@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Paper, Grid } from "@mui/material";
-import AnswerBox from '../../components/answer-box/answer-box.component';
-import QuestionBox from '../../components/question-box/question-box.component';
+import AnswerBox from '../../components/Chat/answer-box/answer-box.component';
+import QuestionBox from '../../components/Chat/question-box/question-box.component';
 
 const Chat = () => {
   const [question, setQuestion] = useState('');

@@ -2,6 +2,7 @@ import { Box, Grid } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from '../src/Pages/Chat/chat.component';
 import User from '../src/Pages/User/user.component';
+import AuthPage from './Pages/Authentication/authentication.component';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Chat />} />
                 <Route path="/User" element={<User />} />
+                <Route path="/Auth" element={<AuthPage />} />
               </Routes>
 
             </Grid> {/* End of Inner Grid container */}
