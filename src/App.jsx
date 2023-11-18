@@ -1,14 +1,32 @@
-import './App.css'
-import Chat from '../src/Pages/Chat/chat.component'
+import { Box, Grid } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Chat from '../src/Pages/Chat/chat.component';
+import User from '../src/Pages/User/user.component';
 
 const App = () => {
-
   return (
+    <Router>
+      <Box style={{ paddingTop: '60px' }}>
 
-    <div className="App">
-        <Chat />
-    </div>
-  )
+        {/* Outer Grid container */}
+        <Grid container justifyContent="center" alignItems="center" style={{ width: '100%' }}>
+          {/* Main Content */}
+          <Grid item xs={12} sm={10} style={{ width: '100%' }}>
+            {/* Inner Grid container */}
+            <Grid container justifyContent="center" alignItems="center">
+       
+              <Routes>
+                <Route path="/" element={<Chat />} />
+                <Route path="/User" element={<User />} />
+              </Routes>
+
+            </Grid> {/* End of Inner Grid container */}
+          </Grid> {/* End of Main Content */}
+        </Grid> {/* End of Outer Grid container */}
+
+      </Box>
+    </Router>
+  );
 }
 
-export default App
+export default App;
