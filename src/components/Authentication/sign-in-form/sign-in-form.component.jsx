@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Button, Grid, Paper, Box, FormControl, Typography, FormHelperText } from "@mui/material";
-import { StyledTextField } from "../../../utils/styledComponents";
+import { Button, Grid, Sheet, Box, FormControl, Typography, FormHelperText } from "@mui/joy";
 import { signInUserWithEmailAndPassword, auth } from "../../../utils/firebase-utils";
 import { handleGoogleAuthentication } from "../../../hooks/handleGoogleAuthentication";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -43,14 +42,14 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
     }
 
     return (
-        <Paper elevation={10} sx={{ backgroundColor: "#FCDDBC", border: "0 0 0 20px solid white" }}>
+        <Sheet elevation={10} sx={{ backgroundColor: "#FCDDBC", border: "0 0 0 20px solid white" }}>
             <Box p={3}>
                 <Box marginBottom={3}>
                     <Typography variant="h3" fontWeight="bold">Sign In</Typography>
                 </Box>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <FormControl error={errors.email ? true : false} fullWidth>
-                            <StyledTextField 
+                            <Input 
                                 {...register("email", { required: true })}
                                 label="Email" 
                                 variant="filled"
@@ -60,7 +59,7 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                             {errors.email && <FormHelperText>Email is required</FormHelperText>}
                         </FormControl>
                         <FormControl error={errors.password ? true : false} fullWidth>
-                            <StyledTextField 
+                            <Input 
                                 {...register("password", { required: true })}
                                 label="Password" 
                                 variant="filled" 
@@ -71,21 +70,21 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                         </FormControl>
                         <Grid container spacing={1} justifyContent="center"  marginY={2}>
                             <Grid item xs={5}>
-                                <Button type="submit" variant="contained" color="secondary">
+                                <Button type="submit" variant="contained" color="primary">
                                     Sign In with Email
                                 </Button>
                             </Grid>
                         <Grid item xs={1}></Grid>
                             <Grid item xs={5}>
-                                <Button variant="contained" color="secondary" onClick={() => googleAuthHandler(setUser)}>
+                                <Button variant="contained" color="primary" onClick={() => googleAuthHandler(setUser)}>
                                         Sign In with Google
                                 </Button>
                             </Grid>
                         </Grid>
-                    <Typography>Don't have an account? <Button color="secondary" onClick={switchToSignUp}>Sign Up</Button></Typography>
+                    <Typography>Don't have an account? <Button color="primary" onClick={switchToSignUp}>Sign Up</Button></Typography>
                 </form>
             </Box>
-        </Paper>
+        </Sheet>
                         
                                             
     );

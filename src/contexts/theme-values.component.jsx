@@ -1,19 +1,18 @@
 import React from "react";
-import {lightTheme, darkTheme} from "../utils/theme";
-import { useMediaQuery } from '@mui/material';
+import { lightTheme, darkTheme } from "../utils/theme";
+import { useMedia } from 'react-use';
 import { ThemeValuesContext } from "./theme-values.context";
 
 const ThemeValuesProvider = ({ children }) => {
-
-    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    // Detects if the user has a preference for dark mode
+    const prefersDarkMode = useMedia('(prefers-color-scheme: dark)');
     const theme = prefersDarkMode ? darkTheme : lightTheme;
 
-
-
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
-    const isLaptop = useMediaQuery(theme.breakpoints.up('xl'));
-    const isDesktop = useMediaQuery(theme.breakpoints.up('xxl'));
+    // Media queries matching your specified breakpoints
+    const isMobile = useMedia(`(max-width: ${theme.breakpoints.values.md}px)`);
+    const isTablet = useMedia(`(max-width: ${theme.breakpoints.values.lg}px)`);
+    const isLaptop = useMedia(`(min-width: ${theme.breakpoints.values.xl}px)`);
+    const isDesktop = useMedia(`(min-width: ${theme.breakpoints.values.xxl}px)`);
 
     return (
         <ThemeValuesContext.Provider value={{ theme, checks: { isMobile, isTablet, isLaptop, isDesktop } }}>

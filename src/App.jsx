@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Box, Grid, ThemeProvider, CssBaseline  } from '@mui/material';
+import { Box, Grid, CssVarsProvider, CssBaseline  } from '@mui/joy';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from '../src/Pages/Chat/chat.component';
 import User from '../src/Pages/User/user.component';
@@ -12,7 +12,7 @@ const App = () => {
   const { theme } = useContext(ThemeValuesContext);
 
   return (
-    <ThemeProvider theme={theme}>
+    <CssVarsProvider theme={theme}>
       <CssBaseline />
       <Router>
         <Box style={{ paddingTop: '60px' }}>
@@ -36,7 +36,7 @@ const App = () => {
 
         </Box>
       </Router>
-    </ThemeProvider>
+      </CssVarsProvider>
   );
 }
 

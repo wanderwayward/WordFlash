@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paper, Grid } from "@mui/material";
+import { Sheet, Grid } from "@mui/joy";
 import AnswerBox from '../../components/Chat/answer-box/answer-box.component';
 import QuestionBox from '../../components/Chat/question-box/question-box.component';
 
@@ -35,7 +35,7 @@ const Chat = () => {
   };
 
   return (
-    <Paper
+    <Sheet
     sx={{
       padding: 3,
       display: "flex",
@@ -50,7 +50,7 @@ const Chat = () => {
       <AnswerBox response={response} />
       <QuestionBox question={question} setQuestion={setQuestion}  handleSubmit={handleSubmit}/>  
 
-    </Paper>
+    </Sheet>
   );
 }
 

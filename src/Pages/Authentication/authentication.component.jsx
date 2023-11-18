@@ -1,7 +1,7 @@
 // React and hooks
 import React, { useState } from 'react';
 
-import Box from '@mui/material/Box';
+import Box from '@mui/joy/Box';
 
 // Components
 import SignInForm from '../../components/Authentication/sign-in-form/sign-in-form.component';

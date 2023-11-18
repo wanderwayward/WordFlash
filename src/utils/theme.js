@@ -1,6 +1,6 @@
-import { createTheme } from '@mui/material/styles';
+import { extendTheme  } from '@mui/joy/styles';
 
-const lightTheme = createTheme({
+const lightTheme = extendTheme ({
   palette: {
     mode: 'light',
     primary: {
@@ -51,7 +51,7 @@ const lightTheme = createTheme({
   },
 });
 
-const darkTheme = createTheme({
+const darkTheme = extendTheme({
   palette: {
     mode: 'dark',
     primary: {

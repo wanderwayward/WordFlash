@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
+import Snackbar from "@mui/joy/Snackbar";
+import MuiAlert from "@mui/joy/Alert";
 
 
 const SnackbarFormMessage = ({ open, message, severity, position, onClose }) => {

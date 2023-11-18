@@ -1,4 +1,4 @@
-import { Box, TextField, Button } from '@mui/material';
+import { Box, Input, Button } from '@mui/joy';
 
 const QuestionBox = ({ question, setQuestion, handleSubmit }) => {
   return (
@@ -7,12 +7,12 @@ const QuestionBox = ({ question, setQuestion, handleSubmit }) => {
       onSubmit={handleSubmit}
       sx={{
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         gap: 2
       }}
     >
-      <TextField
+      <Input
         fullWidth
         label="type your word here"
         variant="filled"
