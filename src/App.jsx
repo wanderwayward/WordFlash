@@ -12,7 +12,7 @@ const App = () => {
   const { theme } = useContext(ThemeValuesContext);
 
   return (
-    <CssVarsProvider theme={theme}>
+    <CssVarsProvider defaultMode="dark" theme={theme}>
       <CssBaseline />
       <Router>
         <Box style={{ paddingTop: '60px' }}>
@@ -20,7 +20,7 @@ const App = () => {
           {/* Outer Grid container */}
           <Grid container justifyContent="center" alignItems="center" style={{ width: '100%' }}>
             {/* Main Content */}
-            <Grid item xs={12} sm={10} style={{ width: '100%' }}>
+            <Grid  xs={12} sm={10} style={{ width: '100%' }}>
               {/* Inner Grid container */}
               <Grid container justifyContent="center" alignItems="center">
         

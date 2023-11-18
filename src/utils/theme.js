@@ -1,105 +1,146 @@
-import { extendTheme  } from '@mui/joy/styles';
+import { extendTheme } from '@mui/joy/styles';
 
-const lightTheme = extendTheme ({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#75B9BE',
-      contrastText: '#FFFFFF',
+const theme = extendTheme({
+  "colorSchemes": {
+    "light": {
+      "palette": {
+        "primary": {
+          "50": "#F1F6F6",
+          "100": "#E2EEEC",
+          "200": "#C6DDDA",
+          "300": "#A9CBC7",
+          "400": "#70A9A1",
+          "500": "#548C85",
+          "600": "#3F6964",
+          "700": "#355853",
+          "800": "#2A4642",
+          "900": "#152321"
+        },
+        "neutral": {
+          "50": "#F6F4F6",
+          "100": "#EDE9ED",
+          "200": "#DCD3DB",
+          "300": "#CABDC9",
+          "400": "#A691A5",
+          "500": "#8A6F88",
+          "600": "#685366",
+          "700": "#564555",
+          "800": "#342a33",
+          "900": "#231c22"
+        },
+        "danger": {
+          "50": "#FEF6EC",
+          "100": "#FEE8D0",
+          "200": "#FCD0A1",
+          "300": "#FBBC79",
+          "400": "#F08007",
+          "500": "#C86B06",
+          "600": "#A05505",
+          "700": "#784004",
+          "800": "#502B02",
+          "900": "#170C02"
+        },
+        "success": {
+          "50": "#D5FDF5",
+          "100": "#ACFCEA",
+          "200": "#82FAE0",
+          "300": "#59F8D5",
+          "400": "#0AF0BE",
+          "500": "#079D7C",
+          "600": "#05735B",
+          "700": "#03493A",
+          "800": "#034234",
+          "900": "#023B2F"
+        },
+        "warning": {
+          "50": "#F8EDF0",
+          "100": "#F8EDF0",
+          "200": "#E9CAD3",
+          "300": "#E2B8C5",
+          "400": "#CC8399",
+          "500": "#B74E6D",
+          "600": "#943C57",
+          "700": "#81354C",
+          "800": "#6F2D41",
+          "900": "#5C2636"
+        }
+      }
     },
-    secondary: {
-      main: '#D0D6B5',
-      contrastText: '#2F2F2F',
-    },
-    error: {
-      main: '#6B0F1A',
-      contrastText: '#FFFFFF',
-    },
-    warning: {
-      main: '#F9B5AC',
-      contrastText: '#2F2F2F',
-    },
-    info: {
-      main: '#264653',
-      contrastText: '#FFFFFF',
-    },
-    success: {
-      main: '#093824',
-      contrastText: '#FFFFFF',
-    },
-    additional: {
-      magenta: '#987284',
-      lightPurple: '#EE7674',
-      deepPurple: '#31081F',
-      darkGrey: '#393424',
-      lightPastelPink: '#F7E1D7',
-    },
-    background: {
-      default: '#f7f7f7', // Light background color
-      paper: '#fff',
-    },
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1300,
-      xl: 1536,
-      xxl: 1920,
-    },
-  },
-});
+    "dark": {
+      "palette": {
+        "primary": {
+          "50": "#f0fdfa",
+          "100": "#ccfbf1",
+          "200": "#99f6e4",
+          "300": "#5eead4",
+          "400": "#2dd4bf",
+          "500": "#14b8a6",
+          "600": "#0d9488",
+          "700": "#0f766e",
+          "800": "#115e59",
+          "900": "#134e4a"
+        },
+        "neutral": {
+          "50": "#f0fdf4",
+          "100": "#dcfce7",
+          "200": "#bbf7d0",
+          "300": "#86efac",
+          "400": "#4ade80",
+          "500": "#22c55e",
+          "600": "#16a34a",
+          "700": "#15803d",
+          "800": "#166534",
+          "900": "#14532d"
+        },
+        "danger": {
+          "50": "#fdf4ff",
+          "100": "#fae8ff",
+          "200": "#f5d0fe",
+          "300": "#f0abfc",
+          "400": "#e879f9",
+          "500": "#d946ef",
+          "600": "#c026d3",
+          "700": "#a21caf",
+          "800": "#86198f",
+          "900": "#701a75"
+        },
+        "success": {
+          "50": "#faf5ff",
+          "100": "#f3e8ff",
+          "200": "#e9d5ff",
+          "300": "#d8b4fe",
+          "400": "#c084fc",
+          "500": "#a855f7",
+          "600": "#9333ea",
+          "700": "#7e22ce",
+          "800": "#6b21a8",
+          "900": "#581c87"
+        },
+        "warning": {
+          "50": "#f0f9ff",
+          "100": "#e0f2fe",
+          "200": "#bae6fd",
+          "300": "#7dd3fc",
+          "400": "#38bdf8",
+          "500": "#0ea5e9",
+          "600": "#0284c7",
+          "700": "#0369a1",
+          "800": "#075985",
+          "900": "#0c4a6e"
+        }
+      }
+    }
+  }
+})
 
-const darkTheme = extendTheme({
-  palette: {
-    mode: 'dark',
-    primary: {
-      main: '#987284',
-      contrastText: '#FFFFFF',
-    },
-    secondary: {
-      main: '#EE7674',
-      contrastText: '#2F2F2F',
-    },
-    error: {
-      main: '#31081F',
-      contrastText: '#FFFFFF',
-    },
-    warning: {
-      main: '#393424',
-      contrastText: '#FFFFFF',
-    },
-    info: {
-      main: '#75B9BE',
-      contrastText: '#2F2F2F',
-    },
-    success: {
-      main: '#264653',
-      contrastText: '#FFFFFF',
-    },
-    additional: {
-      deepPurple: '#6B0F1A',
-      darkGrey: '#D0D6B5',
-      lightPastelPink: '#F9B5AC',
-      aquamarine: '#093824',
-      brown: '#F7E1D7',
-    },
-    background: {
-      default: '#424242', // Dark background color
-      paper: '#333333',
-    },
-  },
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1300,
-      xl: 1536,
-      xxl: 1920,
-    },
-  },
-});
+export default theme;
 
-export { lightTheme, darkTheme };
+
+
+
+
+
+
+
+
+
