@@ -1,9 +1,15 @@
 import React from "react";
-import theme from "../utils/theme";
+import {lightTheme, darkTheme} from "../utils/theme";
 import { useMediaQuery } from '@mui/material';
 import { ThemeValuesContext } from "./theme-values.context";
 
 const ThemeValuesProvider = ({ children }) => {
+
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const theme = prefersDarkMode ? darkTheme : lightTheme;
+
+
+
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
     const isLaptop = useMediaQuery(theme.breakpoints.up('xl'));
