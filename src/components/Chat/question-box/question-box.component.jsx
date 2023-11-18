@@ -15,11 +15,11 @@ const QuestionBox = ({ question, setQuestion, handleSubmit }) => {
       <Input
         fullWidth
         label="type your word here"
-        variant="filled"
+        variant="soft"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
-      <Button type="submit" variant="contained" color="primary">
+      <Button type="submit" variant="soft" color="warning">
         Ask
       </Button>
     </Box>

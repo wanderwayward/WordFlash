@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Button, Grid, Sheet, Box, FormControl, Typography, FormHelperText } from "@mui/joy";
+import { Button, Grid, Sheet, Box, FormControl, Typography, Input, FormHelperText } from "@mui/joy";
 import { signInUserWithEmailAndPassword, auth } from "../../../utils/firebase-utils";
 import { handleGoogleAuthentication } from "../../../hooks/handleGoogleAuthentication";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -42,7 +42,11 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
     }
 
     return (
-        <Sheet elevation={10} sx={{ backgroundColor: "#FCDDBC", border: "0 0 0 20px solid white" }}>
+        <Sheet 
+        variant="soft"
+        color="primary"
+        elevation={10} 
+        sx={{  borderRadius: 20 }}>
             <Box p={3}>
                 <Box marginBottom={3}>
                     <Typography variant="h3" fontWeight="bold">Sign In</Typography>
@@ -51,37 +55,48 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                         <FormControl error={errors.email ? true : false} fullWidth>
                             <Input 
                                 {...register("email", { required: true })}
-                                label="Email" 
-                                variant="filled"
+                                placeholder="Email" 
+                                variant="soft"
                                 type='email'
                                 fullWidth 
+
                             />
                             {errors.email && <FormHelperText>Email is required</FormHelperText>}
                         </FormControl>
                         <FormControl error={errors.password ? true : false} fullWidth>
                             <Input 
                                 {...register("password", { required: true })}
-                                label="Password" 
-                                variant="filled" 
+                                placeholder="Password" 
+                                variant="soft" 
                                 type="password" 
                                 fullWidth
+                                sx={{marginTop: 2}}
+
                             />
                             {errors.password && <FormHelperText>Password is required</FormHelperText>}
                         </FormControl>
                         <Grid container spacing={1} justifyContent="center"  marginY={2}>
                             <Grid item xs={5}>
-                                <Button type="submit" variant="contained" color="primary">
+                            <Button variant="soft" color="success" >
                                     Sign In with Email
                                 </Button>
                             </Grid>
                         <Grid item xs={1}></Grid>
                             <Grid item xs={5}>
-                                <Button variant="contained" color="primary" onClick={() => googleAuthHandler(setUser)}>
+                                <Button variant="soft" color="success" onClick={() => googleAuthHandler(setUser)}>
                                         Sign In with Google
                                 </Button>
                             </Grid>
                         </Grid>
-                    <Typography>Don't have an account? <Button color="primary" onClick={switchToSignUp}>Sign Up</Button></Typography>
+                    <Typography>Don't have an account? 
+                    <Button 
+                        variant="soft" 
+                        color="danger" 
+                        onClick={switchToSignUp}
+                        sx={{marginX:'20px'}}>
+                            Sign Up
+                        </Button>
+                    </Typography>
                 </form>
             </Box>
         </Sheet>
