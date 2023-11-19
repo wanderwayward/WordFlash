@@ -1,39 +1,84 @@
-import { Box, Typography, List, ListItem, Alert, Sheet } from "@mui/joy";
+import { List, ListItem, Alert, Sheet, LinearProgress } from "@mui/joy";
+import { StyledTypography } from "../../../utils/styledComponents";
 
-const AnswerBox = ({ response }) => {
-  console.log(response)
+const AnswerBox = ({ response, checks, isLoading }) => {
+  
+  const { isMobile, isTablet } = checks;
+ 
   return (
-    <Box sx={{ margin: 'auto', width: '100%' }}>
-      {response.errorMessage ? (
-        <Alert severity="error">
-          Error: {response.errorMessage}
-        </Alert>
-      ) : (
-        <Sheet variant="soft" color="primary" sx={{ padding: 2, borderRadius:5, margin:'auto' }}>
-          <Typography level="h4" component="div">
+    isLoading ? (
+      <LinearProgress 
+      color="warning"
+      variant="solid"
+      sx={{ 
+        width: isMobile ? '100%' : isTablet ? '80%' : '50%',
+        height: '10px !important',
+        marginTop: '98vh',
+        marginBottom: 2, 
+        alignItems: 'flex-end'}} />
+    ) : (
+      <Sheet 
+        variant="solid" 
+        color="primary" 
+        sx={{ 
+          height: '50vh', 
+          borderRadius:5,
+          padding: isMobile ? 1 : 2,
+          marginX: isMobile ? 'null' : '', 
+          width: isMobile ? '100%' : isTablet ? '80%' : '50%',
+          margin:'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
+          }}>
+
+      {!response.errorMessage ? (
+           <>
+          <StyledTypography level="h4">
             Original Word: {response.originalWord}
-          </Typography>
-          <Typography level="h4" component="div">
+          </StyledTypography>
+        
+          <StyledTypography level="h4">
             English Translation: {response.englishTranslation}
-          </Typography>
-          <Typography level="h5" component="div">
+          </StyledTypography>
+        
+          <StyledTypography level="h5">
             Classification: {response.classification}
-          </Typography>
-          <Typography level="h5" component="div">Spanish Definitions:</Typography>
+          </StyledTypography>
+        
+          <StyledTypography level="h5">Spanish Definitions:</StyledTypography>
+
           <List>
             {response.spanishDefinition.map((definition, index) => (
               <ListItem key={index}>{definition}</ListItem>
             ))}
           </List>
-          <Typography level="h6" component="div">Example Sentences:</Typography>
-          <List>
-            {response.exampleSentences.map((sentence, index) => (
-              <ListItem key={index}>{sentence}</ListItem>
-            ))}
-          </List>
-        </Sheet>
+          
+          <StyledTypography level="h5">Example Sentences:</StyledTypography>
+            <List>
+              {response.exampleSentences.map((sentence, index) => (
+                <ListItem key={index}>{sentence}</ListItem>
+              ))}
+            </List>
+          </>
+
+      ) : 
+      (
+        <Alert 
+        severity="error"
+        color="danger"
+        sx={{
+          textAlign: 'center',
+        }}  
+        >
+          {response.errorMessage}
+        </Alert>
       )}
-    </Box>
+
+      </Sheet>
+    )
+
   );
 };
 

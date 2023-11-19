@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
-import { Sheet, Grid } from "@mui/joy";
+import React, { useState, useContext } from 'react';
+import { Box} from "@mui/joy";
 import AnswerBox from '../../components/Chat/answer-box/answer-box.component';
 import QuestionBox from '../../components/Chat/question-box/question-box.component';
+import { ThemeValuesContext } from '../../contexts/theme-values.context';
+import { set } from 'react-hook-form';
 
 const Chat = () => {
+
+  const { checks } = useContext(ThemeValuesContext);
+
+
   const [question, setQuestion] = useState('');
+  const [isLoading, setIsLoading] = useState(false); 
   const [response, setResponse] = useState({
     originalWord: '',
     englishTranslation: '',
@@ -17,7 +24,7 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('starting handleSubmit');
+    setIsLoading(true);
     const apiResponse = await fetch('http://localhost:5000/ask/', {
       method: 'POST',
       headers: {
@@ -32,28 +39,25 @@ const Chat = () => {
     } else {
       setResponse({ ...response, errorMessage: 'Error getting response' });
     }
+    setIsLoading(false);
   };
 
   return (
-    <Sheet
-    variant="soft"
-    color="warning"
+    <Box
     sx={{
+      width: "100%",
       borderRadius: 10,
-      padding: 3,
-      height: "100vh",
+      height: "93vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      justifyContent: "flex-end",
-      margin: "auto",
-    }}
-    >
 
-      <AnswerBox response={response} />
-      <QuestionBox question={question} setQuestion={setQuestion}  handleSubmit={handleSubmit}/>  
+    }}>
 
-    </Sheet>
+      <AnswerBox response={response} checks={checks} isLoading={isLoading}/>
+      <QuestionBox question={question} setQuestion={setQuestion}  handleSubmit={handleSubmit} checks={checks}/>  
+
+    </Box>
   );
 }
 
