@@ -1,11 +1,13 @@
 import {useState, useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
-import { Box, Drawer, IconButton, List, ListItemButton, Typography, ModalClose } from '@mui/joy';
+import { Box, Drawer, IconButton, List, ListItemButton, Typography, ModalClose, Button, Link } from '@mui/joy';
 
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import { IoMenuSharp as Menu } from "react-icons/io5";
 import {UserContext} from '../../contexts/user.context';
+
+import { signOutUser } from '../../utils/firebase-utils';
 
 
 const MenuDrawer = () => {
@@ -13,12 +15,6 @@ const MenuDrawer = () => {
   const {user} = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const handleClick = () => {
-    navigate('/Auth');
-  }
-
-
 
 
   return (
@@ -65,24 +61,35 @@ const MenuDrawer = () => {
         >
           <ListItemButton sx={{ fontWeight: 'lg' }}>
           
-          <Link to="/" state={{background: location}}>
+          <Link 
+          href="/" 
+          state={{background: location}}
+          sx={{ textDecoration: 'none !important', color: 'inherit' }}
+          >
           'Word Flash' 
           </Link>  
           </ListItemButton>
           <ListItemButton>Flashcard Collection</ListItemButton>
           
           <ListItemButton>
-          {user ? 
-          <Link onClick={{}}>
-          Sign Out 
-          </Link>
-          
-          : 
-          <Link to="/Auth" state={{background: location}}>
-          'Sign In' 
-          </Link>
-          }
+            {user ? 
+              <Button
+                variant="soft"  
+                onClick={signOutUser}>
+                  Sign Out
+              </Button>
+            : 
+              <Button
+                variant="soft"
+                component={Link}
+                href="/Auth"
+                state={{ background: location }}
+              >
+                Sign In
+              </Button>
+            }
           </ListItemButton>
+
         </List>
       </Drawer>
     </Box>

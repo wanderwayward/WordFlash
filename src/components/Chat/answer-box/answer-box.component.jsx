@@ -10,11 +10,9 @@ const AnswerBox = ({ response, checks, isLoading }) => {
     sx={{ 
       height: '50vh', 
       borderRadius:5,
-
       width: isMobile ? '100%' : isTablet ? '80%' : '50%',
       margin:'auto',
       padding: isMobile ? 1 : 2,
-
       display: 'flex',
       justifyContent: 'center',
       flexDirection: 'column',
@@ -37,9 +35,7 @@ const AnswerBox = ({ response, checks, isLoading }) => {
         sx={{
           borderRadius: 5,
           padding: 3
-        }} 
-        
-        >
+        }}>
 
       {!response.errorMessage ? (
            <>

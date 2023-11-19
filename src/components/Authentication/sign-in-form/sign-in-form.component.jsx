@@ -51,46 +51,45 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                 <Box marginBottom={3}>
                     <Typography variant="h3" fontWeight="bold">Sign In</Typography>
                 </Box>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <FormControl error={errors.email ? true : false} fullWidth>
-                            <Input 
-                                {...register("email", { required: true })}
-                                placeholder="Email" 
-                                variant="soft"
-                                type='email'
-                                fullWidth 
-
-                            />
-                            {errors.email && <FormHelperText>Email is required</FormHelperText>}
-                        </FormControl>
-                        <FormControl error={errors.password ? true : false} fullWidth>
-                            <Input 
-                                {...register("password", { required: true })}
-                                placeholder="Password" 
-                                variant="soft" 
-                                type="password" 
-                                fullWidth
-                                sx={{marginTop: 2}}
-
-                            />
-                            {errors.password && <FormHelperText>Password is required</FormHelperText>}
-                        </FormControl>
-                        <Grid container spacing={1} justifyContent="center"  marginY={2}>
-                            <Grid item xs={5}>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <FormControl error={errors.email ? true : false} fullWidth>
+                        <Input 
+                            {...register("email", { required: true })}
+                            placeholder="Email" 
+                            variant="soft"
+                            type='email'
+                            fullWidth 
+                        />
+                        {errors.email && <FormHelperText>Email is required</FormHelperText>}
+                    </FormControl>
+                    <FormControl error={errors.password ? true : false} fullWidth>
+                        <Input 
+                        {...register("password", { required: true })}
+                        placeholder="Password" 
+                        variant="soft" 
+                        type="password" 
+                        fullWidth
+                        sx={{marginTop: 2}}
+                        />
+                         {errors.password && <FormHelperText>Password is required</FormHelperText>}
+                    </FormControl>
+                    <Grid container spacing={1} justifyContent="center"  marginY={2}>
+                        <Grid item xs={5}>
                             <Button variant="soft" color="success" >
-                                    Sign In with Email
-                                </Button>
-                            </Grid>
-                        <Grid item xs={1}></Grid>
-                            <Grid item xs={5}>
-                                <Button variant="soft" color="success" onClick={() => googleAuthHandler(setUser)}>
-                                        Sign In with Google
-                                </Button>
-                            </Grid>
+                                Sign In with Email
+                            </Button>
                         </Grid>
-                        <Box
+                        <Grid item xs={1}> </Grid>
+                        <Grid item xs={5}>
+                            <Button variant="soft" color="success" onClick={() => googleAuthHandler(setUser)}>
+                                Sign In with Google
+                            </Button>
+                        </Grid>
+                    </Grid>
+                    <Box
                     sx={{
-                        display: 'flex',	
+                        display: 'flex',
+                        alignItems: 'center',
                         justifyContent: 'center',
                     }}>    
                     <Typography>Don't have an account? </Typography>
@@ -98,16 +97,13 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                         variant="soft" 
                         color="danger" 
                         onClick={switchToSignUp}
-                        sx={{marginX:'20px'}}>
+                        sx={{marginX:'10px'}}>
                             Sign Up
                         </Button>
                     </Box>
-                  
                 </form>
             </Box>
-        </Sheet>
-                        
-                                            
+        </Sheet>                                    
     );
 };
 

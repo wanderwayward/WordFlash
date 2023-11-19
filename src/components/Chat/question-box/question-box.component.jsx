@@ -20,12 +20,12 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
         autoFocus
         fullWidth
         placeholder="type your word here"
-        variant="solid"
-        color="neutral"
+        variant="soft"
+        color="primary"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
-      <Button type="submit" variant="solid" color={isDark ? "warning" : "success"}>
+      <Button type="submit" variant="soft" color={isDark ? "warning" : "success"}>
         Ask
       </Button>
     </Box>
