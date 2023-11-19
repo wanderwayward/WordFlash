@@ -88,7 +88,12 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                                 </Button>
                             </Grid>
                         </Grid>
-                    <Typography>Don't have an account? 
+                        <Box
+                    sx={{
+                        display: 'flex',	
+                        justifyContent: 'center',
+                    }}>    
+                    <Typography>Don't have an account? </Typography>
                     <Button 
                         variant="soft" 
                         color="danger" 
@@ -96,7 +101,8 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                         sx={{marginX:'20px'}}>
                             Sign Up
                         </Button>
-                    </Typography>
+                    </Box>
+                  
                 </form>
             </Box>
         </Sheet>

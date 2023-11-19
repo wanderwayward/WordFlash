@@ -14,13 +14,15 @@ const SnackbarFormMessage = ({ open, message, severity, position, onClose }) => 
   return (
     <Snackbar
       open={open}
-      autoHideDuration={6000}
+      autoHideDuration={3000}
       onClose={handleClose}
       anchorOrigin={position}
+      variant="soft"
     >
-      <MuiAlert elevation={6} variant="filled" onClose={handleClose} severity={severity}>
+      <MuiAlert elevation={6} variant="soft" onClose={handleClose} severity={severity}>
         {message}
       </MuiAlert>
+
     </Snackbar>
   );
 };

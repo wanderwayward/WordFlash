@@ -1,11 +1,25 @@
-import {useState} from 'react';
-import { Box, Input, Drawer, IconButton, List, ListItemButton, Typography, ModalClose } from '@mui/joy';
-import { IoMenuSharp as Menu } from "react-icons/io5";
+import {useState, useContext} from 'react';
+import {useNavigate} from 'react-router-dom';
+import { Box, Drawer, IconButton, List, ListItemButton, Typography, ModalClose } from '@mui/joy';
 
+import { Link, useLocation } from "react-router-dom";
+
+import { IoMenuSharp as Menu } from "react-icons/io5";
+import {UserContext} from '../../contexts/user.context';
 
 
 const MenuDrawer = () => {
   const [open, setOpen] = useState(false);
+  const {user} = useContext(UserContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleClick = () => {
+    navigate('/Auth');
+  }
+
+
+
 
   return (
     <Box
@@ -49,9 +63,26 @@ const MenuDrawer = () => {
             '& > div': { justifyContent: 'center' },
           }}
         >
-          <ListItemButton sx={{ fontWeight: 'lg' }}>Word Flash</ListItemButton>
+          <ListItemButton sx={{ fontWeight: 'lg' }}>
+          
+          <Link to="/" state={{background: location}}>
+          'Word Flash' 
+          </Link>  
+          </ListItemButton>
           <ListItemButton>Flashcard Collection</ListItemButton>
-          <ListItemButton>Sign Out</ListItemButton>
+          
+          <ListItemButton>
+          {user ? 
+          <Link onClick={{}}>
+          Sign Out 
+          </Link>
+          
+          : 
+          <Link to="/Auth" state={{background: location}}>
+          'Sign In' 
+          </Link>
+          }
+          </ListItemButton>
         </List>
       </Drawer>
     </Box>

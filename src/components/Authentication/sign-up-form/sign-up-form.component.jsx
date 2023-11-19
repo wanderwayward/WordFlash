@@ -54,7 +54,7 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                         <Input 
                             {...register("displayName", { required: true })}
                             placeholder="Display Name" 
-                            variant="filled"
+                            variant="soft"
                             fullWidth
                         />
                         {errors.name && <FormHelperText>Name is required</FormHelperText>}
@@ -63,7 +63,7 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                         <Input 
                             {...register("email", { required: true })}
                             placeholder="Email" 
-                            variant="filled" 
+                            variant="soft" 
                             fullWidth
                             sx={{marginTop: 2,
                                 marginBottom: 2}}
@@ -74,7 +74,7 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                         <Input 
                             {...register("password", { required: true })}
                             placeholder="Password" 
-                            variant="filled" 
+                            variant="soft" 
                             type="password" 
                             fullWidth 
                         />
@@ -93,15 +93,20 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                             </Button>
                         </Grid>
                     </Grid>
-                    <Typography>Already have an account? 
-                        <Button 
+                    <Box
+                    sx={{
+                        display: 'flex',	
+                        justifyContent: 'center',
+                    }}>                      
+                    <Typography>Already have an account?  </Typography>
+                    <Button 
                         variant="soft" 
                         color="danger" 
                         onClick={switchToSignIn}
                         sx={{marginX:'20px'}}>
                             Sign In
                         </Button>
-                    </Typography>
+                    </Box>
                 </form>
             </Box>
         </Sheet>
