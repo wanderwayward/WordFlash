@@ -1,4 +1,4 @@
-import { List, ListItem, Alert, Sheet, LinearProgress } from "@mui/joy";
+import { List, ListItem, Alert, Sheet, LinearProgress, Box } from "@mui/joy";
 import { StyledTypography } from "../../../utils/styledComponents";
 
 const AnswerBox = ({ response, checks, isLoading }) => {
@@ -6,32 +6,40 @@ const AnswerBox = ({ response, checks, isLoading }) => {
   const { isMobile, isTablet } = checks;
  
   return (
-    isLoading ? (
+    <Box
+    sx={{ 
+      height: '50vh', 
+      borderRadius:5,
+
+      width: isMobile ? '100%' : isTablet ? '80%' : '50%',
+      margin:'auto',
+      padding: isMobile ? 1 : 2,
+
+      display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      alignItems: 'center',
+      }}>
+    {isLoading ? (
       <LinearProgress 
       color="warning"
       variant="solid"
       sx={{ 
-        width: isMobile ? '100%' : isTablet ? '80%' : '50%',
+        width: '100%',
         height: '10px !important',
-        marginTop: '98vh',
+        marginTop: '94vh',
         marginBottom: 2, 
         alignItems: 'flex-end'}} />
     ) : (
       <Sheet 
         variant="solid" 
-        color="primary" 
-        sx={{ 
-          height: '50vh', 
-          borderRadius:5,
-          padding: isMobile ? 1 : 2,
-          marginX: isMobile ? 'null' : '', 
-          width: isMobile ? '100%' : isTablet ? '80%' : '50%',
-          margin:'auto',
-          display: 'flex',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          alignItems: 'center',
-          }}>
+        color="primary"
+        sx={{
+          borderRadius: 5,
+          padding: 3
+        }} 
+        
+        >
 
       {!response.errorMessage ? (
            <>
@@ -77,7 +85,8 @@ const AnswerBox = ({ response, checks, isLoading }) => {
       )}
 
       </Sheet>
-    )
+    )}
+    </Box>
 
   );
 };

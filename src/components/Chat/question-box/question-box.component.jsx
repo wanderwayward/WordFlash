@@ -7,11 +7,12 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
     <Box
       component="form"
       onSubmit={handleSubmit}
+      p={1}
       sx={{
         width: isMobile ? '100%' : isTablet ? '80%' : '50%',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
+
         gap: 2
       }}
     >

@@ -4,12 +4,12 @@ import { IoMenuSharp as Menu } from "react-icons/io5";
 
 
 
-const Menu = () => {
+const MenuDrawer = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <Box
-    sx={{position: 'absolute', top: 5, left: 7, }}
+    sx={{position: 'absolute', top: 8, left: 7, }}
     >
       <IconButton
       variant="outlined" 
@@ -49,7 +49,7 @@ const Menu = () => {
             '& > div': { justifyContent: 'center' },
           }}
         >
-          <ListItemButton sx={{ fontWeight: 'lg' }}>Home</ListItemButton>
+          <ListItemButton sx={{ fontWeight: 'lg' }}>Word Flash</ListItemButton>
           <ListItemButton>Flashcard Collection</ListItemButton>
           <ListItemButton>Sign Out</ListItemButton>
         </List>
@@ -58,4 +58,4 @@ const Menu = () => {
   );
 }
 
-export default Menu;
+export default MenuDrawer;

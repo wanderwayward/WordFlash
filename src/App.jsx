@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from '../src/Pages/Chat/chat.component';
 import User from '../src/Pages/User/user.component';
 import AuthPage from './Pages/Authentication/authentication.component';
-import Menu from './Pages/Menu/menu.component';
+import MenuDrawer from './Pages/Menu/menu.component';
 
 import { ThemeValuesContext } from './contexts/theme-values.context';
 
@@ -23,10 +23,9 @@ const App = () => {
         display="flex"  
         sx={{
           width: "100%",
-          padding: 2,
         }}
         >
-       <Menu />
+       <MenuDrawer />
         
 
           {/* Outer Grid container */}
