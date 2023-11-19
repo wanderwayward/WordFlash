@@ -1,6 +1,7 @@
 import { Box, Input, Button } from '@mui/joy';
 
 const QuestionBox = ({ question, setQuestion, handleSubmit }) => {
+  
   return (
     <Box
       component="form"
@@ -16,10 +17,11 @@ const QuestionBox = ({ question, setQuestion, handleSubmit }) => {
         fullWidth
         label="type your word here"
         variant="soft"
+        color="error"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
-      <Button type="submit" variant="soft" color="warning">
+      <Button type="submit" variant="soft" color="success">
         Ask
       </Button>
     </Box>

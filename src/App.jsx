@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import { Box, Grid, CssVarsProvider, CssBaseline  } from '@mui/joy';
+import { Box, Grid, CssBaseline  } from '@mui/joy';
+import { CssVarsProvider } from '@mui/joy/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from '../src/Pages/Chat/chat.component';
 import User from '../src/Pages/User/user.component';
@@ -12,10 +13,10 @@ const App = () => {
   const { theme } = useContext(ThemeValuesContext);
 
   return (
-    <CssVarsProvider defaultMode="dark" theme={theme}>
+    <CssVarsProvider defaultMode="system" theme={theme}   modeStorageKey="identify-system-mode"    >
       <CssBaseline />
       <Router>
-        <Box style={{ paddingTop: '60px' }}>
+        
 
           {/* Outer Grid container */}
           <Grid container justifyContent="center" alignItems="center" style={{ width: '100%' }}>
@@ -33,8 +34,6 @@ const App = () => {
               </Grid> {/* End of Inner Grid container */}
             </Grid> {/* End of Main Content */}
           </Grid> {/* End of Outer Grid container */}
-
-        </Box>
       </Router>
       </CssVarsProvider>
   );

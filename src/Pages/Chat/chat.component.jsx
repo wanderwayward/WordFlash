@@ -37,14 +37,15 @@ const Chat = () => {
   return (
     <Sheet
     variant="soft"
-    color="primary"
+    color="warning"
     sx={{
       borderRadius: 10,
       padding: 3,
+      height: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "flex-end",
       margin: "auto",
     }}
     >

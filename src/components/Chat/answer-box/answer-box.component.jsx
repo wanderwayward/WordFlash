@@ -1,33 +1,40 @@
-import {  Box } from "@mui/joy";
+import { Box, Typography, List, ListItem, Alert, Sheet } from "@mui/joy";
 
-const AnswerBox = ({response}) => {
-    console.log(response);
-    return (
-        <Box>
-        {response.errorMessage ? (
-        <p>Error: {response.errorMessage}</p>
-            ) : (
-        <div>
-          <p>Original Word: {response.originalWord}</p>
-          <p>English Translation: {response.englishTranslation}</p>
-          <p>Classification: {response.classification}</p>
-          <p>Spanish Definitions</p>
-          <ul>
+const AnswerBox = ({ response }) => {
+  console.log(response)
+  return (
+    <Box sx={{ margin: 'auto', width: '100%' }}>
+      {response.errorMessage ? (
+        <Alert severity="error">
+          Error: {response.errorMessage}
+        </Alert>
+      ) : (
+        <Sheet variant="soft" color="primary" sx={{ padding: 2, borderRadius:5, margin:'auto' }}>
+          <Typography level="h4" component="div">
+            Original Word: {response.originalWord}
+          </Typography>
+          <Typography level="h4" component="div">
+            English Translation: {response.englishTranslation}
+          </Typography>
+          <Typography level="h5" component="div">
+            Classification: {response.classification}
+          </Typography>
+          <Typography level="h5" component="div">Spanish Definitions:</Typography>
+          <List>
             {response.spanishDefinition.map((definition, index) => (
-              <li key={index}>{definition}</li>
+              <ListItem key={index}>{definition}</ListItem>
             ))}
-            </ul>
-
-          <p>Example Sentences:</p>
-          <ul>
+          </List>
+          <Typography level="h6" component="div">Example Sentences:</Typography>
+          <List>
             {response.exampleSentences.map((sentence, index) => (
-              <li key={index}>{sentence}</li>
+              <ListItem key={index}>{sentence}</ListItem>
             ))}
-          </ul>
-        </div>
-         )}
-        </Box>
-    )
-}
+          </List>
+        </Sheet>
+      )}
+    </Box>
+  );
+};
 
 export default AnswerBox;
