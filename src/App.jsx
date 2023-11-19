@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from '../src/Pages/Chat/chat.component';
 import User from '../src/Pages/User/user.component';
 import AuthPage from './Pages/Authentication/authentication.component';
-import DrawerMobileNavigation from './Pages/Menu/menu.component';
+import Menu from './Pages/Menu/menu.component';
 
 import { ThemeValuesContext } from './contexts/theme-values.context';
 
@@ -26,7 +26,7 @@ const App = () => {
           padding: 2,
         }}
         >
-       <DrawerMobileNavigation />
+       <Menu />
         
 
           {/* Outer Grid container */}

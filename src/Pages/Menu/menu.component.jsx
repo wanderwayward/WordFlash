@@ -4,7 +4,7 @@ import { IoMenuSharp as Menu } from "react-icons/io5";
 
 
 
-const DrawerMobileNavigation = () => {
+const Menu = () => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -58,4 +58,4 @@ const DrawerMobileNavigation = () => {
   );
 }
 
-export default DrawerMobileNavigation;
+export default Menu;
