@@ -8,11 +8,14 @@ const DrawerMobileNavigation = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <Box
+    sx={{position: 'absolute', top: 5, left: 7, }}
+    >
       <IconButton
       variant="outlined" 
       color="neutral" 
-      onClick={() => setOpen(true)}>
+      onClick={() => setOpen(true)}
+      >
         <Menu />
       </IconButton>
       <Drawer open={open} onClose={() => setOpen(false)}>
@@ -51,7 +54,7 @@ const DrawerMobileNavigation = () => {
           <ListItemButton>Sign Out</ListItemButton>
         </List>
       </Drawer>
-    </>
+    </Box>
   );
 }
 

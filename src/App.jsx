@@ -23,9 +23,7 @@ const App = () => {
         display="flex"  
         sx={{
           width: "100%",
-          borderRadius: 10,
           padding: 2,
-          marginBottom: -21,  
         }}
         >
        <DrawerMobileNavigation />

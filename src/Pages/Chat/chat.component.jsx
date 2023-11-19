@@ -46,8 +46,7 @@ const Chat = () => {
     <Box
     sx={{
       width: "100%",
-      borderRadius: 10,
-      height: "93vh",
+      height: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
