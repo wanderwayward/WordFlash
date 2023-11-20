@@ -12,6 +12,9 @@ const ThemeValuesProvider = ({ children }) => {
     const isDesktop = useMedia('(min-width: 1500px)');
 
 
+    console.log(isDark, isMobile, isTablet, isLaptop, isDesktop)
+
+
     return (
         <ThemeValuesContext.Provider value={{ theme, checks: { isDark, isMobile, isTablet, isLaptop, isDesktop } }}>
             {children}

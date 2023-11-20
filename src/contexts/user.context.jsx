@@ -19,7 +19,7 @@ export const UserProvider = ({ children }) => {
 
 
   if (loading) {
-    return <GeneralLoadingSpinner />;
+    return null
   }
 
   return (
