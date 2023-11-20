@@ -8,11 +8,9 @@ const Navbar = () => {
       top: 0, 
       left: 0, 
       right: 0,
-      zIndex: 1100, // Ensure it's above other content
+      zIndex: 1100, 
       width: '100%', 
       padding: '10px', 
-      backgroundColor: '#f5f5f5',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
     }}>
       <Grid item>
         <MenuDrawer />
@@ -21,7 +19,6 @@ const Navbar = () => {
         {/* Additional navigation links or branding */}
       </Grid>
       <Grid item>
-        <Button>User Profile</Button>
       </Grid>
     </Grid>
   );

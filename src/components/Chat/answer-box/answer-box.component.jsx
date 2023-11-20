@@ -12,7 +12,7 @@ const AnswerBox = ({ response, checks, isLoading }) => {
       borderRadius:5,
       width: isMobile ? '100%' : isTablet ? '80%' : '50%',
       margin:'auto',
-      marginTop: isMobile ? 2 : 5,
+      marginTop: isMobile ? 8 : 12,
       padding: isMobile ? 1 : 2,
       display: 'flex',
       justifyContent: 'center',
@@ -37,6 +37,7 @@ const AnswerBox = ({ response, checks, isLoading }) => {
           borderRadius: 5,
           padding: 3,
           width: '90%',
+          marginBotton: 2,
         }}>
 
       {!response.errorMessage ? (
