@@ -1,9 +1,9 @@
-import { Grid, Button } from '@mui/joy';
+import { Grid, Avatar, Typography } from '@mui/joy';
 import MenuDrawer from '../Menu/menu.component';    
 
 const Navbar = () => {
   return (
-    <Grid container justifyContent="flex-start" alignItems="center" sx={{ 
+    <Grid container justifyContent="space-between" alignItems="center" sx={{ 
       position: 'fixed', 
       top: 0, 
       left: 0, 
@@ -15,10 +15,13 @@ const Navbar = () => {
       <Grid item>
         <MenuDrawer />
       </Grid>
-      <Grid item xs>
-        {/* Additional navigation links or branding */}
+      <Grid item >
+        <Typography>
+            WORD FLASH
+        </Typography>
       </Grid>
       <Grid item>
+        <Avatar color="warning" alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
       </Grid>
     </Grid>
   );
