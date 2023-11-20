@@ -17,7 +17,7 @@ const WordsContextProvider = ({ children }) => {
     if (user) {
       userWords();
     }
-    }, [user, userWords]);
+    }, [user]);
 
 
 
@@ -30,7 +30,6 @@ const WordsContextProvider = ({ children }) => {
     setWords([...words, newWord]);
   }
 
-  console.log(uploadWord)
 
 
   return (
