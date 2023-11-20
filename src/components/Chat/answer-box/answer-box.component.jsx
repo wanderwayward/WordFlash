@@ -8,10 +8,11 @@ const AnswerBox = ({ response, checks, isLoading }) => {
   return (
     <Box
     sx={{ 
-      height: '50vh', 
+      height: '60vh', 
       borderRadius:5,
       width: isMobile ? '100%' : isTablet ? '80%' : '50%',
       margin:'auto',
+      marginTop: isMobile ? 2 : 5,
       padding: isMobile ? 1 : 2,
       display: 'flex',
       justifyContent: 'center',
@@ -34,7 +35,8 @@ const AnswerBox = ({ response, checks, isLoading }) => {
         color="primary"
         sx={{
           borderRadius: 5,
-          padding: 3
+          padding: 3,
+          width: '90%',
         }}>
 
       {!response.errorMessage ? (

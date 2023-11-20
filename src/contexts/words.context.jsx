@@ -28,6 +28,7 @@ const WordsContextProvider = ({ children }) => {
     word = { ...word, userId: user.uid };
     const newWord = await addWord(word);
     setWords([...words, newWord]);
+    userWords();
   }
 
 

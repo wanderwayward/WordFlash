@@ -12,7 +12,6 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
         width: isMobile ? '100%' : isTablet ? '80%' : '50%',
         display: 'flex',
         flexDirection: 'row',
-
         gap: 2
       }}
     >
@@ -21,11 +20,11 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
         fullWidth
         placeholder="type your word here"
         variant="soft"
-        color="primary"
+        color="danger"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
-      <Button type="submit" variant="soft" color={isDark ? "warning" : "success"}>
+      <Button type="submit" variant="soft" color={isDark ? "warning" : "primary"}>
         Ask
       </Button>
     </Box>

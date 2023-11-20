@@ -43,21 +43,21 @@ const Chat = () => {
     }
     setIsLoading(false);
   };
-
   return (
     <Box
-    sx={{
-      width: "100%",
-      height: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-
-    }}>
-
-      <AnswerBox response={response} checks={checks} isLoading={isLoading}/>
-      <QuestionBox question={question} setQuestion={setQuestion}  handleSubmit={handleSubmit} checks={checks}/>  
-
+      sx={{
+        width: "100%",
+        height: "calc(100vh - 60px)", // Adjust 60px to your navbar's height
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Box sx={{ overflowY: 'auto', flexGrow: 1, flexShrink: 1 }}>
+        <AnswerBox response={response} checks={checks} isLoading={isLoading}/>
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+        <QuestionBox question={question} setQuestion={setQuestion} handleSubmit={handleSubmit} checks={checks}/>  
+      </Box>
     </Box>
   );
 }

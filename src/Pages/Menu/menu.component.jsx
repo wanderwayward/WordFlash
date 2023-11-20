@@ -18,13 +18,11 @@ const MenuDrawer = () => {
 
 
   return (
-    <Box
-    sx={{position: 'absolute', top: 8, left: 7, }}
-    >
+    <Box margin={1}>
       <IconButton
-      variant="outlined" 
-      color="neutral" 
-      onClick={() => setOpen(true)}
+        variant="outlined" 
+        color="neutral" 
+        onClick={() => setOpen(true)}
       >
         <Menu />
       </IconButton>
