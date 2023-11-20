@@ -3,7 +3,7 @@ import { Box} from "@mui/joy";
 import AnswerBox from '../../components/Chat/answer-box/answer-box.component';
 import QuestionBox from '../../components/Chat/question-box/question-box.component';
 import { ThemeValuesContext } from '../../contexts/theme-values.context';
-import { WordsContext } from '../../contexts/words.component';
+import { WordsContext } from '../../contexts/words.context';
 
 const Chat = () => {
 
