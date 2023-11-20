@@ -3,11 +3,12 @@ import { Box} from "@mui/joy";
 import AnswerBox from '../../components/Chat/answer-box/answer-box.component';
 import QuestionBox from '../../components/Chat/question-box/question-box.component';
 import { ThemeValuesContext } from '../../contexts/theme-values.context';
-import { set } from 'react-hook-form';
+import { WordsContext } from '../../contexts/words.component';
 
 const Chat = () => {
 
   const { checks } = useContext(ThemeValuesContext);
+  const { uploadWord } = useContext(WordsContext);
 
 
   const [question, setQuestion] = useState('');
@@ -35,7 +36,8 @@ const Chat = () => {
 
     if (apiResponse.ok) {
       const data = await apiResponse.json();
-      setResponse(data.answer); 
+      setResponse(data.answer);
+      uploadWord(data.answer); 
     } else {
       setResponse({ ...response, errorMessage: 'Error getting response' });
     }

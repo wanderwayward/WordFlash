@@ -31,7 +31,7 @@ googleProvider.setCustomParameters({prompt: 'select_account'});
     try {
       const wordRef = await addDoc(collection(db, 'words'), word);
       console.log('Word added successfully:', word.originalWord);
-      return wordRef.id;
+      return wordRef;
     } catch (error) {
       console.error('Error adding word:', error);
       throw error;
@@ -42,7 +42,7 @@ googleProvider.setCustomParameters({prompt: 'select_account'});
     try {
       const wordsRef = collection(db, 'words');
       const q = query(wordsRef, where('userId', '==', userId));
-      const querySnapshot = await getDoc(q);
+      const querySnapshot = await getDocs(q);
       const words = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       console.log('Words retrieved successfully:', words);
       return words;

@@ -8,23 +8,33 @@ const WordsContextProvider = ({ children }) => {
   const [words, setWords] = useState([]);
   const { user } = useContext(UserContext);
 
+  const userWords = async () => {
+    const words = await getWords(user.uid);
+    setWords(words);
+  };
+
     useEffect(() => {
-    const userWords = async () => {
-      const words = await getWords(user.uid);
-      setWords(words);
-    };
-    }, [user]);
+    if (user) {
+      userWords();
+    }
+    }, [user, userWords]);
+
 
 
   const uploadWord = async (word) => {
+    if (word.errorMessage) {
+        return;
+    }
     word = { ...word, userId: user.uid };
     const newWord = await addWord(word);
     setWords([...words, newWord]);
   }
 
+  console.log(uploadWord)
+
 
   return (
-    <WordsContext.Provider value={{ words, setWords,  }}>
+    <WordsContext.Provider value={{ words, setWords, uploadWord  }}>
       {children}
     </WordsContext.Provider>
   );
