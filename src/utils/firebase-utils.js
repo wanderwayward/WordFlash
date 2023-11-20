@@ -25,6 +25,35 @@ const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({prompt: 'select_account'});
 
 
+
+//Word Related Functions
+  export const addWord = async (word) => {
+    try {
+      const wordRef = await addDoc(collection(db, 'words'), word);
+      console.log('Word added successfully:', word.originalWord);
+      return wordRef.id;
+    } catch (error) {
+      console.error('Error adding word:', error);
+      throw error;
+    }
+  }
+
+  export const getWords = async (userId) => {
+    try {
+      const wordsRef = collection(db, 'words');
+      const q = query(wordsRef, where('userId', '==', userId));
+      const querySnapshot = await getDoc(q);
+      const words = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      console.log('Words retrieved successfully:', words);
+      return words;
+    } catch (error) {
+      console.error('Error retrieving words:', error);
+      throw error;
+    }
+  }
+
+
+//User Related Functions
 export const signUpWithEmailAndPassword = async (auth, email, password, displayName) => {
     try {
       const { user } = await createUserWithEmailAndPassword(auth, email, password);
