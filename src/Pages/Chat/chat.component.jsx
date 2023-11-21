@@ -19,6 +19,7 @@ const Chat = () => {
     spanishDefinition: [],
     exampleSentences: [],
     classification: '',
+    note:'',
     errorType: '',
     errorMessage: ''
   });
@@ -47,7 +48,7 @@ const Chat = () => {
     <Box
       sx={{
         width: "100%",
-        height: "calc(100vh - 60px)", // Adjust 60px to your navbar's height
+        height: "calc(100vh - 60px)",
         display: "flex",
         flexDirection: "column",
       }}

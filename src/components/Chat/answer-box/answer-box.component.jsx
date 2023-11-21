@@ -1,5 +1,6 @@
-import { List, ListItem, Alert, Sheet, LinearProgress, Box } from "@mui/joy";
+import { List, ListItem, Alert, Sheet, Box } from "@mui/joy";
 import { StyledTypography } from "../../../utils/styledComponents";
+import GeneralLoadingSpinner from "../../ui/loading/general-loading-spinner.component";
 
 const AnswerBox = ({ response, checks, isLoading }) => {
   
@@ -12,7 +13,6 @@ const AnswerBox = ({ response, checks, isLoading }) => {
       borderRadius:5,
       width: isMobile ? '100%' : isTablet ? '80%' : '50%',
       margin:'auto',
-      marginTop: isMobile ? 8 : 12,
       padding: isMobile ? 1 : 2,
       display: 'flex',
       justifyContent: 'center',
@@ -20,7 +20,7 @@ const AnswerBox = ({ response, checks, isLoading }) => {
       alignItems: 'center',
       }}>
     {isLoading ? (
-      <LinearProgress 
+      <GeneralLoadingSpinner 
       color="warning"
       variant="solid"
       sx={{ 
@@ -30,7 +30,8 @@ const AnswerBox = ({ response, checks, isLoading }) => {
         marginBottom: 2, 
         alignItems: 'flex-end'}} />
     ) : (
-      <Sheet 
+      <Sheet
+        container 
         variant="solid" 
         color="primary"
         sx={{
@@ -53,7 +54,7 @@ const AnswerBox = ({ response, checks, isLoading }) => {
           <StyledTypography level="h5">
             Classification: {response.classification}
           </StyledTypography>
-        
+
           <StyledTypography level="h5">Spanish Definitions:</StyledTypography>
 
           <List>
@@ -68,19 +69,23 @@ const AnswerBox = ({ response, checks, isLoading }) => {
                 <ListItem key={index}>{sentence}</ListItem>
               ))}
             </List>
+            <StyledTypography level="h5">
+            Note: {response.note}
+          </StyledTypography>
+        
           </>
 
       ) : 
       (
-        <Alert 
+      <Alert 
+        role="alert"
         severity="error"
         color="danger"
-        sx={{
-          textAlign: 'center',
-        }}  
-        >
-          {response.errorMessage}
-        </Alert>
+        sx={{ textAlign: 'center' }}
+      >
+        {response.errorMessage}
+      </Alert>
+
       )}
 
       </Sheet>
