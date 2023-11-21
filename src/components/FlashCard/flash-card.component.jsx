@@ -13,8 +13,7 @@ const FlashCard = ({ response, checks }) => {
         sx={{
           borderRadius: 5,
           padding: 3,
-          width: isMobile ? '100%' : isTablet ? '80%' : '50%',
-          marginTop: 40,
+          width: isMobile ? '100%' : isTablet ? '80%' : '45%',
         }}>
 
       {!response.errorMessage ? (
@@ -31,7 +30,8 @@ const FlashCard = ({ response, checks }) => {
             Classification: {response.classification}
           </StyledTypography>
 
-          <StyledTypography level="h5">Spanish Definitions:</StyledTypography>
+          <StyledTypography level="h5">Spanish Definitions:
+          </StyledTypography>
 
           <List>
             {response.spanishDefinition.map((definition, index) => (
@@ -39,7 +39,8 @@ const FlashCard = ({ response, checks }) => {
             ))}
           </List>
           
-          <StyledTypography level="h5">Example Sentences:</StyledTypography>
+          <StyledTypography level="h5">Example Sentences:
+          </StyledTypography>
           <List>
             {response.exampleSentences.map((sentence, index) => (
               <ListItem key={index} aria-label={`Example sentence ${index + 1}`}>{sentence}</ListItem>

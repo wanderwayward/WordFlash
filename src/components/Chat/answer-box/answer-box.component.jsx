@@ -9,12 +9,12 @@ const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
   return (
 <Box
   sx={{ 
-    backgroundColor: 'ffffff',
     display: 'flex',
-    padding: 2,
     flexDirection: 'column',
     justifyContent: 'center', 
     alignItems: 'center', 
+    height: '100%', 
+    padding: 2,
   }}
 >
   {isLoading ? (
