@@ -59,17 +59,17 @@ const AnswerBox = ({ response, checks, isLoading }) => {
 
           <List>
             {response.spanishDefinition.map((definition, index) => (
-              <ListItem key={index}>{definition}</ListItem>
+              <ListItem key={index} aria-label={`Spanish definition ${index + 1}`}>{definition}</ListItem>
             ))}
           </List>
           
           <StyledTypography level="h5">Example Sentences:</StyledTypography>
-            <List>
-              {response.exampleSentences.map((sentence, index) => (
-                <ListItem key={index}>{sentence}</ListItem>
-              ))}
-            </List>
-            <StyledTypography level="h5">
+          <List>
+            {response.exampleSentences.map((sentence, index) => (
+              <ListItem key={index} aria-label={`Example sentence ${index + 1}`}>{sentence}</ListItem>
+            ))}
+          </List>
+          <StyledTypography level="h5">
             Note: {response.note}
           </StyledTypography>
         
