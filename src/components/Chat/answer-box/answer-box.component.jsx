@@ -2,7 +2,7 @@ import { List, ListItem, Alert, Sheet, Box } from "@mui/joy";
 import { StyledTypography } from "../../../utils/styledComponents";
 import GeneralLoadingSpinner from "../../ui/loading/general-loading-spinner.component";
 
-const AnswerBox = ({ response, checks, isLoading }) => {
+const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
   
   const { isMobile, isTablet } = checks;
  
@@ -19,19 +19,13 @@ const AnswerBox = ({ response, checks, isLoading }) => {
       flexDirection: 'column',
       alignItems: 'center',
       }}>
-    {isLoading ? (
-      <GeneralLoadingSpinner 
-      color="warning"
-      variant="solid"
-      sx={{ 
-        width: '100%',
-        height: '10px !important',
-        marginTop: '94vh',
-        marginBottom: 2, 
-        alignItems: 'flex-end'}} />
+    {
+    
+    
+    isLoading ? (
+      <GeneralLoadingSpinner />
     ) : (
       <Sheet
-        container 
         variant="solid" 
         color="primary"
         sx={{

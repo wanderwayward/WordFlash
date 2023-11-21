@@ -13,6 +13,7 @@ const Chat = () => {
 
   const [question, setQuestion] = useState('');
   const [isLoading, setIsLoading] = useState(false); 
+  const [isSearchInitiated, setIsSearchInitiated] = useState(false);
   const [response, setResponse] = useState({
     originalWord: '',
     englishTranslation: '',
@@ -26,7 +27,8 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setIsSearchInitiated(true);
+    setIsLoading(true);    
     const apiResponse = await fetch('http://localhost:5000/ask/', {
       method: 'POST',
       headers: {
@@ -54,7 +56,7 @@ const Chat = () => {
       }}
     >
       <Box sx={{ overflowY: 'auto', flexGrow: 1, flexShrink: 1 }}>
-        <AnswerBox response={response} checks={checks} isLoading={isLoading}/>
+        <AnswerBox response={response} checks={checks} isLoading={isLoading} isSearchInitiated={isSearchInitiated}/>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
         <QuestionBox question={question} setQuestion={setQuestion} handleSubmit={handleSubmit} checks={checks}/>  

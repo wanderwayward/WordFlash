@@ -5,8 +5,12 @@ const GeneralLoadingSpinner = () => {
     return (
       <Box 
       aria-label="Loading content, please wait."
-      sx={{display:'flex', justifyContent:'center', alignItems:'center', height:'100vh'}}>
-        <CircularProgress color="warning" />
+      sx={{
+        display:'flex', 
+        justifyContent:'center', 
+        alignItems:'center', 
+        height:'100vh'}}>
+        <CircularProgress />
       </Box>
     );
 }
