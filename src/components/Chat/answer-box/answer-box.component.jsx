@@ -1,14 +1,13 @@
-import { List, ListItem, Alert, Sheet, Box } from "@mui/joy";
-import { StyledTypography } from "../../../utils/styledComponents";
+import { Box } from "@mui/joy";
 import GeneralLoadingSpinner from "../../ui/loading/general-loading-spinner.component";
 import FlashCard from "../../FlashCard/flash-card.component";
+import Instructions from "../../FlashCard/instructions.component";
 
 const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
   
 
   return (
-<Box
-  sx={{ 
+<Box sx={{ 
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center', 
@@ -17,14 +16,16 @@ const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
     padding: 2,
   }}
 >
-  {isLoading ? (
+  {!isSearchInitiated ? (
+    <Instructions />
+  ) : isLoading ? (
     <GeneralLoadingSpinner />
   ) : (
     <FlashCard response={response} checks={checks}  />
   )}
+
 </Box>
 
-  );
-};
+)};
 
 export default AnswerBox;

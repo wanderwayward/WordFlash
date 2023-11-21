@@ -1,7 +1,7 @@
 import { Box, Input, Button } from '@mui/joy';
 
 const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
-  const { isMobile, isTablet, isDark } = checks;
+  const { isMobile, isTablet, isLaptop, isDark } = checks;
 
   return (
     <Box
@@ -9,7 +9,7 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
       onSubmit={handleSubmit}
       p={1}
       sx={{
-        width: isMobile ? '100%' : isTablet ? '80%' : '50%',
+        width: isMobile ? '100%' : isTablet ? '83%' : isLaptop ? '63%' : '43%',
         display: 'flex',
         flexDirection: 'row',
         gap: 2

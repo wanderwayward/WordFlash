@@ -3,8 +3,7 @@ import { StyledTypography } from '../../utils/styledComponents';
 
 const FlashCard = ({ response, checks }) => {
 
-  const { isMobile, isTablet } = checks;
-  console.log(isMobile, isTablet)
+  const { isMobile, isTablet, isLaptop } = checks;
 
     return (
         <Sheet
@@ -13,7 +12,7 @@ const FlashCard = ({ response, checks }) => {
         sx={{
           borderRadius: 5,
           padding: 3,
-          width: isMobile ? '100%' : isTablet ? '80%' : '45%',
+          width: isMobile ? '100%' : isTablet ? '80%' : isLaptop ? '60%' : '40%',
         }}>
 
       {!response.errorMessage ? (
