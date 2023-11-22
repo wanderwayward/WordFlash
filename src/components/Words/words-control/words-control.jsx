@@ -14,13 +14,13 @@ const WordsControl = () => {
             }}
         >
             {/* First Row */}
-            <Grid container justifyContent="space-around" sx={{ width: '100%' }}>
-                <Grid xs={6}>
+            <Grid container justifyContent="center" sx={{ width: '100%' }}>
+                <Grid item xs={6} sx={{ textAlign: 'center' }}>
                     <Typography level="h2">
                         Sort 
                     </Typography>
                 </Grid>
-                <Grid xs={6}>
+                <Grid item xs={6} sx={{ textAlign: 'center' }}>
                     <Typography level="h2">
                         Flash Card View
                     </Typography>
@@ -31,25 +31,27 @@ const WordsControl = () => {
             <Divider sx={{ width: '100%', my: 2 }} />
 
             {/* Headers Row */}
-            <Grid lg={10} container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%', m:'auto' }}>
-                <Grid xs={3}>
-                    <Typography level="h2" sx={{ whiteSpace: 'nowrap', fontSize: '20px' }}>
-                        SPANISH
-                    </Typography>
-                </Grid>
-                <Grid xs={3}>
-                    <Typography level="h2" sx={{ whiteSpace: 'nowrap', fontSize: '20px' }}>
-                        ENGLISH
-                    </Typography>
-                </Grid>
-                <Grid xs={6}>
-                    <Typography level="h2" sx={{ whiteSpace: 'nowrap', fontSize: '20px' }}>
-                        MANAGE
-                    </Typography>
-                </Grid>
-            </Grid>
+            <Grid container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%' }}>
+    <Grid item xs={3}> {/* Adjust to xs={4} if you want equal widths */}
+        <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: '20px' }}>
+            SPANISH
+        </Typography>
+    </Grid>
+    <Grid item xs={3}> {/* Adjust to xs={4} if you want equal widths */}
+        <Typography level="h2" sx={{textAlign:'center',  whiteSpace: 'nowrap', fontSize: '20px' }}>
+            ENGLISH
+        </Typography>
+    </Grid>
+    <Grid item xs={6}>
+        <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: '20px' }}>
+            MANAGE
+        </Typography>
+    </Grid>
+</Grid>
+
         </Grid>
     );
 }
 
 export default WordsControl;
+    
