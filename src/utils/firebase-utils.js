@@ -52,6 +52,16 @@ googleProvider.setCustomParameters({prompt: 'select_account'});
     }
   }
 
+  export const deleteWord = async (wordId) => {
+    try {
+      await deleteDoc(doc(db, 'words', wordId));
+      console.log('Word deleted successfully:', wordId);
+    } catch (error) {
+      console.error('Error deleting word:', error);
+      throw error;
+    }
+  }
+
 
 //User Related Functions
 export const signUpWithEmailAndPassword = async (auth, email, password, displayName) => {

@@ -7,8 +7,7 @@ import WordsControl from '../../components/Words/words-control/words-control';
 
 const Collection = () => {
 
-    const { words } = useContext(WordsContext); 
-
+    const { words, deleteWordFromCollection } = useContext(WordsContext);
     
     return (
         <Box
@@ -21,7 +20,7 @@ const Collection = () => {
           alignItems: "center",
         }}>
             <WordsControl />
-            <Words words={words} /> 
+            <Words words={words} deleteWord={deleteWordFromCollection} /> 
         </Box>
     )
 }

@@ -15,12 +15,12 @@ const WordsControl = () => {
         >
             {/* First Row */}
             <Grid container justifyContent="center" sx={{ width: '100%' }}>
-                <Grid item xs={6} sx={{ textAlign: 'center' }}>
+                <Grid  xs={6} sx={{ textAlign: 'center' }}>
                     <Typography level="h2">
                         Sort 
                     </Typography>
                 </Grid>
-                <Grid item xs={6} sx={{ textAlign: 'center' }}>
+                <Grid  xs={6} sx={{ textAlign: 'center' }}>
                     <Typography level="h2">
                         Flash Card View
                     </Typography>
@@ -29,17 +29,17 @@ const WordsControl = () => {
 
             {/* Headers Row */}
             <Grid container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%' }}>
-                <Grid item xs={4}> 
+                <Grid  xs={4}> 
                     <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: '20px' }}>
                         SPANISH
                     </Typography>
                 </Grid>
-                <Grid item xs={4}> 
+                <Grid  xs={4}> 
                     <Typography level="h2" sx={{textAlign:'center',  whiteSpace: 'nowrap', fontSize: '20px' }}>
                         ENGLISH
                     </Typography>
                 </Grid>
-                <Grid item xs={4}>
+                <Grid  xs={4}>
                     <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: '20px' }}>
                         MANAGE
                     </Typography>

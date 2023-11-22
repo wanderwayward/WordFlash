@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { addWord, getWords } from "../utils/firebase-utils";
+import { addWord, getWords, deleteWord} from "../utils/firebase-utils";
 import { UserContext } from "./user.context";
 
 export const WordsContext = createContext();
@@ -31,10 +31,19 @@ const WordsContextProvider = ({ children }) => {
     userWords();
   }
 
+  const deleteWordFromCollection = async (word) => {
+    console.log("start delete word");
+    await deleteWord(word.id);
+    const newWords = words.filter((w) => w.id !== word.id);
+    setWords(newWords);
+  };
+
+
+
 
 
   return (
-    <WordsContext.Provider value={{ words, setWords, uploadWord  }}>
+    <WordsContext.Provider value={{ words, setWords, uploadWord, deleteWordFromCollection  }}>
       {children}
     </WordsContext.Provider>
   );

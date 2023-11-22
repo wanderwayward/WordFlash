@@ -1,7 +1,7 @@
 import { Box, List, ListItem, Grid, Typography } from '@mui/joy';
 import Word from './word/word.component';
 
-const Words = ({ words }) => {
+const Words = ({ words, deleteWord}) => {
     return (
         <Box
             sx={{
@@ -13,7 +13,7 @@ const Words = ({ words }) => {
             <List sx={{ width: '100%' }}>
                 {/* Mapping through the words */}
                 {words.map((word, index) => (
-                    <Word word={word} key={index} />
+                    <Word word={word} key={index} deleteWord={deleteWord} />
                 ))}
             </List>
         </Box>
