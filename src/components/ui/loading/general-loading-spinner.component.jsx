@@ -3,7 +3,7 @@ import { CircularProgress, Sheet } from "@mui/joy";
 import { ThemeValuesContext } from "../../../contexts/theme-values.context";
 
 const GeneralLoadingSpinner = () => {
-    const { checks } = useContext(ThemeValuesContext);
+    const { checks,theme } = useContext(ThemeValuesContext);
     const { isDark } = checks;
     return (
       <Sheet 
@@ -11,6 +11,7 @@ const GeneralLoadingSpinner = () => {
       variant="soft"
       aria-label="Loading content, please wait."
       sx={{
+        backgroundColor: isDark? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100],
         width:'100vw',
         display:'flex', 
         justifyContent:'center', 
