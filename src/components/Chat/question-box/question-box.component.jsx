@@ -24,7 +24,7 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
-      <Button type="submit" variant="soft" color={isDark ? "danger" : "success"}>
+      <Button type="submit" variant="soft" color="success">
         Ask
       </Button>
     </Box>

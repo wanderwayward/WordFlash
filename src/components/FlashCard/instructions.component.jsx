@@ -9,7 +9,7 @@ const Instructions = ({checks}) => {
     return (
         <Sheet
         variant="soft" 
-        color="danger"
+        color="primary"
         sx={{
           borderRadius: 5,
           padding: 3,
