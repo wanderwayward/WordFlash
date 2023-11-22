@@ -1,5 +1,6 @@
-import { useState, useContext } from 'react';
-import { Box, Drawer, IconButton, List, ListItemButton, Typography, ModalClose, Button, Link } from '@mui/joy';
+import { useState, useContext } from 'react'
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Drawer, IconButton, List, ListItemButton, ModalClose, Button, Link } from '@mui/joy';
 import { IoMenuSharp as Menu } from "react-icons/io5";
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase-utils';
@@ -46,12 +47,12 @@ const MenuDrawer = () => {
             }}
           >
             <ListItemButton sx={{ fontWeight: 'lg' }}>
-              <Link href="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
+              <Link component={RouterLink} to="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
                 WORD FLASH
               </Link>  
             </ListItemButton>
             <ListItemButton>
-              <Link href="Collection" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
+              <Link component={RouterLink} to="Collection" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
                 COLLECTION
               </Link>  
             </ListItemButton>

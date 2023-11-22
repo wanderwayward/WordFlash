@@ -1,4 +1,4 @@
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState, createContext, useMemo } from "react";
 import { onAuthStateChangedListener} from "../utils/firebase-utils";
 import GeneralLoadingSpinner from "../components/ui/loading/general-loading-spinner.component";
 
@@ -16,14 +16,16 @@ export const UserProvider = ({ children }) => {
     return unsubscribe;
   }, []);
 
-
+  const contextValue = useMemo(() => {
+    return { user, setUser };
+  }, [user]);
 
   if (loading) {
-    return null
+    return <GeneralLoadingSpinner />;
   }
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={contextValue}>
       {children}
     </UserContext.Provider>
   );

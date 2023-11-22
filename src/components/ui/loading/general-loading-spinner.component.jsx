@@ -1,11 +1,13 @@
-import { CircularProgress, Box } from "@mui/joy";
+import { useContext } from "react";
+import { CircularProgress, Sheet } from "@mui/joy";
+import { ThemeValuesContext } from "../../../contexts/theme-values.context";
 
-
-const GeneralLoadingSpinner = ({checks}) => {
-  const {isDark} = checks;
-
+const GeneralLoadingSpinner = () => {
+    const { checks } = useContext(ThemeValuesContext);
+    const { isDark } = checks;
     return (
-      <Box 
+      <Sheet 
+      color="danger"
       aria-label="Loading content, please wait."
       sx={{
         display:'flex', 
@@ -16,7 +18,7 @@ const GeneralLoadingSpinner = ({checks}) => {
         variant="soft"
         color={isDark ? "success" : "danger"}        
         />
-      </Box>
+      </Sheet>
     );
 }
 

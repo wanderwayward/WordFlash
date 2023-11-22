@@ -1,3 +1,4 @@
+import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Typography, Link } from '@mui/joy';
 import MenuDrawer from '../Menu/menu.component';
 import CollectionsButton from '../../components/Navigation/collections-button.component'
@@ -18,7 +19,7 @@ const Navbar = () => {
         <MenuDrawer />
       </Grid>
       <Grid  >
-      <Link href="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
+      <Link component={RouterLink} to="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
         <Typography color="warning" level="title-lg" variant='plain' sx={{fontSize:'40px'}}>
             WORD FLASH
         </Typography>
