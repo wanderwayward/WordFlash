@@ -1,12 +1,20 @@
+import { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Typography, Link } from '@mui/joy';
 import MenuDrawer from '../Menu/menu.component';
 import CollectionsButton from '../../components/Navigation/collections-button.component'
+
+import { ThemeValuesContext } from '../../contexts/theme-values.context';
+
 const Navbar = () => {
+
+  const {theme, checks} = useContext(ThemeValuesContext);
+  const {isMobile} = checks;
 
 
   return (
-    <Grid container justifyContent="space-between" alignItems="center" sx={{ 
+    <Grid container justifyContent="space-between" alignItems="center" sx={{
+      backgroundColor: theme.colorSchemes.light.palette.neutral[100], 
       position: 'fixed', 
       top: 0, 
       left: 0, 
@@ -20,7 +28,7 @@ const Navbar = () => {
       </Grid>
       <Grid  >
       <Link component={RouterLink} to="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
-        <Typography color="warning" level="title-lg" variant='plain' sx={{fontSize:'40px'}}>
+        <Typography color="warning" level="title-lg" variant='plain' sx={{fontSize:isMobile ? '30px': '40px'}}>
             WORD FLASH
         </Typography>
       </Link>

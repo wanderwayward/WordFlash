@@ -1,24 +1,27 @@
-import { Box, List, ListItem, Grid, Typography } from '@mui/joy';
+import { Grid } from '@mui/joy';
 import Word from './word/word.component';
 
-const Words = ({ words, deleteWord}) => {
+const Words = ({ words, deleteWord, checks }) => {
+
+    const {isMobile} = checks;
+
     return (
-        <Box
-            sx={{
-                height: "calc(100vh - 60px)",
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                overflowY: "auto",
-            }}>
-            <List sx={{ width: '100%' }}>
-                {/* Mapping through the words */}
-                {words.map((word, index) => (
-                    <Word word={word} key={index} deleteWord={deleteWord} />
-                ))}
-            </List>
-        </Box>
+        <Grid
+        container
+        direction="column"
+        alignItems="center"
+        sx={{
+            marginTop: isMobile ?  "30px" : "0px",
+            pl:2,
+            width: "100%",
+        }}>
+        {/* Mapping through the words */}
+            {words.map((word, index) => (
+            <Grid  key={index} sx={{ width: '100%' }}>
+                <Word word={word} deleteWord={deleteWord} />
+            </Grid>
+            ))}
+        </Grid>
     )
 }
 
