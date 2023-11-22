@@ -1,7 +1,6 @@
 import { Grid, Typography, IconButton,Box } from '@mui/joy';
 import MenuDrawer from '../Menu/menu.component';
-import CollectionsButton from './collections-button.component';
-
+import CollectionsButton from '../../components/Navigation/collections-button.component'
 const Navbar = () => {
 
 
