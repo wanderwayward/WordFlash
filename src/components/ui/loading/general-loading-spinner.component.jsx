@@ -14,7 +14,7 @@ const GeneralLoadingSpinner = ({checks}) => {
         height:'100vh'}}>
         <CircularProgress
         variant="soft"
-        color="success"        
+        color={isDark ? "success" : "danger"}        
         />
       </Box>
     );

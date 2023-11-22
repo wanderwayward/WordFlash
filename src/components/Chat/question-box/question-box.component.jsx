@@ -20,7 +20,7 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
         fullWidth
         placeholder="Type your word here"
         variant="soft"
-        color="danger"
+        color="warning"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
       />
