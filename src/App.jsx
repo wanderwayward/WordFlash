@@ -3,7 +3,7 @@ import { Sheet, Grid, CssBaseline  } from '@mui/joy';
 import { CssVarsProvider } from '@mui/joy/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Chat from '../src/Pages/Chat/chat.component';
-import User from '../src/Pages/User/user.component';
+import Collection from '../src/Pages/Collection/collection.component';
 import AuthPage from './Pages/Authentication/authentication.component';
 import NavBar from './Pages/Navigation/navbar.component';
 import { ThemeValuesContext } from './contexts/theme-values.context';
@@ -32,7 +32,7 @@ const App = () => {
                 <Routes>
                   
                   <Route path="/" element={<Chat />} />
-                  <Route path="/User" element={<User />} />
+                  <Route path="/Collection" element={<Collection />} />
                   <Route path="/Auth" element={<AuthPage />} />
 
                   

@@ -1,8 +1,7 @@
-import { Grid, Typography, IconButton,Box } from '@mui/joy';
+import { Grid, Typography, Link } from '@mui/joy';
 import MenuDrawer from '../Menu/menu.component';
 import CollectionsButton from '../../components/Navigation/collections-button.component'
 const Navbar = () => {
-
 
 
   return (
@@ -19,9 +18,11 @@ const Navbar = () => {
         <MenuDrawer />
       </Grid>
       <Grid  >
-        <Typography level="title-lg" variant='soft' sx={{fontSize:'30px'}}>
+      <Link href="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
+        <Typography color="warning" level="title-lg" variant='plain' sx={{fontSize:'40px'}}>
             WORD FLASH
         </Typography>
+      </Link>
       </Grid>
       <Grid >
         <CollectionsButton />

@@ -3,7 +3,7 @@ import { UserContext } from '../../contexts/user.context';
 import { WordsContext } from '../../contexts/words.context';
 import { Box, Typography, List, ListItem } from '@mui/joy';
 
-const User = () => {
+const Collection = () => {
 
     const { user } = useContext(UserContext);
     const { words } = useContext(WordsContext);
@@ -58,4 +58,4 @@ const User = () => {
     )
 }
 
-export default User;
+export default Collection;
