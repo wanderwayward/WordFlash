@@ -13,7 +13,7 @@ const Words = ({ words }) => {
             <List sx={{ width: '100%' }}>
                 {/* Mapping through the words */}
                 {words.map((word, index) => (
-                    <Word word={word} key={index}/>
+                    <Word word={word} key={index} />
                 ))}
             </List>
         </Box>

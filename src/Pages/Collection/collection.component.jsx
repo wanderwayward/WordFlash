@@ -1,10 +1,9 @@
 import { useContext } from 'react';
 import { WordsContext } from '../../contexts/words.context';
-import { Box, Typography, List, ListItem } from '@mui/joy';
+import { Box } from '@mui/joy';
 
 import Words from '../../components/Words/words.component'
 import WordsControl from '../../components/Words/words-control/words-control';
-import GeneralLoadingSpinner from '../../components/ui/loading/general-loading-spinner.component';
 
 const Collection = () => {
 
