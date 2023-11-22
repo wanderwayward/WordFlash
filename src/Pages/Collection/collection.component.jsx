@@ -1,13 +1,15 @@
 import { useContext } from 'react';
-import { UserContext } from '../../contexts/user.context';
 import { WordsContext } from '../../contexts/words.context';
 import { Box, Typography, List, ListItem } from '@mui/joy';
 
+import Words from '../../components/Words/words.component'
+import WordsControl from '../../components/Words/words-control/words-control';
+import GeneralLoadingSpinner from '../../components/ui/loading/general-loading-spinner.component';
+
 const Collection = () => {
 
-    const { user } = useContext(UserContext);
-    const { words } = useContext(WordsContext);
-    
+    const { words } = useContext(WordsContext); 
+
     
     return (
         <Box
@@ -19,41 +21,8 @@ const Collection = () => {
           flexDirection: "column",
           alignItems: "center",
         }}>
-            <Box
-            sx={{
-                width: "70%",
-                flexDirection: "row !important",
-                display: "flex",
-                justifyContent: "space-around",
-            }}
-            >
-                <Typography variant="h2">
-                    Sort 
-                </Typography>
-                <Typography variant="h2">
-                    Flash Card View
-                </Typography>
-            </Box>
-
-            <Box
-            sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                alignContent: "center",
-                alignText: "center",
-            }}>
-
-            <List>
-                {words.map(word => (
-                    <ListItem>
-                        {word.originalWord.toUpperCase()}-  
-                         {word.englishTranslation.toUpperCase()}
-                    </ListItem>
-                ))}
-            </List>
-
-           </Box>
+            <WordsControl />
+            <Words words={words} /> 
         </Box>
     )
 }
