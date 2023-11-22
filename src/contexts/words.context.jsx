@@ -21,15 +21,25 @@ const WordsContextProvider = ({ children }) => {
 
 
 
-  const uploadWord = async (word) => {
-    if (word.errorMessage) {
-        return;
-    }
-    word = { ...word, userId: user.uid };
-    const newWord = await addWord(word);
-    setWords([...words, newWord]);
-    userWords();
+    const uploadWord = async (word) => {
+      if (word.errorMessage) {
+          return;
+      }
+      // Check if the word already exists
+      const wordExists = words.some(existingWord => existingWord.originalWord === word.originalWord);
+        // Abort the upload if the word already exists
+      if (wordExists) {
+          console.log("Word already exists in the array.");
+          return;
+      }
+  
+      // Proceed with the upload if the word does not exist
+      word = { ...word, userId: user.uid };
+      const newWord = await addWord(word);
+      setWords([...words, newWord]);
+      userWords();
   }
+  
 
   const deleteWordFromCollection = async (word) => {
     console.log("start delete word");

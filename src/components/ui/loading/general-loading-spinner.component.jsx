@@ -7,9 +7,11 @@ const GeneralLoadingSpinner = () => {
     const { isDark } = checks;
     return (
       <Sheet 
-      color="danger"
+      color="neutral"
+      variant="soft"
       aria-label="Loading content, please wait."
       sx={{
+        width:'100vw',
         display:'flex', 
         justifyContent:'center', 
         alignItems:'center', 
