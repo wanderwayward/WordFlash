@@ -17,9 +17,9 @@ const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
   }}
 >
   {!isSearchInitiated ? (
-    <Instructions />
+    <Instructions checks={checks}  />
   ) : isLoading ? (
-    <GeneralLoadingSpinner />
+    <GeneralLoadingSpinner checks={checks} />
   ) : (
     <FlashCard response={response} checks={checks}  />
   )}

@@ -8,8 +8,3 @@ export const StyledTypography = styled(Typography)(({ theme }) => ({
 
 }));
 
-export const StyledLinearProgress = styled(LinearProgress)`
-  & .MuiLinearProgress-bar {
-    height: '10px !important';
-  }
-`;

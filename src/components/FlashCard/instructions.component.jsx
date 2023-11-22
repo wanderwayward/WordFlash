@@ -1,14 +1,28 @@
-const Instructions = () => {
+import {Sheet, Typography } from '@mui/joy';
+
+import { StyledTypography } from '../../utils/styledComponents';
+
+const Instructions = ({checks}) => {
+    const { isDark, isMobile, isTablet, isLaptop } = checks;
+
+
     return (
-        <div className="instructions">
-            <h1>How to use this app</h1>
-            <p>Click on the flashcard to see the answer</p>
-            <p>Click on the "Next" button to see the next flashcard</p>
-            <p>Click on the "Previous" button to see the previous flashcard</p>
-            <p>Click on the "Add" button to add a new flashcard</p>
-            <p>Click on the "Edit" button to edit a flashcard</p>
-            <p>Click on the "Delete" button to delete a flashcard</p>
-        </div>
+        <Sheet
+        variant="soft" 
+        color="primary"
+        sx={{
+          borderRadius: 5,
+          padding: 3,
+          textAlign: 'center',
+          width: isMobile ? '100%' : isTablet ? '80%' : isLaptop ? '60%' : '40%',
+        }}>
+            <Typography level="h5" sx={{fontSize:'25px', padding:2}}>
+                Start by typing in any Spanish word or phrase, and Word Flash will instantly transform it into a custom flash card for you. 
+            </Typography>
+            <Typography level="h5" sx={{fontSize:'25px', padding:2}}>
+                Explore your personalized flash card collection by clicking the icon in the top right corner. 
+            </Typography>
+        </Sheet>
     )
 }
 

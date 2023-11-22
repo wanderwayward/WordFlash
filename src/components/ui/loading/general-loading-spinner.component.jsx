@@ -1,7 +1,9 @@
 import { CircularProgress, Box } from "@mui/joy";
 
 
-const GeneralLoadingSpinner = () => {
+const GeneralLoadingSpinner = ({checks}) => {
+  const {isDark} = checks;
+
     return (
       <Box 
       aria-label="Loading content, please wait."
@@ -10,7 +12,10 @@ const GeneralLoadingSpinner = () => {
         justifyContent:'center', 
         alignItems:'center', 
         height:'100vh'}}>
-        <CircularProgress />
+        <CircularProgress
+        variant="soft"
+        color="success"        
+        />
       </Box>
     );
 }

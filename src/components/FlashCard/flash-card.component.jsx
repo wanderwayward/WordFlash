@@ -3,7 +3,7 @@ import { StyledTypography } from '../../utils/styledComponents';
 
 const FlashCard = ({ response, checks }) => {
 
-  const { isMobile, isTablet, isLaptop } = checks;
+  const { isDark, isMobile, isTablet, isLaptop } = checks;
 
     return (
         <Sheet
