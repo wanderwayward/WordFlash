@@ -1,4 +1,4 @@
-import { Grid, Typography, Divider } from "@mui/joy";
+import { Grid, Typography, Divider, Sheet } from "@mui/joy";
 
 const WordsControl = () => {
     return (
@@ -9,12 +9,15 @@ const WordsControl = () => {
         alignItems="center"
         spacing={2}
         sx={{
+            backgroundColor: "inherit",
             width: "100%",
             zIndex: 10,
-            margin: "auto",
             position: "fixed",
-            top: 0
+            top: 80,
+            p: 0,
         }}>
+        <Sheet color="neutral" variant="soft" sx={{width: "100%"}}>
+            
         {/* First Row */}
             <Grid container justifyContent="center" sx={{ width: '100%' }}>
                 <Grid  xs={6} sx={{ textAlign: 'center' }}>
@@ -47,9 +50,11 @@ const WordsControl = () => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Divider sx={{ width: '100%', my: 2 }} />
+            <Divider sx={{ width: '100%', mt: 2 }} />
 
+            </Sheet>
         </Grid>
+        
     );
 }
 
