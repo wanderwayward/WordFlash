@@ -2,17 +2,19 @@ import { Grid, Typography, Divider } from "@mui/joy";
 
 const WordsControl = () => {
     return (
-        <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-            sx={{
-                width: "100%",
-                zIndex: 10, 
-                margin: "auto",
-            }}>
+    <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        spacing={2}
+        sx={{
+            width: "100%",
+            zIndex: 10,
+            margin: "auto",
+            position: "sticky",
+            top: 0
+        }}>
         {/* First Row */}
             <Grid container justifyContent="center" sx={{ width: '100%' }}>
                 <Grid  xs={6} sx={{ textAlign: 'center' }}>
