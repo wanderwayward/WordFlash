@@ -5,11 +5,12 @@ const Words = ({ words, deleteWord}) => {
     return (
         <Box
             sx={{
+                height: "calc(100vh - 60px)",
                 width: "100%",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                overflowY: "scroll",
+                overflowY: "auto",
             }}>
             <List sx={{ width: '100%' }}>
                 {/* Mapping through the words */}

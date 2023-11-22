@@ -12,7 +12,7 @@ const WordsControl = () => {
             width: "100%",
             zIndex: 10,
             margin: "auto",
-            position: "sticky",
+            position: "fixed",
             top: 0
         }}>
         {/* First Row */}
