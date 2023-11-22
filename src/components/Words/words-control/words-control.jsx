@@ -9,11 +9,11 @@ const WordsControl = () => {
             alignItems="center"
             spacing={2}
             sx={{
-                width: "100%", 
+                width: "100%",
+                zIndex: 10, 
                 margin: "auto",
-            }}
-        >
-            {/* First Row */}
+            }}>
+        {/* First Row */}
             <Grid container justifyContent="center" sx={{ width: '100%' }}>
                 <Grid  xs={6} sx={{ textAlign: 'center' }}>
                     <Typography level="h2">

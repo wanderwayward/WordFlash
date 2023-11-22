@@ -9,6 +9,7 @@ const Words = ({ words, deleteWord}) => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                overflowY: "scroll",
             }}>
             <List sx={{ width: '100%' }}>
                 {/* Mapping through the words */}
