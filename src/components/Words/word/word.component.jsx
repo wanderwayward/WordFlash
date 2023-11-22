@@ -10,7 +10,7 @@ const Word = ({ word, deleteWord }) => {
     const { isDark } = checks;
 
     return (
-        <ListItem sx={{ width: '100%', py: 1, m:'auto' }}> 
+        <ListItem sx={{ width: '100%', py: 1, }}> 
             <Grid container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%' }}>
                 <Grid  xs={4}>
                     <Typography level="h6" sx={{ textAlign:'center', whiteSpace: 'nowrap' }}>

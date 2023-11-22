@@ -11,7 +11,6 @@ const WordsControl = () => {
         sx={{
             backgroundColor: "inherit",
             width: "100%",
-            zIndex: 10,
             position: "fixed",
             top: 80,
             p: 0,
@@ -33,7 +32,7 @@ const WordsControl = () => {
             </Grid>
 
             {/* Headers Row */}
-            <Grid container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%' }}>
+            <Grid container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%', pt:2 }}>
                 <Grid  xs={4}> 
                     <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: '20px' }}>
                         SPANISH
