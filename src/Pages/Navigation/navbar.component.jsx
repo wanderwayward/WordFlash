@@ -24,7 +24,7 @@ const Navbar = () => {
       padding: '10px', 
     }}>
       <Grid >
-        <MenuDrawer />
+        <MenuDrawer theme={theme} checks={checks} />
       </Grid>
       <Grid  >
       <Link component={RouterLink} to="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
@@ -34,7 +34,7 @@ const Navbar = () => {
       </Link>
       </Grid>
       <Grid >
-        <CollectionsButton />
+        <CollectionsButton theme={theme} checks={checks} />
       </Grid>
     </Grid>
   );

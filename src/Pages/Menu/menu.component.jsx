@@ -5,9 +5,12 @@ import { IoMenuSharp as Menu } from "react-icons/io5";
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase-utils';
 
-const MenuDrawer = () => {
+const MenuDrawer = ({theme, checks}) => {
   const [open, setOpen] = useState(false);
   const { user } = useContext(UserContext);
+
+  const {isDark, isMobile, isTablet, isLaptop}= checks;
+
 
   return (
     <Box margin={1}>
@@ -15,8 +18,19 @@ const MenuDrawer = () => {
         variant="outlined" 
         color="neutral" 
         onClick={() => setOpen(true)}
+        sx={{
+          overflow: 'hidden',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          border: isDark ? `0.5px solid ${theme.colorSchemes.dark.palette.neutral[700]}` : `0.5px solid ${theme.colorSchemes.light.palette.neutral[300]}`,
+          borderRadius: '8px', 
+          fontSize: isMobile ? '20px' : '30px',
+          minWidth: isMobile? '45px !important': '60px !important', 
+          minHeight: isMobile? '45px !important': '60px !important', 
+      }}
       >
-        <Menu />
+        <Menu sx={{ fontSize: isMobile ? '20px' : '30px' }} />
       </IconButton>
       <Drawer open={open} onClose={() => setOpen(false)}>
         <Box
