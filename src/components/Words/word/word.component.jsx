@@ -11,7 +11,7 @@ const Word = ({ word, deleteWord }) => {
         <Grid container spacing={2} alignItems="center" sx={{ textAlign: 'center', width: '100%', py: 1 }}>
             <Grid xs={4}>
                 <Typography level="h6" sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
-                    {word.originalWord.toUpperCase()}
+                    {word.word.toUpperCase()}
                 </Typography>
             </Grid>
 

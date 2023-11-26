@@ -18,6 +18,7 @@ const Chat = () => {
   const [isSearchInitiated, setIsSearchInitiated] = useState(false);
   const [response, setResponse] = useState({
     originalWord: '',
+    word:'',
     englishTranslation: '',
     spanishDefinition: [],
     exampleSentences: [],

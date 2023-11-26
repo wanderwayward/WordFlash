@@ -10,7 +10,7 @@ const CollectionsButton = () => {
     const navigate = useNavigate();
 
     const {theme, checks} = useContext(ThemeValuesContext);
-    const {isDark}= checks;
+    const {isDark, isMobile, isTablet, isLaptop}= checks;
 
     const handleCollectionsClick = () => {
         navigate('/Collection')
@@ -28,8 +28,9 @@ const CollectionsButton = () => {
                 border: isDark ? `0.5px solid ${theme.colorSchemes.dark.palette.neutral[700]}` : `0.5px solid ${theme.colorSchemes.light.palette.neutral[300]}`,
                 borderRadius: '8px', 
                 fontSize: 'inherit',
-                minWidth: '45px !important', 
-                minHeight: '45px !important',}}
+                minWidth: isMobile? '45px !important': '60px !important', 
+                minHeight: isMobile? '45px !important': '60px !important', 
+            }}
         >
 
                 <TbBookFilled style={{ fontSize: '20px' }} />

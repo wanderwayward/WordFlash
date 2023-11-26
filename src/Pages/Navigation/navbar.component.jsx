@@ -9,12 +9,12 @@ import { ThemeValuesContext } from '../../contexts/theme-values.context';
 const Navbar = () => {
 
   const {theme, checks} = useContext(ThemeValuesContext);
-  const {isMobile} = checks;
+  const {isMobile, isDark} = checks;
 
 
   return (
     <Grid container justifyContent="space-between" alignItems="center" sx={{
-      backgroundColor: theme.colorSchemes.light.palette.neutral[100], 
+      backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100], 
       position: 'fixed', 
       top: 0, 
       left: 0, 

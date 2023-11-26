@@ -1,9 +1,9 @@
-import {Sheet, List, ListItem, Alert} from '@mui/joy'
+import {Sheet, List, ListItem, Alert, Grid} from '@mui/joy'
 import { StyledTypography } from '../../utils/styledComponents';
 
 const FlashCard = ({ response, checks }) => {
 
-  const { isDark, isMobile, isTablet, isLaptop } = checks;
+  const { isMobile, isTablet, isLaptop } = checks;
 
     return (
         <Sheet
@@ -16,41 +16,57 @@ const FlashCard = ({ response, checks }) => {
         }}>
 
       {!response.errorMessage ? (
-           <>
-          <StyledTypography level="h4">
-            Original Word: {response.originalWord}
-          </StyledTypography>
-        
-          <StyledTypography level="h4">
-            English Translation: {response.englishTranslation}
-          </StyledTypography>
-        
-          <StyledTypography level="h5">
-            Classification: {response.classification}
-          </StyledTypography>
+        <Grid container spacing={2} >
+          {/* Top Row */}
+          <Grid xs>
+            <StyledTypography level="h3">
+              {response.word.toUpperCase()}
+            </StyledTypography>
+          </Grid>
+          <Grid xs>
+            <StyledTypography level="h3">
+              {response.englishTranslation.toUpperCase()}
+            </StyledTypography>
+          </Grid>
 
-          <StyledTypography level="h5">Spanish Definitions:
-          </StyledTypography>
+          {/* Second Row */}
+          <Grid xs={12}>
+            <StyledTypography level="h5">
+              Classification: {response.classification}
+            </StyledTypography>
+          </Grid>
 
-          <List>
-            {response.spanishDefinition.map((definition, index) => (
-              <ListItem key={index} aria-label={`Spanish definition ${index + 1}`}>{definition}</ListItem>
-            ))}
-          </List>
-          
-          <StyledTypography level="h5">Example Sentences:
-          </StyledTypography>
-          <List>
-            {response.exampleSentences.map((sentence, index) => (
-              <ListItem key={index} aria-label={`Example sentence ${index + 1}`}>{sentence}</ListItem>
-            ))}
-          </List>
-          <StyledTypography level="h5">
-            Note: {response.note}
-          </StyledTypography>
-        
-          </>
+          {/* Third Row */}
+          <Grid xs={12}>
+            <StyledTypography level="h4">Spanish Definitions:</StyledTypography>
+            <List>
+              {response.spanishDefinition.map((definition, index) => (
+                <ListItem key={index}>
+                  {definition}
+                </ListItem>
+              ))}
+            </List>
+          </Grid>
 
+          {/* Fourth Row */}
+          <Grid xs={12}>
+            <StyledTypography level="h4">Example Sentences:</StyledTypography>
+            <List>
+              {response.exampleSentences.map((sentence, index) => (
+                <ListItem key={index}>
+                  {sentence}
+                </ListItem>
+              ))}
+            </List>
+          </Grid>
+
+          {/* Fifth Row */}
+          <Grid xs={12}>
+            <StyledTypography level="h5">
+              Nota: {response.note}
+            </StyledTypography>
+          </Grid>
+        </Grid>
       ) : 
       (
       <Alert 

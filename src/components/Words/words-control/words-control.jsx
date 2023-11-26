@@ -49,7 +49,7 @@ const WordsControl = ({theme}) => {
                     </Typography>
                 </Grid>
             </Grid>
-            <Divider sx={{ width: '100%', mt: 1 }} />
+            <Divider sx={{ width: '100%', mt: 1 }} />   
 
         </Grid>
         
