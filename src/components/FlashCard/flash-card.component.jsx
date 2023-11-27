@@ -5,67 +5,86 @@ const FlashCard = ({ response, checks }) => {
 
   const { isMobile, isTablet, isLaptop } = checks;
 
+  const wordFontSize = isMobile ? '22px' : isTablet ? '30px' : isLaptop ? '35px' :  '38px';
+  const answerTitleFontSize = isMobile ? '19px' : isTablet ? '27px' : isLaptop ? '30px' :  '32px';
+  const answerFontSize = isMobile ? '16px' : isTablet ? '25px' : isLaptop ? '29px' :  '28px';
+  const answerPadding = isMobile ? 2 : isTablet ? 4 : isLaptop ? 6 : 8;
+
     return (
         <Sheet
-        variant="solid" 
+        variant="soft" 
         color="primary"
         sx={{
-          borderRadius: 5,
-          padding: 3,
+          display:'flex',
+          flexDirection:'column',
+          justifyContent:'center',
+          marginTop: isMobile ? 10 : 2,
+          borderRadius: 10,
+          py:2,
           width: isMobile ? '100%' : isTablet ? '80%' : isLaptop ? '60%' : '40%',
         }}>
 
       {!response.errorMessage ? (
-        <Grid container spacing={2} >
+        <Grid container   >
+                    
           {/* Top Row */}
-          <Grid xs>
-            <StyledTypography level="h3">
-              {response.word.toUpperCase()}
-            </StyledTypography>
-          </Grid>
-          <Grid xs>
-            <StyledTypography level="h3">
-              {response.englishTranslation.toUpperCase()}
-            </StyledTypography>
+          <Grid xs={12} sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: isMobile ? 'space-around' : 'center', paddingTop:2, px: 2}}>
+            <Grid xs={5} >
+              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize}}>
+                {response.word.toUpperCase()}
+              </StyledTypography>
+            </Grid>
+            <Grid xs={2}>
+              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize, flexShrink:2, px: isMobile ? 0 : 5}}>
+                -            
+              </StyledTypography>
+            </Grid>
+            <Grid xs={5}>
+              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize}}>
+                {response.englishTranslation.toUpperCase()}
+              </StyledTypography>
+            </Grid>
           </Grid>
 
           {/* Second Row */}
-          <Grid xs={12}>
-            <StyledTypography level="h5">
+          <Grid xs={12} sx={{mt:-2, display:'flex', justifyContent:'center'}} >
+            <StyledTypography level="h5" color="danger" variant='soft' sx={{fontSize:'5px', width:'80%'}}>
               Classification: {response.classification}
             </StyledTypography>
           </Grid>
 
           {/* Third Row */}
-          <Grid xs={12}>
-            <StyledTypography level="h4">Spanish Definitions:</StyledTypography>
-            <List>
+          <Grid xs={12} sx={{px:answerPadding, display:'flex', flexDirection:'column', m:'auto', textAlign: isMobile ?  'center' : 'left'}}>
+            <StyledTypography color="error" level="h4" sx={{fontSize: answerTitleFontSize}}>Spanish Definitions:</StyledTypography>
+            <List >
               {response.spanishDefinition.map((definition, index) => (
-                <ListItem key={index}>
-                  {definition}
+                <ListItem color="neutral" key={index} sx={{fontSize: answerFontSize, justifyContent:'center'}}>
+                  {!isMobile ? `${index + 1} -`: null} {definition}
                 </ListItem>
               ))}
             </List>
           </Grid>
 
           {/* Fourth Row */}
-          <Grid xs={12}>
-            <StyledTypography level="h4">Example Sentences:</StyledTypography>
-            <List>
+          <Grid xs={12} sx={{px:answerPadding, display:'flex', flexDirection:'column', m:'auto', textAlign: isMobile ?  'center' : 'left'}}>
+            <StyledTypography color="error" level="h4" sx={{fontSize: answerTitleFontSize}}>Example Sentences:</StyledTypography>
+            <List >
               {response.exampleSentences.map((sentence, index) => (
-                <ListItem key={index}>
-                  {sentence}
+                <ListItem color="neutral" key={index} sx={{fontSize: answerFontSize, justifyContent:'center'}}>  
+                  {!isMobile ? `${index + 1} -`: null} {sentence}
                 </ListItem>
               ))}
             </List>
           </Grid>
 
           {/* Fifth Row */}
-          <Grid xs={12}>
-            <StyledTypography level="h5">
+          { response.note ? (
+          <Grid xs={12} sx={{mt:-2, display:'flex', justifyContent:'center'}} >
+          <StyledTypography level="h5" color="warning" variant='soft' sx={{fontSize:'5px', width:'80%', mt:2}}>
               Nota: {response.note}
             </StyledTypography>
-          </Grid>
+          </Grid> ) : null }
+          
         </Grid>
       ) : 
       (
