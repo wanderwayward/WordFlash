@@ -21,8 +21,6 @@ const Collection = () => {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: "40px",
-            paddingTop: "100px",
         }}>
                 <WordsControl theme={theme} checks={checks}/>
                 <Words checks={checks} words={words} deleteWord={deleteWordFromCollection} />

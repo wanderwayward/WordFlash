@@ -8,27 +8,30 @@ const Word = ({ word, deleteWord }) => {
     const { isDark } = checks;
 
     return (
-        <>
-            <Grid xs={8} sx={{display:'flex', justifyContent:'space-evenly', alignItems:'center', px:5}}>
-                <Typography level="h6" >
+        
+        <Grid sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around' }}>  
+            <Grid  xs={4}> 
+                <Typography level="h3" sx={{ textAlign:'center',   }}>
                     {word.word.toUpperCase()}
                 </Typography>
-
-                <Typography level="h6">
-                    {word.englishTranslation.toUpperCase()}
+            </Grid>
+            <Grid  xs={4}> 
+                <Typography level="h3" sx={{textAlign:'center',   }}>
+                {word.englishTranslation.toUpperCase()}
                 </Typography>
             </Grid>
-
-            <Grid xs={8} sx={{display:'flex', justifyContent:'space-evenly', alignItems:'center', }}>
+            <Grid  xs={4}>
+                <Typography level="h3" sx={{ textAlign:'center', }}>
                 <IconButton 
-                    variant="outlined" 
-                    color={isDark ? "danger" : "warning"}
-                    onClick={() => deleteWord(word)}
-                >
-                    <MdDelete />
-                </IconButton>
+                        variant="outlined" 
+                        color={isDark ? "danger" : "warning"}
+                        onClick={() => deleteWord(word)}
+                    >
+                        <MdDelete />
+                    </IconButton>
+                </Typography>
             </Grid>
-        </>
+        </Grid>
     );
 }
 

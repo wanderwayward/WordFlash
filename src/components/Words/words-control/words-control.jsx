@@ -3,12 +3,7 @@ import { Grid, Typography, Divider, Sheet } from "@mui/joy";
 const WordsControl = ({theme, checks}) => {
 
     const { isDark, isMobile, isTablet, isLaptop } = checks;
-
-    
     const firstRowFontSize = isMobile ? '22px' : isTablet ? '30px' : isLaptop ? '35px' :  '38px';
-    const secondRowFontSize = isMobile ? '16px' : isTablet ? '25px' : isLaptop ? '29px' :  '28px';
-    const answerPadding = isMobile ? 2 : isTablet ? 4 : isLaptop ? 6 : 8;
-
 
     return (
         <Grid
@@ -23,40 +18,16 @@ const WordsControl = ({theme, checks}) => {
             position: "fixed",
             top: 80, 
             zIndex: 10, 
-            p: 0,
+            height: '60px',
         }}>
-            
-        {/* First Row */}
-            <Grid sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around',   }}>  
                 <Typography level="h2" sx={{fontSize:firstRowFontSize}}>
                     Sort 
-                </Typography>        
+                </Typography>
+
                 <Typography level="h2" sx={{fontSize:firstRowFontSize}}>
                     Flash Card View
                 </Typography>
-            </Grid>
-
-            {/* Headers Row */}
-            <Grid sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around',   }}>  
-                <Grid  xs={4}> 
-                    <Typography level="h3" sx={{ textAlign:'center',  fontSize: secondRowFontSize }}>
-                        SPANISH
-                    </Typography>
-                </Grid>
-                <Grid  xs={4}> 
-                    <Typography level="h3" sx={{textAlign:'center',  fontSize: secondRowFontSize }}>
-                        ENGLISH
-                    </Typography>
-                </Grid>
-                <Grid  xs={4}>
-                    <Typography level="h3" sx={{ textAlign:'center', fontSize: secondRowFontSize }}>
-                        MANAGE
-                    </Typography>
-                </Grid>
-            </Grid>
-            <Divider sx={{ width: '100%', mt: 1 }} />   
-
-        </Grid>
+            </Grid>            
         
     );
 }
