@@ -9,7 +9,7 @@ const Word = ({ word, deleteWord }) => {
 
     return (
         <>
-            <Grid xs={8} sx={{display:'flex', justifyContent:'space-around', alignItems:'center', px:5}}>
+            <Grid xs={8} sx={{display:'flex', justifyContent:'space-evenly', alignItems:'center', px:5}}>
                 <Typography level="h6" >
                     {word.word.toUpperCase()}
                 </Typography>
@@ -19,7 +19,7 @@ const Word = ({ word, deleteWord }) => {
                 </Typography>
             </Grid>
 
-            <Grid xs={4} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Grid xs={8} sx={{display:'flex', justifyContent:'space-evenly', alignItems:'center', }}>
                 <IconButton 
                     variant="outlined" 
                     color={isDark ? "danger" : "warning"}

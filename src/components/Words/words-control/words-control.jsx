@@ -27,29 +27,29 @@ const WordsControl = ({theme, checks}) => {
         }}>
             
         {/* First Row */}
-            <Grid container sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around',   }}>  
-                <Typography level="h3" sx={{fontSize:firstRowFontSize}}>
+            <Grid sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around',   }}>  
+                <Typography level="h2" sx={{fontSize:firstRowFontSize}}>
                     Sort 
                 </Typography>        
-                <Typography level="h3" sx={{fontSize:firstRowFontSize}}>
+                <Typography level="h2" sx={{fontSize:firstRowFontSize}}>
                     Flash Card View
                 </Typography>
             </Grid>
 
             {/* Headers Row */}
-            <Grid container spacing={2} alignItems="center" sx={{ textAlign:'center', width: '100%', pt:2, px:2 }}>
+            <Grid sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around',   }}>  
                 <Grid  xs={4}> 
-                    <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: secondRowFontSize }}>
+                    <Typography level="h3" sx={{ textAlign:'center',  fontSize: secondRowFontSize }}>
                         SPANISH
                     </Typography>
                 </Grid>
                 <Grid  xs={4}> 
-                    <Typography level="h2" sx={{textAlign:'center',  whiteSpace: 'nowrap', fontSize: secondRowFontSize }}>
+                    <Typography level="h3" sx={{textAlign:'center',  fontSize: secondRowFontSize }}>
                         ENGLISH
                     </Typography>
                 </Grid>
                 <Grid  xs={4}>
-                    <Typography level="h2" sx={{ textAlign:'center', whiteSpace: 'nowrap', fontSize: secondRowFontSize }}>
+                    <Typography level="h3" sx={{ textAlign:'center', fontSize: secondRowFontSize }}>
                         MANAGE
                     </Typography>
                 </Grid>
