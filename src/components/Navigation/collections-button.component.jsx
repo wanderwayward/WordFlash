@@ -1,6 +1,6 @@
 import { useContext } from 'react'; 
 import { useNavigate } from 'react-router-dom';
-import {  IconButton } from '@mui/joy';
+import {  IconButton, Box} from '@mui/joy';
 import { TbBookFilled } from "react-icons/tb";
 import { ThemeValuesContext } from '../../contexts/theme-values.context';
 
@@ -20,6 +20,7 @@ const CollectionsButton = ({theme, checks}) => {
         <IconButton size='lg'
             onClick={handleCollectionsClick}
             sx={{
+                margin: 1,
                 overflow: 'hidden',
                 display: 'inline-flex',
                 alignItems: 'center',

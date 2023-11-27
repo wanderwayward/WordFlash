@@ -21,7 +21,6 @@ const Navbar = () => {
       right: 0,
       zIndex: 1100, 
       width: '100%', 
-      padding: '10px', 
     }}>
       <Grid >
         <MenuDrawer theme={theme} checks={checks} />
