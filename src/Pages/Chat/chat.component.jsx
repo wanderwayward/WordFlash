@@ -50,22 +50,21 @@ const Chat = () => {
     setIsLoading(false);
   };
   return (
-<Box
-  sx={{
-    width: "100%",
-    height: "calc(100vh - 60px)", // Account for the navbar
-    display: "flex",
-    flexDirection: "column",
-  }}
->
-  <Box sx={{ overflowY: 'auto', flexGrow: 1, }}> {/* Adjust flexGrow as needed */}
-    <AnswerBox response={response} checks={checks} isLoading={isLoading} isSearchInitiated={isSearchInitiated}/>
-  </Box>
-  <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', height: '6vh', paddingBottom: isMobile ? 8 : 1}}> {/* Set a fixed height or percentage for QuestionBox */}
-    <QuestionBox question={question} setQuestion={setQuestion} handleSubmit={handleSubmit} checks={checks}/>  
-  </Box>
-</Box>
-
+    <Box
+      sx={{
+        width: "100%",
+        height: "calc(100vh - 60px)", // Account for the navbar
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Box sx={{ overflowY: 'auto', flexGrow: 1, }}> {/* Adjust flexGrow as needed */}
+        <AnswerBox response={response} checks={checks} isLoading={isLoading} isSearchInitiated={isSearchInitiated}/>
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', height: '6vh', paddingBottom: isMobile ? 8 : 1}}> {/* Set a fixed height or percentage for QuestionBox */}
+        <QuestionBox question={question} setQuestion={setQuestion} handleSubmit={handleSubmit} checks={checks}/>  
+      </Box>
+    </Box>
   );
 }
 

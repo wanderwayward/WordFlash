@@ -7,28 +7,30 @@ const WordsControl = ({theme, checks}) => {
 
     return (
         <Grid
-        container
-        direction="column"
-        justifyContent="center"
-        alignItems="center"
-        spacing={2}
-        sx={{
-            backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100], 
-            width: "100%",
-            position: "fixed",
-            top: 80, 
-            zIndex: 10, 
-            height: '60px',
-        }}>
-                <Typography level="h2" sx={{fontSize:firstRowFontSize}}>
+            container
+            spacing={2}
+            sx={{
+                backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100], 
+                width: "100%",
+                position: "fixed",
+                top: 80, 
+                zIndex: 10, 
+                height: '60px',
+                alignItems: 'center',
+                justifyContent: 'space-around'
+            }}
+        >
+            <Grid xs={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Typography level="h2" sx={{ fontSize: firstRowFontSize }}>
                     Sort 
                 </Typography>
-
-                <Typography level="h2" sx={{fontSize:firstRowFontSize}}>
+            </Grid>
+            <Grid xs={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Typography level="h2" sx={{ fontSize: firstRowFontSize }}>
                     Flash Card View
                 </Typography>
             </Grid>            
-        
+        </Grid>  
     );
 }
 

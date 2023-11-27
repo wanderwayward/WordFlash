@@ -9,7 +9,12 @@ const Word = ({ word, deleteWord }) => {
 
     return (
         
-        <Grid sx={{ width: '100%', display:'flex', alignItems:'center', textAlign: 'center', justifyContent: 'space-around' }}>  
+        <Grid sx={{ 
+            width: '100%', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-around' 
+        }}>  
             <Grid  xs={4}> 
                 <Typography level="h3" sx={{ textAlign:'center',   }}>
                     {word.word.toUpperCase()}
@@ -28,7 +33,7 @@ const Word = ({ word, deleteWord }) => {
                         onClick={() => deleteWord(word)}
                     >
                         <MdDelete />
-                    </IconButton>
+                </IconButton>
                 </Typography>
             </Grid>
         </Grid>
