@@ -8,15 +8,13 @@ const Word = ({ word, deleteWord }) => {
     const { isDark } = checks;
 
     return (
-        <Grid container spacing={2} alignItems="center" sx={{ textAlign: 'center', width: '100%', py: 1 }}>
-            <Grid xs={4}>
-                <Typography level="h6" sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
+        <>
+            <Grid xs={8} sx={{display:'flex', justifyContent:'space-around', alignItems:'center', px:5}}>
+                <Typography level="h6" >
                     {word.word.toUpperCase()}
                 </Typography>
-            </Grid>
 
-            <Grid xs={4}> 
-                <Typography level="h6" sx={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
+                <Typography level="h6">
                     {word.englishTranslation.toUpperCase()}
                 </Typography>
             </Grid>
@@ -30,7 +28,7 @@ const Word = ({ word, deleteWord }) => {
                     <MdDelete />
                 </IconButton>
             </Grid>
-        </Grid>
+        </>
     );
 }
 

@@ -24,7 +24,7 @@ const Collection = () => {
             marginTop: "40px",
             paddingTop: "100px",
         }}>
-                <WordsControl theme={theme} />
+                <WordsControl theme={theme} checks={checks}/>
                 <Words checks={checks} words={words} deleteWord={deleteWordFromCollection} />
         </Grid>
     )
