@@ -1,40 +1,23 @@
-import { useContext } from "react";
 import { IconButton, Typography, Grid } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
-import { ThemeValuesContext } from "../../../contexts/theme-values.context";
 
-const Word = ({ word, deleteWord }) => {
-    const { checks } = useContext(ThemeValuesContext);
-    const { isDark } = checks;
-
+const Word = ({ word, deleteWord, style, isDark }) => {
     return (
-        
-        <Grid sx={{ 
-            width: '100%', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-around' 
-        }}>  
-            <Grid  xs={4}> 
-                <Typography level="h3" sx={{ textAlign:'center',   }}>
-                    {word.word.toUpperCase()}
-                </Typography>
+        <Grid container spacing={2} alignItems="center">
+            <Grid xs={4} sx={style}>
+            <Typography>{word.word.toUpperCase()}</Typography>
             </Grid>
-            <Grid  xs={4}> 
-                <Typography level="h3" sx={{textAlign:'center',   }}>
-                {word.englishTranslation.toUpperCase()}
-                </Typography>
+            <Grid xs={4} sx={style}>
+            <Typography>{word.englishTranslation.toUpperCase()}</Typography>
             </Grid>
-            <Grid  xs={4}>
-                <Typography level="h3" sx={{ textAlign:'center', }}>
-                <IconButton 
-                        variant="outlined" 
-                        color={isDark ? "danger" : "warning"}
-                        onClick={() => deleteWord(word)}
-                    >
-                        <MdDelete />
-                </IconButton>
-                </Typography>
+            <Grid xs={4} sx={style}>
+            <IconButton
+                variant="outlined"
+                color={isDark ? "danger" : "warning"}
+                onClick={() => deleteWord(word)}
+            >
+                <MdDelete />
+            </IconButton>
             </Grid>
         </Grid>
     );

@@ -1,36 +1,24 @@
-import { Grid, Typography, Divider, Sheet } from "@mui/joy";
+import { Grid, Button } from "@mui/joy";
 
-const WordsControl = ({theme, checks}) => {
-
-    const { isDark, isMobile, isTablet, isLaptop } = checks;
-    const firstRowFontSize = isMobile ? '22px' : isTablet ? '30px' : isLaptop ? '35px' :  '38px';
+const WordsControl = ({theme, isDark, style}) => {
 
     return (
-        <Grid
-            container
-            spacing={2}
-            sx={{
-                backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100], 
-                width: "100%",
-                position: "fixed",
-                top: 80, 
-                zIndex: 10, 
-                height: '60px',
-                alignItems: 'center',
-                justifyContent: 'space-around'
-            }}
-        >
-            <Grid xs={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Typography level="h2" sx={{ fontSize: firstRowFontSize }}>
-                    Sort 
-                </Typography>
+        <Grid container sx={{height:'60px', position: 'fixed', top: 70, left: 0, right: 0, zIndex: 1100, backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100] }}>
+            <Grid xs={6} sx={style}>
+            <Button
+            variant='soft'
+            color='neutral'>
+                SORT
+            </Button>
             </Grid>
-            <Grid xs={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Typography level="h2" sx={{ fontSize: firstRowFontSize }}>
-                    Flash Card View
-                </Typography>
-            </Grid>            
-        </Grid>  
+            <Grid xs={6} sx={style}>
+            <Button
+            variant='soft'
+            color='neutral'>
+                FLASH CARD VIEW
+            </Button>
+            </Grid>
+        </Grid>
     );
 }
 
