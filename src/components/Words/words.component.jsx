@@ -1,7 +1,10 @@
-import { Grid, Typography, Divider, IconButton} from '@mui/joy';
+import { Grid, Typography, Divider} from '@mui/joy';
 import Word from './word/word.component';
+import GeneralLoadingSpinner from '../ui/loading/general-loading-spinner.component';
 
 const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, isDark, padding}) => {
+
+    console.log('From words component','wordfontsize', wordFontSize, 'headerfontsize', headerFontSize)
 
 
 
@@ -20,11 +23,14 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
             </Grid>
             <Divider sx={{backgroundColor:theme.colorSchemes.light.palette.primary}} />    
             
+            { words ? 
             <Grid container direction="column" sx={{ pt: '140px' }}>
                 {words.map((word, index) => (
                 <Word word={word} key={index} style={style} isDark={isDark} deleteWord={deleteWord} fontSize={wordFontSize} padding={padding} />    
                 ))}
-            </Grid>
+            </Grid> :
+            <GeneralLoadingSpinner style={{pt:'140px'}} />
+            }	
         </>
     )
 }

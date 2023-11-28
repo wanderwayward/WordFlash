@@ -2,6 +2,9 @@ import { IconButton, Typography, Grid } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
 
 const Word = ({ word, deleteWord, style, isDark, fontSize, padding }) => {
+
+    console.log('From word component','wordfontsize', fontSize, )
+
     return (
         <Grid container alignItems="center" sx={{py:1}}>
             <Grid xs={4} sx={style}>
@@ -20,6 +23,7 @@ const Word = ({ word, deleteWord, style, isDark, fontSize, padding }) => {
                     color={isDark ? "danger" : "warning"}
                     onClick={() => deleteWord(word)}
                     sx={{
+                        fontSize: fontSize,
                         mr: padding,
                     }}                
                 >

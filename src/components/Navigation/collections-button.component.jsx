@@ -1,8 +1,6 @@
-import { useContext } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import {  IconButton, Box} from '@mui/joy';
 import { TbBookFilled } from "react-icons/tb";
-import { ThemeValuesContext } from '../../contexts/theme-values.context';
 
 
 const CollectionsButton = ({theme, checks}) => {

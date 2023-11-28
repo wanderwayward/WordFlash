@@ -58,7 +58,7 @@ const FlashCard = ({ response, checks }) => {
             <StyledTypography color="error" level="h4" sx={{fontSize: answerTitleFontSize}}>Spanish Definitions:</StyledTypography>
             <List >
               {response.spanishDefinition.map((definition, index) => (
-                <ListItem color="neutral" key={index} sx={{fontSize: answerFontSize, justifyContent:'center'}}>
+                <ListItem color="neutral" key={index} sx={{fontSize: answerFontSize, justifyContent: isMobile ? 'center' :'left'}}>
                   {!isMobile ? `${index + 1} -`: null} {definition}
                 </ListItem>
               ))}
@@ -70,7 +70,7 @@ const FlashCard = ({ response, checks }) => {
             <StyledTypography color="error" level="h4" sx={{fontSize: answerTitleFontSize}}>Example Sentences:</StyledTypography>
             <List >
               {response.exampleSentences.map((sentence, index) => (
-                <ListItem color="neutral" key={index} sx={{fontSize: answerFontSize, justifyContent:'center'}}>  
+                <ListItem color="neutral" key={index} sx={{fontSize: answerFontSize, justifyContent: isMobile ? 'center' :'left'}}>  
                   {!isMobile ? `${index + 1} -`: null} {sentence}
                 </ListItem>
               ))}
