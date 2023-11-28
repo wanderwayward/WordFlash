@@ -12,8 +12,15 @@ import WordsControl from '../../components/Words/words-control/words-control';
 const Collection = () => {
 
     const { theme, checks } = useContext(ThemeValuesContext);
-    const { isDark } = checks;
+    const {isMobile, isTablet, isLaptop, isDark} = checks;
     const { words, deleteWordFromCollection } = useContext(WordsContext);
+
+    const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.4rem';
+    const controlMarginL = isMobile ? '' : isTablet ? '6.8rem' : isLaptop ? '11rem' : '17rem';
+    const controlMarginR = isMobile ? '3.8rem' : isTablet ? '8.5rem' : isLaptop ? '11.2rem' : '17rem';
+    const headerFontSize = isMobile ? '.9rem' : isTablet ? '1.2rem' : isLaptop ? '1.4rem' : '1.3rem';
+    const wordFontSize = isMobile ? '.5rem' : isTablet ? '1rem' : isLaptop ? '1.2rem' : '1.2rem';
+    const wordsPadding = isMobile ? '.2rem' : ''
     
     const style = {
         display: 'flex', 
@@ -35,12 +42,12 @@ const Collection = () => {
                 overflowX: 'hidden', 
             }}
             >
-            <WordsControl isDark={isDark} theme={theme} style={style} />
-            <Words words={words} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme}/>
+            <WordsControl isDark={isDark} theme={theme} style={style} fontSize={controlFontSize} ml={controlMarginL} mr={controlMarginR} />
+            <Words words={words} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} wordFontSize={wordFontSize} isDark={isDark} padding={wordsPadding}/>
          
         </Sheet>
       );
     }
     
     
-    export default Collection;
+    export default Collection;7

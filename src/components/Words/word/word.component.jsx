@@ -1,23 +1,30 @@
 import { IconButton, Typography, Grid } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
 
-const Word = ({ word, deleteWord, style, isDark }) => {
+const Word = ({ word, deleteWord, style, isDark, fontSize, padding }) => {
     return (
-        <Grid container spacing={2} alignItems="center">
+        <Grid container alignItems="center" sx={{py:1}}>
             <Grid xs={4} sx={style}>
-            <Typography>{word.word.toUpperCase()}</Typography>
+                <Typography variant="plain" color={isDark ? "primary" : "danger"} sx={{ml: padding, fontSize:fontSize, fontWeight:500, textAlign:'center', }}>
+                    {word.originalWord.toUpperCase()}
+                </Typography>
             </Grid>
             <Grid xs={4} sx={style}>
-            <Typography>{word.englishTranslation.toUpperCase()}</Typography>
+                <Typography variant="plain" color={isDark ? "primary" : "danger"} sx={{ml: padding, fontSize:fontSize, fontWeight:500, textAlign:'center', }}>
+                    {word.englishTranslation.toUpperCase()}
+                </Typography>
             </Grid>
             <Grid xs={4} sx={style}>
-            <IconButton
-                variant="outlined"
-                color={isDark ? "danger" : "warning"}
-                onClick={() => deleteWord(word)}
-            >
-                <MdDelete />
-            </IconButton>
+                <IconButton
+                    variant="outlined"
+                    color={isDark ? "danger" : "warning"}
+                    onClick={() => deleteWord(word)}
+                    sx={{
+                        mr: padding,
+                    }}                
+                >
+                    <MdDelete/>
+                </IconButton>
             </Grid>
         </Grid>
     );
