@@ -14,19 +14,12 @@ const Collection = () => {
     const { isDark } = checks;
     const { words, deleteWordFromCollection } = useContext(WordsContext);
     
-    const headerStyle = {
+    const style = {
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center', 
-        height: '40px',
+        
       };
-      const contentCellStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-      };
-    
 
       return (
             <Sheet
@@ -43,23 +36,31 @@ const Collection = () => {
             }}
             >
             {/* Fixed header for SORT and FLASH CARD VIEW */}
-            <Grid container sx={{ position: 'fixed', top: 60, left: 0, right: 0, zIndex: 1100 }}>
-                <Grid xs={6} sx={headerStyle}>
-                <Button>SORT</Button>
+            <Grid container sx={{height:'60px', position: 'fixed', top: 70, left: 0, right: 0, zIndex: 1100, backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100] }}>
+                <Grid xs={6} sx={style}>
+                <Button
+                    variant='soft'
+                    color='neutral'>
+                    SORT
+                </Button>
                 </Grid>
-                <Grid xs={6} sx={headerStyle}>
-                <Button>FLASH CARD VIEW</Button>
+                <Grid xs={6} sx={style}>
+                <Button
+                variant='soft'
+                color='neutral'>
+                    FLASH CARD VIEW
+                </Button>
                 </Grid>
             </Grid>
             {/* Fixed header for SPANISH, ENGLISH, and MANAGE */}
-            <Grid container sx={{ position: 'fixed', top: 100, left: 0, right: 0, zIndex: 1100 }}>
-                    <Grid xs={4} sx={headerStyle}>
+            <Grid container sx={{height:'60px', position: 'fixed', top: 130, left: 0, right: 0, zIndex: 1100, backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100] }}>
+                    <Grid xs={4} sx={style}>
                     <Typography>SPANISH</Typography>
                     </Grid>
-                    <Grid xs={4} sx={headerStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>ENGLISH</Typography>
                     </Grid>
-                    <Grid xs={4} sx={headerStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>MANAGE</Typography>
                     </Grid>
                 </Grid>    
@@ -68,13 +69,13 @@ const Collection = () => {
                 {words.map((word, index) => (
                 <>
                 <Grid container key={index} spacing={2} alignItems="center">
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.word}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.englishTranslation}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={{ ...contentCellStyle, justifyContent: 'flex-end' }}>
+                    <Grid xs={4} sx={{ ...style, justifyContent: 'flex-end' }}>
                     <IconButton
                         variant="outlined"
                         color={isDark ? "danger" : "warning"}
@@ -86,13 +87,13 @@ const Collection = () => {
                 </Grid>
 
                 <Grid container key={index} spacing={2} alignItems="center">
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.word}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.englishTranslation}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={{ ...contentCellStyle, justifyContent: 'flex-end' }}>
+                    <Grid xs={4} sx={{ ...style, justifyContent: 'flex-end' }}>
                     <IconButton
                         variant="outlined"
                         color={isDark ? "danger" : "warning"}
@@ -103,13 +104,13 @@ const Collection = () => {
                     </Grid>
                 </Grid>
                 <Grid container key={index} spacing={2} alignItems="center">
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.word}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.englishTranslation}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={{ ...contentCellStyle, justifyContent: 'flex-end' }}>
+                    <Grid xs={4} sx={{ ...style, justifyContent: 'flex-end' }}>
                     <IconButton
                         variant="outlined"
                         color={isDark ? "danger" : "warning"}
@@ -120,13 +121,13 @@ const Collection = () => {
                     </Grid>
                 </Grid>
                 <Grid container key={index} spacing={2} alignItems="center">
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.word}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={contentCellStyle}>
+                    <Grid xs={4} sx={style}>
                     <Typography>{word.englishTranslation}</Typography>
                     </Grid>
-                    <Grid xs={4} sx={{ ...contentCellStyle, justifyContent: 'flex-end' }}>
+                    <Grid xs={4} sx={{ ...style, justifyContent: 'flex-end' }}>
                     <IconButton
                         variant="outlined"
                         color={isDark ? "danger" : "warning"}
