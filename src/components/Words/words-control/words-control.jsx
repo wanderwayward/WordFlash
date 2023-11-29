@@ -1,6 +1,6 @@
 import { Grid, Select, Option, Typography } from "@mui/joy";
 
-const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort}) => {
+const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort, mr, ml}) => {
 
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
@@ -21,13 +21,13 @@ const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort}) 
 >
     {/* Sort By Section */}
     <Grid container pt={1} xs={6} sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'row' }}>
-        <Grid pb={1} xs={12}  sm={3} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Grid pb={1} xs={12}  sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Typography level="h2" sx={{ fontSize: fontSize }}>
                 SORT BY:
             </Typography>
         </Grid>
-        <Grid xs={12} sm={9} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <Select placeholder="Alphabetical" defaultValue="Alphabetical" variant="soft" color="success" size={isMobile ? "sm" : "md"} onChange={handleSort}>
+        <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Select placeholder="Alphabetical" defaultValue="Alphabetical" variant="soft" color="success" size={isMobile ? "sm" : "md"} onChange={handleSort} sx={{width:'60%', textAlign:'center'}}>
                 <Option value="Alphabetical">Alphabetical</Option>
                 <Option value="Classification">Classification</Option>
             </Select>
@@ -36,13 +36,13 @@ const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort}) 
 
     {/* View Section */}
     <Grid container pt={1} xs={6} sx={{display: 'flex', justifyContent: 'center',  flexDirection: 'row' }}>      
-        <Grid pb={1} xs={12}  sm={3} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Grid pb={1} xs={12}  sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Typography level="h2" sx={{ fontSize: fontSize }}>
                 VIEW
             </Typography>
         </Grid>
-        <Grid xs={12} sm={9} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center',  }}>
-            <Select placeholder="List" defaultValue="List" variant="soft" color="success" size={isMobile ? "sm" : "md"} onChange={handleView}>
+        <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Select placeholder="List" defaultValue="List" variant="soft" color="success" size={isMobile ? "sm" : "md"} onChange={handleView} sx={{width:'60%', textAlign:'center'}}>
                 <Option value="List">List</Option>
                 <Option value="Flashcards">Flashcards</Option>
             </Select>
