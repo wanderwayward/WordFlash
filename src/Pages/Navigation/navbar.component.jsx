@@ -27,7 +27,7 @@ const Navbar = () => {
       </Grid>
       <Grid  >
       <Link component={RouterLink} to="/" sx={{ textDecoration: 'none !important', color: 'inherit' }}>
-        <Typography color="warning" level="title-lg" variant='plain' sx={{fontSize:isMobile ? '30px': '40px'}}>
+        <Typography color="warning" level="title-lg" variant='plain' sx={{fontSize:isMobile ? '1.5rem': '2.2rem'}}>
             WORD FLASH
         </Typography>
       </Link>

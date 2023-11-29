@@ -15,11 +15,11 @@ const Collection = () => {
     const {isMobile, isTablet, isLaptop, isDark} = checks;
     const { words, deleteWordFromCollection } = useContext(WordsContext);
 
-    const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.4rem';
+    const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.8rem';
     const controlMarginL = isMobile ? '' : isTablet ? '6.8rem' : isLaptop ? '11rem' : '17rem';
     const controlMarginR = isMobile ? '3.8rem' : isTablet ? '8.5rem' : isLaptop ? '11.2rem' : '17rem';
-    const headerFontSize = isMobile ? '.9rem' : isTablet ? '1.2rem' : isLaptop ? '1.4rem' : '2rem';
-    const wordFontSize = isMobile ? '.5rem' : isTablet ? '1rem' : isLaptop ? '1.2rem' : '1.5rem';
+    const headerFontSize = isMobile ? '.9rem' : isTablet ? '1.1rem' : isLaptop ? '1.2rem' : '1.5rem';
+    const wordFontSize = isMobile ? '.5rem' : isTablet ? '1rem' : isLaptop ? '1.2rem' : '1.3rem';
     const wordsPadding = isMobile ? '.2rem' : ''
     
     const style = {
@@ -27,6 +27,14 @@ const Collection = () => {
         justifyContent: 'center', 
         alignItems: 'center', 
       };
+
+    const handleSort = () => {
+        console.log('sort');
+    }
+
+    const handleView = () => {
+        console.log('view');
+    }
 
       return (
             <Sheet
@@ -42,12 +50,13 @@ const Collection = () => {
                 overflowX: 'hidden', 
             }}
             >
-            <WordsControl isDark={isDark} theme={theme} style={style} fontSize={controlFontSize} ml={controlMarginL} mr={controlMarginR} />
-            <Words words={words} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} wordFontSize={wordFontSize} isDark={isDark} padding={wordsPadding}/>
+            <WordsControl checks={checks} theme={theme} style={style} fontSize={controlFontSize} handleSort={handleSort} handleView={handleView} />
+
+            <Words words={words} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} wordFontSize={wordFontSize} padding={wordsPadding}/>
          
         </Sheet>
       );
     }
     
     
-    export default Collection;7
+    export default Collection;
