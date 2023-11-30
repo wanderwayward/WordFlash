@@ -1,19 +1,18 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { WordsContext } from '../../contexts/words.context';
 import { ThemeValuesContext } from '../../contexts/theme-values.context';
 
-import { Grid, Button, IconButton, Typography, Sheet  } from '@mui/joy';
+import {  Sheet  } from '@mui/joy';
 
-import Word from '../../components/Words/word/word.component';
 import Words from '../../components/Words/words.component'
 import WordsControl from '../../components/Words/words-control/words-control';
-import { set } from 'react-hook-form';
+import GeneralLoadingSpinner from '../../components/ui/loading/general-loading-spinner.component';
 
 const Collection = () => {
 
     const { theme, checks } = useContext(ThemeValuesContext);
     const {isMobile, isTablet, isLaptop, isDark} = checks;
-    const { alphabeticalWords, classificationWords, deleteWordFromCollection } = useContext(WordsContext);
+    const { isLoading, words, alphabeticalWords, classificationWords, deleteWordFromCollection } = useContext(WordsContext);
 
     console.log(alphabeticalWords, classificationWords);
 
@@ -34,6 +33,14 @@ const Collection = () => {
         alignItems: 'center', 
       };
 
+    useEffect(() => {
+        if (sort === 'Alphabetical') {
+            setSortedWords(alphabeticalWords)
+        } else {
+            setSortedWords(classificationWords)
+        }
+    }, [sort, words, alphabeticalWords, classificationWords])
+
     const handleSort = () => {
       if(sort === 'Alphabetical') {
         setSort('Classification')
@@ -46,6 +53,12 @@ const Collection = () => {
 
     const handleView = () => {
         console.log('view');
+    }
+
+    if (isLoading) {
+        return (
+          <GeneralLoadingSpinner checks={checks}/>
+        )
     }
 
       return (

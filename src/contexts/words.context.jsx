@@ -2,6 +2,7 @@ import { createContext, useState, useEffect, useContext } from "react";
 import { addWord, getWords, deleteWord} from "../utils/firebase-utils";
 import { UserContext } from "./user.context";
 import { AlphabeticalSort, groupByClassification } from "../utils/utils";
+import { set } from "react-hook-form";
 
 export const WordsContext = createContext();
 
@@ -9,11 +10,14 @@ const WordsContextProvider = ({ children }) => {
   const [words, setWords] = useState([]);
   const [alphabeticalWords, setAlphabeticalWords] = useState([]);
   const [classificationWords, setClassificationWords] = useState([])
-  const { user } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const { user, loading: userLoading } = useContext(UserContext);
 
   const userWords = async () => {
+    setIsLoading(true);
     const words = await getWords(user.uid);
     setWords(words);
+    setIsLoading(false);
   };
 
 
@@ -62,12 +66,14 @@ const WordsContextProvider = ({ children }) => {
     setWords(newWords);
   };
 
+  const combinedLoading = userLoading || isLoading; 
+
 
 
 
 
   return (
-    <WordsContext.Provider value={{ words, setWords, alphabeticalWords, classificationWords, uploadWord, deleteWordFromCollection  }}>
+    <WordsContext.Provider value={{ isLoading: combinedLoading, words, setWords, alphabeticalWords, classificationWords, uploadWord, deleteWordFromCollection  }}>
       {children}
     </WordsContext.Provider>
   );

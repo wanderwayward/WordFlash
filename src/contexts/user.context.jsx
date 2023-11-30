@@ -1,6 +1,7 @@
 import { useEffect, useState, createContext, useMemo } from "react";
 import { onAuthStateChangedListener} from "../utils/firebase-utils";
 import GeneralLoadingSpinner from "../components/ui/loading/general-loading-spinner.component";
+import { set } from "react-hook-form";
 
 export const UserContext = createContext();
 
@@ -9,6 +10,7 @@ export const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const unsubscribe = onAuthStateChangedListener((user) => {
       setUser(user);
       setLoading(false);
@@ -17,7 +19,7 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   const contextValue = useMemo(() => {
-    return { user, setUser };
+    return { user, setUser, loading };
   }, [user]);
 
   if (loading) {
