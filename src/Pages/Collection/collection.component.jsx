@@ -23,7 +23,7 @@ const Collection = () => {
     const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.8rem';
     const controlMarginL = isMobile ? '' : isTablet ? '6.8rem' : isLaptop ? '11rem' : '17rem';
     const controlMarginR = isMobile ? '3.8rem' : isTablet ? '8.5rem' : isLaptop ? '11.2rem' : '17rem';
-    const headerFontSize = isMobile ? '.9rem' : isTablet ? '1.1rem' : isLaptop ? '1.2rem' : '1.5rem';
+    const headerFontSize = isMobile ? '.9rem' : isTablet ? '1.2rem' : isLaptop ? '1.3rem' : '1.5rem';
     const wordFontSize = isMobile ? '.5rem' : isTablet ? '1rem' : isLaptop ? '1.2rem' : '1.3rem';
     const wordsPadding = isMobile ? '.2rem' : ''
     

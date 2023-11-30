@@ -1,6 +1,9 @@
-import { Grid, Typography, Divider} from '@mui/joy';
+import { Grid, Typography, Divider } from '@mui/joy';
+import ClassificationWords from './classification-words/classification-words.component';
 import Word from './word/word.component';
+
 import GeneralLoadingSpinner from '../ui/loading/general-loading-spinner.component';
+import { StyledDivider } from '../../utils/styledComponents';
 
 const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, padding, sort }) => {
 
@@ -23,7 +26,7 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
                 <Typography variant='plain'color={isDark ? "danger" : "primary"}  level='h2' sx={{fontSize: headerFontSize, mr:padding}}>MANAGE</Typography>
                 </Grid>
             </Grid>
-            <Divider sx={{backgroundColor:theme.colorSchemes.light.palette.primary}} />    
+            <Divider/>    
             
             { words && sort === 'Alphabetical' ? 
             <Grid container direction="column" sx={{ pt: '155px' }}>
@@ -31,9 +34,7 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
                 <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} padding={padding} />    
                 ))}
             </Grid> : sort === 'Classification' ?
-                <Grid container direction="column" sx={{ pt: '155px' }}>
-                    <Typography> hello</Typography>
-                </Grid>
+            <ClassificationWords words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} padding={padding} deleteWord={deleteWord}/>
             :
             <GeneralLoadingSpinner style={{pt:'175px'}} />
             }	
