@@ -2,10 +2,12 @@ import { Grid, Typography, Divider} from '@mui/joy';
 import Word from './word/word.component';
 import GeneralLoadingSpinner from '../ui/loading/general-loading-spinner.component';
 
-const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, padding}) => {
+const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, padding, sort }) => {
 
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
+
+3
 
 
     return (
@@ -23,12 +25,16 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
             </Grid>
             <Divider sx={{backgroundColor:theme.colorSchemes.light.palette.primary}} />    
             
-            { words ? 
+            { words && sort === 'Alphabetical' ? 
             <Grid container direction="column" sx={{ pt: '155px' }}>
                 {words.map((word, index) => (
                 <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} padding={padding} />    
                 ))}
-            </Grid> :
+            </Grid> : sort === 'Classification' ?
+                <Grid container direction="column" sx={{ pt: '155px' }}>
+                    <Typography> hello</Typography>
+                </Grid>
+            :
             <GeneralLoadingSpinner style={{pt:'175px'}} />
             }	
         </>

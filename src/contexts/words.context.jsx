@@ -1,11 +1,14 @@
 import { createContext, useState, useEffect, useContext } from "react";
 import { addWord, getWords, deleteWord} from "../utils/firebase-utils";
 import { UserContext } from "./user.context";
+import { AlphabeticalSort, groupByClassification } from "../utils/utils";
 
 export const WordsContext = createContext();
 
 const WordsContextProvider = ({ children }) => {
   const [words, setWords] = useState([]);
+  const [alphabeticalWords, setAlphabeticalWords] = useState([]);
+  const [classificationWords, setClassificationWords] = useState([])
   const { user } = useContext(UserContext);
 
   const userWords = async () => {
@@ -13,12 +16,23 @@ const WordsContextProvider = ({ children }) => {
     setWords(words);
   };
 
+
+
     useEffect(() => {
     if (user) {
       userWords();
     }
     }, [user]);
 
+    useEffect(() => {
+      if (words.length === 0) {
+          return;
+      }
+      const classifiedWords = groupByClassification([...words])
+      setAlphabeticalWords([...words].sort(AlphabeticalSort))
+      setClassificationWords(classifiedWords)
+
+    }, [words])
 
 
     const uploadWord = async (word) => {
@@ -53,7 +67,7 @@ const WordsContextProvider = ({ children }) => {
 
 
   return (
-    <WordsContext.Provider value={{ words, setWords, uploadWord, deleteWordFromCollection  }}>
+    <WordsContext.Provider value={{ words, setWords, alphabeticalWords, classificationWords, uploadWord, deleteWordFromCollection  }}>
       {children}
     </WordsContext.Provider>
   );

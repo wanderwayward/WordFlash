@@ -1,19 +1,25 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { WordsContext } from '../../contexts/words.context';
 import { ThemeValuesContext } from '../../contexts/theme-values.context';
-import { MdDelete } from "react-icons/md";
 
 import { Grid, Button, IconButton, Typography, Sheet  } from '@mui/joy';
 
 import Word from '../../components/Words/word/word.component';
 import Words from '../../components/Words/words.component'
 import WordsControl from '../../components/Words/words-control/words-control';
+import { set } from 'react-hook-form';
 
 const Collection = () => {
 
     const { theme, checks } = useContext(ThemeValuesContext);
     const {isMobile, isTablet, isLaptop, isDark} = checks;
-    const { words, deleteWordFromCollection } = useContext(WordsContext);
+    const { alphabeticalWords, classificationWords, deleteWordFromCollection } = useContext(WordsContext);
+
+    console.log(alphabeticalWords, classificationWords);
+
+    const [sort, setSort] = useState('Alphabetical');
+    const [sortedWords, setSortedWords] = useState(alphabeticalWords);
+
 
     const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.8rem';
     const controlMarginL = isMobile ? '' : isTablet ? '6.8rem' : isLaptop ? '11rem' : '17rem';
@@ -29,7 +35,13 @@ const Collection = () => {
       };
 
     const handleSort = () => {
-        console.log('sort');
+      if(sort === 'Alphabetical') {
+        setSort('Classification')
+        setSortedWords(classificationWords)
+      }  else {
+        setSort('Alphabetical')
+        setSortedWords(alphabeticalWords)
+      }
     }
 
     const handleView = () => {
@@ -52,7 +64,7 @@ const Collection = () => {
             >
             <WordsControl checks={checks} theme={theme} style={style} fontSize={controlFontSize} handleSort={handleSort} handleView={handleView} mr={controlMarginR} ml={controlMarginL}/>
 
-            <Words words={words} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} wordFontSize={wordFontSize} padding={wordsPadding}/>
+            <Words words={sortedWords} sort={sort} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} wordFontSize={wordFontSize} padding={wordsPadding}/>
          
         </Sheet>
       );
