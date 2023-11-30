@@ -1,12 +1,22 @@
+import { useState } from "react";
 import { IconButton, Grid, Modal } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
 import WordModal from "../word-modal/word-modal.component";
 
 import { StyledTypographyWord } from "../../../utils/styledComponents";
 
-const Word = ({ word, deleteWord, style, checks, theme, fontSize, open, handleModal }) => {
+const Word = ({ word, deleteWord, style, checks, theme, fontSize,  }) => {
 
     const { isDark} = checks;
+
+    const [open, setOpen] = useState(false);
+
+    const handleModal = () => {
+        open ? setOpen(false) :
+        setOpen(true);
+    }
+
+
 
     return (
         <Grid container 
@@ -15,6 +25,7 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize, open, handleMo
         onClick={handleModal}
         sx={{
             '&:hover': {
+            cursor: 'pointer',    
             backgroundColor: isDark ? theme.colorSchemes.dark.palette.success[800] : theme.colorSchemes.light.palette.primary[100]  
         },}}>
             <Grid xs={4} sx={style}>
