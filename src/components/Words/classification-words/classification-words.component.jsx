@@ -18,7 +18,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.adjective.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme}/>    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -51,7 +51,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.article.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize}  />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -67,7 +67,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.conjunction.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme}/>    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -83,7 +83,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.interjection.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme}/>    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -99,7 +99,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.noun.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize}  />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -115,7 +115,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.preposition.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize}  />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -131,7 +131,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.pronoun.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize}  />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme}  />    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -146,7 +146,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.verb.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize}  />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
                     ))}
                 </Grid>
                 <StyledDivider />
@@ -162,7 +162,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.uncertain.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
                     ))}
                 </Grid>
                 <StyledDivider />

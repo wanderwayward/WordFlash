@@ -35,10 +35,10 @@ const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort, m
             </Grid>
 
             {/* View Section */}
-            <Grid container pt={1} xs={6} sx={{display: 'flex', justifyContent: 'center',  flexDirection: 'row', alignItems:'center' }}>      
+            <Grid container pt={1} xs={6} sx={{display: 'flex', justifyContent: 'center',  flexDirection: 'row', alignItems:'center', pr: '40px' }}>      
                 <Grid pb={1} xs={12}  sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Typography level="h2" sx={{ fontSize: fontSize }}>
-                        VIEW
+                        VIEW:
                     </Typography>
                 </Grid>
                 <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
