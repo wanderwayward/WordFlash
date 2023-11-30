@@ -1,14 +1,20 @@
-import { IconButton, Grid } from "@mui/joy";
+import { IconButton, Grid, Modal } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
+import WordModal from "../word-modal/word-modal.component";
 
 import { StyledTypographyWord } from "../../../utils/styledComponents";
 
-const Word = ({ word, deleteWord, style, checks, theme, fontSize }) => {
+const Word = ({ word, deleteWord, style, checks, theme, fontSize, open, handleModal }) => {
 
     const { isDark} = checks;
 
     return (
-        <Grid container alignItems="center" sx={{py:1, '&:hover': {
+        <Grid container 
+        alignItems="center" 
+        py={1}
+        onClick={handleModal}
+        sx={{
+            '&:hover': {
             backgroundColor: isDark ? theme.colorSchemes.dark.palette.success[800] : theme.colorSchemes.light.palette.primary[100]  
         },}}>
             <Grid xs={4} sx={style}>
@@ -33,6 +39,15 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize }) => {
                     <MdDelete />
                 </IconButton>
             </Grid>
+            <Modal
+            open={open}
+            onClose={handleModal}
+            sx={{display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center'}}
+            >
+              <WordModal word={word} checks={checks} />
+            </Modal>
         </Grid>
     );
 }

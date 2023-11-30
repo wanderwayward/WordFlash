@@ -14,10 +14,10 @@ const Collection = () => {
     const {isMobile, isTablet, isLaptop, isDark} = checks;
     const { isLoading, words, alphabeticalWords, classificationWords, deleteWordFromCollection } = useContext(WordsContext);
 
-    console.log(alphabeticalWords, classificationWords);
 
     const [sort, setSort] = useState('Alphabetical');
     const [sortedWords, setSortedWords] = useState(alphabeticalWords);
+    const [open, setOpen] = useState(false);
 
 
     const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.8rem';
@@ -51,6 +51,12 @@ const Collection = () => {
         setSortedWords(alphabeticalWords)
       }
     }
+
+    const handleModal = () => {
+        open ? setOpen(false) :
+        setOpen(true);
+    }
+
 
     const handleView = () => {
         console.log('view');
@@ -93,7 +99,7 @@ const Collection = () => {
             >
             <WordsControl checks={checks} theme={theme} style={style} fontSize={controlFontSize} handleSort={handleSort} handleView={handleView} mr={controlMarginR} ml={controlMarginL}/>
 
-            <Words words={sortedWords} sort={sort} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} classificationFontsize={wordClassificationsFontSize} headerPadding={headerPadding} wordFontSize={wordFontSize} />
+            <Words words={sortedWords} sort={sort} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} classificationFontsize={wordClassificationsFontSize} headerPadding={headerPadding} wordFontSize={wordFontSize} open={open} handleModal={handleModal}/>
          
         </Sheet>
       );

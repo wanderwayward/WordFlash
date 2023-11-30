@@ -5,7 +5,7 @@ import Word from './word/word.component';
 import GeneralLoadingSpinner from '../ui/loading/general-loading-spinner.component';
 import { StyledDivider } from '../../utils/styledComponents';
 
-const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, classificationFontsize, headerPadding, sort }) => {
+const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, classificationFontsize, headerPadding, sort, open, handleModal}) => {
 
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
@@ -30,7 +30,7 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
             { words && sort === 'Alphabetical' ? 
             <Grid container direction="column" sx={{ pt: '155px', mx:headerPadding }}>
                 {words.map((word, index) => (
-                <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme}  />    
+                <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} open={open} handleModal={handleModal}  />    
                 ))}
             </Grid> : sort === 'Classification' ?
             <ClassificationWords isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize}/>

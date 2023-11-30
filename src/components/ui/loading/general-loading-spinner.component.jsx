@@ -4,7 +4,6 @@ import { ThemeValuesContext } from "../../../contexts/theme-values.context";
 
 const GeneralLoadingSpinner = () => {
     const { checks, theme } = useContext(ThemeValuesContext);
-    console.log("Spinner Theme Context:", { checks, theme });
 
     const { isDark } = checks;
     return (

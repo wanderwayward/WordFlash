@@ -47,7 +47,6 @@ const WordsContextProvider = ({ children }) => {
       const wordExists = words.some(existingWord => existingWord.originalWord === word.originalWord);
         // Abort the upload if the word already exists
       if (wordExists) {
-          console.log("Word already exists in the array.");
           return;
       }
   
