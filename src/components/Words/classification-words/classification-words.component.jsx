@@ -2,9 +2,8 @@ import { Grid, Box, Divider } from "@mui/joy"
 import Word from "../word/word.component"
 import { StyledTypographyClassification, StyledDivider } from "../../../utils/styledComponents"
 
-const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  headerPadding, deleteWord, classificationFontsize}) => {
+const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  headerPadding, deleteWord, classificationFontsize, theme}) => {
 
-    console.log("words", words)
 
     return (
         <Box sx={{ pt: '155px', px:headerPadding}}>
@@ -36,7 +35,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
                 </Grid>
                 <Grid container direction="column">
                     {words.adverb.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} />    
+                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme}/>    
                     ))}
                 </Grid>
                 <StyledDivider />

@@ -47,7 +47,7 @@ const FlashCard = ({ response, checks }) => {
           </Grid>
 
           {/* Second Row */}
-          <Grid xs={12} sx={{mt:-2, display:'flex', justifyContent:'center'}} >
+          <Grid xs={12} sx={{mb:2, display:'flex', justifyContent:'center'}} >
             <StyledTypography level="h5" color="danger" variant='soft' sx={{fontSize:'5px', width:'80%'}}>
               Classification: {response.classification}
             </StyledTypography>

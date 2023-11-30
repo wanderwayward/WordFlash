@@ -3,13 +3,13 @@ import { MdDelete } from "react-icons/md";
 
 import { StyledTypographyWord } from "../../../utils/styledComponents";
 
-const Word = ({ word, deleteWord, style, checks, fontSize }) => {
+const Word = ({ word, deleteWord, style, checks, theme, fontSize }) => {
 
-    const {isMobile, isTablet, isLaptop, isDark} = checks;
+    const { isDark} = checks;
 
     return (
         <Grid container alignItems="center" sx={{py:1, '&:hover': {
-            backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+            backgroundColor: isDark ? theme.colorSchemes.dark.palette.success[800] : theme.colorSchemes.light.palette.primary[100]  
         },}}>
             <Grid xs={4} sx={style}>
                 <StyledTypographyWord variant="plain" color={isDark ? "primary" : "danger"} sx={{fontSize:fontSize, }}>
