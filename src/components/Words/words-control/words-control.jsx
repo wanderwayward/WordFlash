@@ -27,7 +27,7 @@ const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort, m
             </Typography>
         </Grid>
         <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <Select placeholder="Alphabetical" defaultValue="Alphabetical" variant="soft" color="success" size={isMobile ? "sm" : "md"} onChange={handleSort} sx={{width:'78%', textAlign:'center'}}>
+            <Select placeholder="Alphabetical" defaultValue="Alphabetical" variant="soft" color="success" size={isMobile ? "sm" : "md"} onChange={handleSort} sx={{width:'80%', textAlign:'center'}}>
                 <Option value="Alphabetical">Alphabetical</Option>
                 <Option value="Classification">Classification</Option>
             </Select>
@@ -42,7 +42,7 @@ const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort, m
             </Typography>
         </Grid>
         <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <Select placeholder="List" defaultValue="List" variant="soft" color="success" size={isTablet ? "sm" : "md"} onChange={handleView} sx={{width:'78%', textAlign:'center'}}>
+            <Select placeholder="List" defaultValue="List" variant="soft" color="success" size={isTablet ? "sm" : "md"} onChange={handleView} sx={{width:'80%', textAlign:'center'}}>
                 <Option value="List">List</Option>
                 <Option value="Flashcards">Flashcards</Option>
             </Select>

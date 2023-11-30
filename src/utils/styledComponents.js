@@ -3,8 +3,13 @@ import { Typography, Divider } from "@mui/joy";
 
 export const StyledTypography = styled(Typography)(({ theme }) => ({
     textAlign: "center !important",
-    variant: 'soft',
 }));
+
+export const StyledTypographyClassification = styled(Typography)(({ theme }) => ({
+    textAlign: "center !important",
+
+}));
+
 
 export const StyledDivider = styled(Divider)(({ theme }) => ({
     width:'30%',

@@ -32,7 +32,7 @@ const WordsContextProvider = ({ children }) => {
       if (words.length === 0) {
           return;
       }
-      const classifiedWords = groupByClassification([...words])
+      const classifiedWords = groupByClassification([...words].sort(AlphabeticalSort))
       setAlphabeticalWords([...words].sort(AlphabeticalSort))
       setClassificationWords(classifiedWords)
 
