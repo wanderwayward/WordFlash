@@ -27,12 +27,10 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize }) => {
                     color={isDark ? "danger" : "warning"}
                     onClick={() => deleteWord(word)}
                     sx={{
-                        height: '40px',
-                        width: '40px',
                         fontSize: '1em',
                     }}                
                 >
-                    <MdDelete/>
+                    <MdDelete />
                 </IconButton>
             </Grid>
         </Grid>

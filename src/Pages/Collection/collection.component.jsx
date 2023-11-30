@@ -74,6 +74,21 @@ const Collection = () => {
                 position: 'relative',
                 overflowY: 'auto', 
                 overflowX: 'hidden', 
+                '&::-webkit-scrollbar': {
+                  width: '5px',
+                },
+                '&::-webkit-scrollbar-track': {
+                  background: 'transparent',
+                },
+                '&::-webkit-scrollbar-thumb': {
+                  backgroundColor: theme.colorSchemes.light.palette.warning[300],
+                  borderRadius: '10px',
+                  marginLeft: '5px',
+                },
+              
+              //firefox
+                scrollbarWidth: 'thin',
+                scrollbarColor:  theme.colorSchemes.light.palette.warning[300],
             }}
             >
             <WordsControl checks={checks} theme={theme} style={style} fontSize={controlFontSize} handleSort={handleSort} handleView={handleView} mr={controlMarginR} ml={controlMarginL}/>
