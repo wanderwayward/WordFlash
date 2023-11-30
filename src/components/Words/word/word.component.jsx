@@ -6,7 +6,9 @@ const Word = ({ word, deleteWord, style, checks, fontSize }) => {
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
     return (
-        <Grid container alignItems="center" sx={{py:1}}>
+        <Grid container alignItems="center" sx={{py:1, '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+        },}}>
             <Grid xs={4} sx={style}>
                 <Typography variant="plain" color={isDark ? "primary" : "danger"} sx={{overflowX: 'hidden', fontSize:fontSize, fontWeight:500, textAlign:'center', }}>
                     {word.originalWord.toUpperCase()}
