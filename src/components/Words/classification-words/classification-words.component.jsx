@@ -2,7 +2,7 @@ import { Grid, Box, Divider } from "@mui/joy"
 import Word from "../word/word.component"
 import { StyledTypographyClassification, StyledDivider } from "../../../utils/styledComponents"
 
-const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  headerPadding, deleteWord }) => {
+const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  headerPadding, deleteWord, classificationFontsize}) => {
 
     console.log("words", words)
 
@@ -13,8 +13,8 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.adjective.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
-                    Adjectives 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
+                    ADJECTIVES 
                     </StyledTypographyClassification>
                 </Grid>
                 <Grid container direction="column">
@@ -30,7 +30,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.adverb.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Adverbs
                     </StyledTypographyClassification>
                 </Grid>
@@ -46,7 +46,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.article.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Articles
                     </StyledTypographyClassification>
                 </Grid>
@@ -62,7 +62,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.conjunction.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Conjunctions
                     </StyledTypographyClassification>
                 </Grid>
@@ -78,7 +78,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.interjection.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Interjections
                     </StyledTypographyClassification>
                 </Grid>
@@ -94,7 +94,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.noun.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Nouns
                     </StyledTypographyClassification>
                 </Grid>
@@ -110,7 +110,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.preposition.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Prepositions
                     </StyledTypographyClassification>
                 </Grid>
@@ -126,7 +126,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.pronoun.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Pronouns
                     </StyledTypographyClassification>
                 </Grid>
@@ -141,7 +141,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.verb.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Verbs
                     </StyledTypographyClassification>
                 </Grid>
@@ -157,7 +157,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
         {words.uncertain.length > 0  ?
             <>
                 <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain"> 
+                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
                         Uncertain
                     </StyledTypographyClassification>
                 </Grid>

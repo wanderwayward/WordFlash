@@ -1,5 +1,7 @@
-import { IconButton, Typography, Grid } from "@mui/joy";
+import { IconButton, Grid } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
+
+import { StyledTypographyWord } from "../../../utils/styledComponents";
 
 const Word = ({ word, deleteWord, style, checks, fontSize }) => {
 
@@ -10,14 +12,14 @@ const Word = ({ word, deleteWord, style, checks, fontSize }) => {
             backgroundColor: 'rgba(255, 255, 255, 0.2)', 
         },}}>
             <Grid xs={4} sx={style}>
-                <Typography variant="plain" color={isDark ? "primary" : "danger"} sx={{overflowX: 'hidden', fontSize:fontSize, fontWeight:500, textAlign:'center', }}>
+                <StyledTypographyWord variant="plain" color={isDark ? "primary" : "danger"} sx={{fontSize:fontSize, }}>
                     {word.originalWord.toUpperCase()}
-                </Typography>
+                </StyledTypographyWord>
             </Grid>
             <Grid xs={4} sx={style}>
-                <Typography variant="plain" color={isDark ? "primary" : "danger"} sx={{overflowX: 'hidden',  fontSize:fontSize, fontWeight:500, textAlign:'center', }}>
+                <StyledTypographyWord variant="plain" color={isDark ? "primary" : "danger"} sx={{fontSize:fontSize, }}>
                     {word.englishTranslation.toUpperCase()}
-                </Typography>
+                </StyledTypographyWord>
             </Grid>
             <Grid xs={4} sx={style}>
                 <IconButton

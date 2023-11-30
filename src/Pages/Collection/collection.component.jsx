@@ -24,8 +24,9 @@ const Collection = () => {
     const controlMarginL = isMobile ? '' : isTablet ? '6.8rem' : isLaptop ? '11rem' : '17rem';
     const controlMarginR = isMobile ? '3.8rem' : isTablet ? '8.5rem' : isLaptop ? '11.2rem' : '17rem';
     const headerFontSize = isMobile ? '.9rem' : isTablet ? '1.2rem' : isLaptop ? '1.3rem' : '1.5rem';
-    const headerPadding = isMobile ? '2rem' : ''
-    const wordFontSize = isMobile ? '.5rem' : isTablet ? '1rem' : isLaptop ? '1.2rem' : '1.3rem';
+    const headerPadding = isMobile ? '1.2rem' : ''
+    const wordClassificationsFontSize = isMobile ? '.7rem' : isTablet ? '1rem' : isLaptop ? '1.2rem' : '1.3rem';
+    const wordFontSize = isMobile ? '.5rem' : isTablet ? '.8rem' : isLaptop ? '1rem' : '1.2rem';
     
     const style = {
         display: 'flex', 
@@ -77,7 +78,7 @@ const Collection = () => {
             >
             <WordsControl checks={checks} theme={theme} style={style} fontSize={controlFontSize} handleSort={handleSort} handleView={handleView} mr={controlMarginR} ml={controlMarginL}/>
 
-            <Words words={sortedWords} sort={sort} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} headerPadding={headerPadding} wordFontSize={wordFontSize} />
+            <Words words={sortedWords} sort={sort} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} classificationFontsize={wordClassificationsFontSize} headerPadding={headerPadding} wordFontSize={wordFontSize} />
          
         </Sheet>
       );

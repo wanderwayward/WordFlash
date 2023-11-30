@@ -10,6 +10,15 @@ export const StyledTypographyClassification = styled(Typography)(({ theme }) => 
 
 }));
 
+export const StyledTypographyWord = styled(Typography)(({ theme }) => ({
+    overflowX: 'hidden', 
+        textOverflow: 'ellipsis', 
+        whiteSpace: 'nowrap', 
+        fontWeight: 500, 
+        textAlign: 'center',
+        position: 'relative',
+}));
+
 
 export const StyledDivider = styled(Divider)(({ theme }) => ({
     width:'30%',
