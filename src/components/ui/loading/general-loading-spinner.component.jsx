@@ -4,6 +4,8 @@ import { ThemeValuesContext } from "../../../contexts/theme-values.context";
 
 const GeneralLoadingSpinner = () => {
     const { checks, theme } = useContext(ThemeValuesContext);
+    console.log("Spinner Theme Context:", { checks, theme });
+
     const { isDark } = checks;
     return (
       <Sheet 
@@ -12,11 +14,12 @@ const GeneralLoadingSpinner = () => {
       aria-label="Loading content, please wait."
       sx={{
         backgroundColor: isDark? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100],
-        width:'100vw',
-        margin: '0',
+        width:'100%',
+        margin: 'auto',
         display:'flex', 
         justifyContent:'center', 
         alignItems:'center', 
+        overflow:'hidden',
         height:'100vh'}}>
         <CircularProgress
         variant="soft"

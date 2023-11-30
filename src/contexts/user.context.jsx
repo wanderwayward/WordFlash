@@ -23,9 +23,9 @@ export const UserProvider = ({ children }) => {
   }, [user]);
 
   if (loading) {
-    return <GeneralLoadingSpinner />;
+    return 
   }
-
+  
   return (
     <UserContext.Provider value={contextValue}>
       {children}
