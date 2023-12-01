@@ -125,7 +125,7 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         NOUNS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container>
                     {words.noun.map((word, index) => (
                         <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
@@ -179,7 +179,7 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                     </StyledTypographyClassification>
                 </Grid>
                 <Grid container spacing={3}>
-                    {words.ver.map((word, index) => (
+                    {words.verb.map((word, index) => (
                         <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    

@@ -6,8 +6,7 @@ import WordModal from "../../word-modal/word-modal.component";
 
 const WordFlashcardView = ({  word, deleteWord, style, checks, theme,   }) => {
 
-    console.log('WFV', word);  
-    
+   
     const { isDark} = checks;
 
     const [open, setOpen] = useState(false);
@@ -48,7 +47,16 @@ const WordFlashcardView = ({  word, deleteWord, style, checks, theme,   }) => {
             <IconButton
             onClick={(e) => {
                 e.stopPropagation();
-                deleteWord(word)}
+                deleteWord(word)
+            }}
+            sx={{
+                position: 'absolute',
+                top: '-.2em',
+                right: '-.3em',
+                color: isDark ? theme.colorSchemes.dark.palette.danger[300] :theme.colorSchemes.light.palette.warning[700],
+                '&:hover': {
+                    color: isDark ? theme.palette.danger.dark : theme.palette.success.dark,
+            }}
             }
             >
                 <MdDelete />
