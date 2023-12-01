@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { IconButton, Grid, Modal } from "@mui/joy";
+import { useState, forwardRef } from "react";
+import { IconButton, Grid, Modal, Box } from "@mui/joy";
 import { MdDelete } from "react-icons/md";
-import WordModal from "../word-modal/word-modal.component";
+import WordModal from "../../word-modal/word-modal.component";
+import { StyledTypographyWord } from "../../../../utils/styledComponents";
 
-import { StyledTypographyWord } from "../../../utils/styledComponents";
 
-const Word = ({ word, deleteWord, style, checks, theme, fontSize,  }) => {
+const Word = forwardRef(({ word, deleteWord, style, checks, theme, fontSize,  }, ref) => {
 
     const { isDark} = checks;
 
@@ -19,11 +19,13 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize,  }) => {
 
 
     return (
-        <Grid container 
-        alignItems="center" 
+        <Grid
+        ref={ref}
+        container 
         py={1}
         onClick={handleModal}
         sx={{
+            alignItems: 'center',
             '&:hover': {
             cursor: 'pointer',    
             backgroundColor: isDark ? theme.colorSchemes.dark.palette.success[800] : theme.colorSchemes.light.palette.primary[100]  
@@ -64,6 +66,6 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize,  }) => {
             </Modal>
         </Grid>
     );
-}
+});
 
 export default Word;

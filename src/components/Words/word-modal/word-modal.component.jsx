@@ -1,4 +1,4 @@
-import {Sheet, Grid, List, ListItem,} from '@mui/joy'
+import {Sheet, Grid, List, ListItem, Box} from '@mui/joy'
 
 import GeneralLoadingSpinner from '../../ui/loading//general-loading-spinner.component'
 import { StyledTypography } from '../../../utils/styledComponents'
@@ -16,9 +16,8 @@ const WordModal = ({word, checks }) => {
   
 
   return (
-
-
-<Sheet
+      <Sheet
+        component={Box}
         variant="soft" 
         color="primary"
         sx={{

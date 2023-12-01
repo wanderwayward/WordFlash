@@ -1,16 +1,41 @@
-import { Grid, Typography, Divider } from '@mui/joy';
-import ClassificationWords from './classification-words/classification-words.component';
-import Word from './word/word.component';
-
+import { Grid, Typography } from '@mui/joy';
 import GeneralLoadingSpinner from '../ui/loading/general-loading-spinner.component';
-import { StyledDivider } from '../../utils/styledComponents';
 
-const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, classificationFontsize, headerPadding, sort,}) => {
+
+//list views
+import ClassificationWords from './ListViews/classification-words/classification-words.component';
+import ListWords from './ListViews/list-words/list-words.component';
+
+//flashcard views
+import AlphabeticalFlashCards from './FlashCardViews/alphabetical-flashcards/alphabetical-flashcards.component';
+import ClassificationFlashcards from './FlashCardViews/classification-flashcards/classification-flashcards.component';
+
+
+
+
+const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, classificationFontsize, headerPadding, sort, view}) => {
 
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
+    const renderWords = () => {
+        if (words) {
+            switch (`${sort}-${view}`) {
+                case 'Alphabetical-List':
+                    return <ListWords words={words} style={style} checks={checks} deleteWord={deleteWord} wordFontSize={wordFontSize} theme={theme} headerPadding={headerPadding}/>;
+                case 'Classification-List':
+                    return  <ClassificationWords isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize}/>
+                case 'Alphabetical-Flashcards':
+                    return <AlphabeticalFlashCards words={words} style={style} checks={checks} deleteWord={deleteWord} wordFontSize={wordFontSize} theme={theme} />;
+                case 'Classification-Flashcards':
+                    return <ClassificationFlashcards  isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize} />;
+                default:
+                    return <GeneralLoadingSpinner style={{ pt: '175px' }} />;
+            }
+        }
+    };
 
-3
+
+    
 
 
     return (
@@ -25,18 +50,8 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
                 <Grid xs={4} sx={style}>
                 <Typography color={isDark ? "danger" : "primary"}  level='h2' sx={{fontSize: headerFontSize, }}>MANAGE</Typography>
                 </Grid>
-            </Grid>
-            
-            { words && sort === 'Alphabetical' ? 
-            <Grid container direction="column" sx={{ pt: '155px', mx:headerPadding }}>
-                {words.map((word, index) => (
-                <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
-                ))}
-            </Grid> : sort === 'Classification' ?
-            <ClassificationWords isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize}/>
-            :
-            <GeneralLoadingSpinner style={{pt:'175px'}} />
-            }	
+            </Grid>    
+            {renderWords()}
         </>
     )
 }

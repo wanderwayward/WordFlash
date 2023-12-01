@@ -17,7 +17,7 @@ const Collection = () => {
 
     const [sort, setSort] = useState('Alphabetical');
     const [sortedWords, setSortedWords] = useState(alphabeticalWords);
-
+    const [view, setView] = useState('List');
 
     const controlFontSize = isMobile ? '1rem' : isTablet ? '1.3rem' : isLaptop ? '1.3rem' : '1.8rem';
     const controlMarginL = isMobile ? '' : isTablet ? '6.8rem' : isLaptop ? '11rem' : '17rem';
@@ -51,9 +51,12 @@ const Collection = () => {
       }
     }
 
-
-    const handleView = () => {
-        console.log('view');
+    const handleView = () => { 
+        if(view === 'List') {
+            setView('Flashcard')
+        } else {
+            setView('List')
+        }
     }
 
     if (isLoading) {
@@ -93,7 +96,7 @@ const Collection = () => {
             >
             <WordsControl checks={checks} theme={theme} style={style} fontSize={controlFontSize} handleSort={handleSort} handleView={handleView} mr={controlMarginR} ml={controlMarginL}/>
 
-            <Words words={sortedWords} sort={sort} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} classificationFontsize={wordClassificationsFontSize} headerPadding={headerPadding} wordFontSize={wordFontSize}/>
+            <Words words={sortedWords} sort={sort} view={view} deleteWord={deleteWordFromCollection} style={style} checks={checks} theme={theme} headerFontSize={headerFontSize} classificationFontsize={wordClassificationsFontSize} headerPadding={headerPadding} wordFontSize={wordFontSize}/>
          
         </Sheet>
       );

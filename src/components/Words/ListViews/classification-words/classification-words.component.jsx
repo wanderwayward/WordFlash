@@ -1,6 +1,6 @@
-import { Grid, Box, Divider } from "@mui/joy"
+import { Grid, Box } from "@mui/joy"
 import Word from "../word/word.component"
-import { StyledTypographyClassification, StyledDivider } from "../../../utils/styledComponents"
+import { StyledTypographyClassification, StyledDivider } from "../../../../utils/styledComponents"
 
 const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  headerPadding, deleteWord, classificationFontsize, theme}) => {
 

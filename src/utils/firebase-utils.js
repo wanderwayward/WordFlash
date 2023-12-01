@@ -44,7 +44,6 @@ googleProvider.setCustomParameters({prompt: 'select_account'});
       const q = query(wordsRef, where('userId', '==', userId));
       const querySnapshot = await getDocs(q);
       const words = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      console.log('Words retrieved successfully:', words);
       return words;
     } catch (error) {
       console.error('Error retrieving words:', error);
