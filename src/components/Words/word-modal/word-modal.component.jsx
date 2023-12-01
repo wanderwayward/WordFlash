@@ -1,10 +1,10 @@
+import { forwardRef } from 'react'
 import {Sheet, Grid, List, ListItem, Box} from '@mui/joy'
 
 import GeneralLoadingSpinner from '../../ui/loading//general-loading-spinner.component'
 import { StyledTypography } from '../../../utils/styledComponents'
 
-const WordModal = ({word, checks }) => {
-
+const WordModal = forwardRef(({ word, checks }, ref) => {
     console.log('word', word);
 
     const { isMobile, isTablet, isLaptop } = checks;
@@ -17,6 +17,7 @@ const WordModal = ({word, checks }) => {
 
   return (
       <Sheet
+        ref={ref}
         component={Box}
         variant="soft" 
         color="primary"
@@ -101,6 +102,6 @@ const WordModal = ({word, checks }) => {
       </Sheet>
 
   )
-}
+})
 
 export default WordModal

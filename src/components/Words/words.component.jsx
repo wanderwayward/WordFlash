@@ -15,6 +15,8 @@ import ClassificationFlashcards from './FlashCardViews/classification-flashcards
 
 const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, checks, classificationFontsize, headerPadding, sort, view}) => {
 
+    console.log(sort, view)
+
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
     const renderWords = () => {
@@ -24,9 +26,9 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
                     return <ListWords words={words} style={style} checks={checks} deleteWord={deleteWord} wordFontSize={wordFontSize} theme={theme} headerPadding={headerPadding}/>;
                 case 'Classification-List':
                     return  <ClassificationWords isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize}/>
-                case 'Alphabetical-Flashcards':
-                    return <AlphabeticalFlashCards words={words} style={style} checks={checks} deleteWord={deleteWord} wordFontSize={wordFontSize} theme={theme} />;
-                case 'Classification-Flashcards':
+                case 'Alphabetical-Flashcard':
+                    return <AlphabeticalFlashCards words={words} style={style} checks={checks} deleteWord={deleteWord} wordFontSize={wordFontSize} theme={theme} headerPadding={headerPadding}/>;
+                case 'Classification-Flashcard':
                     return <ClassificationFlashcards  isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize} />;
                 default:
                     return <GeneralLoadingSpinner style={{ pt: '175px' }} />;

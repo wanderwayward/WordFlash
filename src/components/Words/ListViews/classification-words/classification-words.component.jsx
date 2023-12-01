@@ -74,6 +74,22 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
             </> 
         : null}
 
+        {words.expression.length > 0  ?
+                <>
+                    <Grid container direction="column" >
+                        <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
+                            EXPRESSIONS
+                        </StyledTypographyClassification>
+                    </Grid>
+                    <Grid container direction="column">
+                        {words.expression.map((word, index) => (
+                        <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
+                        ))}
+                    </Grid>
+                    <StyledDivider />
+                </> 
+            : null}
+
         {words.interjection.length > 0  ?
             <>
                 <Grid container direction="column" >
@@ -153,21 +169,7 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
             </> 
         : null}
         
-        {words.expression.length > 0  ?
-            <>
-                <Grid container direction="column" >
-                    <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
-                        EXPRESSIONS
-                    </StyledTypographyClassification>
-                </Grid>
-                <Grid container direction="column">
-                    {words.expression.map((word, index) => (
-                    <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
-                    ))}
-                </Grid>
-                <StyledDivider />
-            </> 
-        : null}
+
         </Box>
     )
 }
