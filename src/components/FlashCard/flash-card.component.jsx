@@ -90,7 +90,7 @@ const FlashCard = ({ response, checks, handleSubmit }) => {
         </Grid>
       ) : 
       (
-       <SearchError response={response} handleSubmit={handleSubmit} />
+       <SearchError response={response} handleSubmit={handleSubmit} isMobile={isMobile} />
       )}
 
       </Sheet>

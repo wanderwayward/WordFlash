@@ -153,15 +153,15 @@ const ClassificationWords = ({ isDark, words, style, checks, wordFontSize,  head
             </> 
         : null}
         
-        {words.uncertain.length > 0  ?
+        {words.expression.length > 0  ?
             <>
                 <Grid container direction="column" >
                     <StyledTypographyClassification level="h4" color={isDark ? "danger" : "success"} variant="plain" sx={{fontSize: classificationFontsize}}> 
-                        UNCERTAIN
+                        EXPRESSIONS
                     </StyledTypographyClassification>
                 </Grid>
                 <Grid container direction="column">
-                    {words.uncertain.map((word, index) => (
+                    {words.expression.map((word, index) => (
                     <Word word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />    
                     ))}
                 </Grid>

@@ -23,19 +23,22 @@ async function getWordInformation(spanishWord) {
         messages: [
           {
             role: "system",
-            content: "Before processing, verify if the input is a recognized Spanish word or phrase against a reliable Spanish dictionary. If it does not exist, follow the error handling procedure. " +
-            "If valid and existing in Spanish, return a JSON response with the following fields: " +
+            content: "Before processing, verify if the input is a recognized Spanish word or phrase, prioritizing common usage and standard dictionary definitions. Exclude archaic, highly regional, or obsolete terms. For inputs that are nonsensical or do not correspond to any known Spanish words (such as random keystrokes or non-words), directly use the error handling procedure defined below. " +
+            "If the input is a valid and existing Spanish word or phrase, return a JSON response with the following fields: " +
             "originalWord: Correct any missing accents. " +
             "word: This will be the original word plus the inclusion of the relevant article (el/la) for nouns; use 'el/la' for nouns with both genders. The end result will be El/La originalWord accordingly. If the word is not a noun, this field will be the same as originalWord. " +
             "englishTranslation: For single words, provide a direct translation; for compound words or idiomatic expressions, give a translation that captures the overall meaning. " +
             "spanishDefinition: An array of up to 2 common meanings, each as a separate string. " +
             "exampleSentences: An array of Spanish sentences, each corresponding to the meanings in the spanishDefinition, in the same order. " +
-            "classification: Limit to 'noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction', 'interjection', 'article', 'pronoun'; use 'uncertain' for compound or idiomatic expressions that do not fit these categories. " +
+            "classification: Limit to 'noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction', 'interjection', 'article', 'pronoun'; use 'expression' for compound or idiomatic expressions that do not fit these categories. " +
             "note: A brief note in one sentence, if the word or phrase is particularly associated with specific Spanish-speaking regions, mentioning any significant regional variations in meaning or usage. " +
-            "If the input is not a valid Spanish word or phrase, or if it does not exist in the Spanish language, return a JSON object with the following fields: " +
+            "If the input is not a valid or existing Spanish word or phrase, or if it is nonsensical (such as random strings of letters with no meaning in Spanish), return a JSON object with the following fields: " +
             "errorType: 'language', " +
             "errorMessage: 'The input is not a valid or existing Spanish word or phrase.', " +
             "alternativeWords: An array of up to 3 alternative REAL words or phrases that are STRICTLY in the Spanish language, STRICTLY pre-existing words. These alternatives should be selected based on their phonetic similarity to the original input, common misspellings, or semantic relevance within the Spanish language context. The goal is to provide suggestions that the user might have intended to input, focusing exclusively on Spanish vocabulary. This excludes any words or phrases from other languages, particularly English. For example, if the input is a non-existent word that resembles a Spanish word, the alternatives should be real Spanish words with similar phonetics or spelling."
+            
+            
+            
             
                       
           },

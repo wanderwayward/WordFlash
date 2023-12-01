@@ -5,7 +5,7 @@ export const AlphabeticalSort = (a, b) => {
   }
 
 export const groupByClassification = (wordsArray) => {
-    const classifications = ['noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction', 'interjection', 'article', 'pronoun', 'uncertain'];
+    const classifications = ['noun', 'verb', 'adjective', 'adverb', 'preposition', 'conjunction', 'interjection', 'article', 'pronoun', 'expression'];
     const grouped = {};
   
     // Initializing each classification with an empty array
