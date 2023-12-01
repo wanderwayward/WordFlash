@@ -43,7 +43,9 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize,  }) => {
                     
                     variant="outlined"
                     color={isDark ? "danger" : "warning"}
-                    onClick={(e) => { deleteWord(word)}}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        deleteWord(word)}}
                     sx={{
                         fontSize: '1em',
                     }}                
