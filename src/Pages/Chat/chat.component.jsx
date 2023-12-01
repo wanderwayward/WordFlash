@@ -29,16 +29,19 @@ const Chat = () => {
     alternativeWords: [],
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e, word= null) => {
+    e?.preventDefault();
     setIsSearchInitiated(true);
-    setIsLoading(true);    
+    setIsLoading(true);
+    
+    const query = word || question;
+    
     const apiResponse = await fetch('http://localhost:5000/ask/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ question }),
+      body: JSON.stringify({ question:query }),
     });
 
     if (apiResponse.ok) {

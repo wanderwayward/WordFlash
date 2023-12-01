@@ -22,7 +22,7 @@ const SearchError = ({response, handleSubmit, isMobile}) => {
                 </Grid>
                  <Grid xs={12} py={1} sx={{display:'flex', justifyContent:'space-evenly', alignItems:'center'}}>
                     {response.alternativeWords.map((word, index) => (
-                        <Button key={index} sx={{mx:1}} variant="solid" color="warning" size={isMobile? 'md' : 'lg'} onClick={() => handleSubmit(word)}>{word}</Button>
+                        <Button key={index} sx={{mx:1}} variant="solid" color="warning" size={isMobile? 'md' : 'lg'} onClick={() => handleSubmit(null, word)}>{word}</Button>
                     ))}
                 </Grid>
 
