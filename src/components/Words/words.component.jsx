@@ -15,7 +15,7 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
 
     return (
         <>
-            <Grid container sx={{height:'48px', position: 'fixed', top: isMobile?  153 : 128, left: 0, right: 0, zIndex: 1100, backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100], px: headerPadding }}>
+            <Grid container sx={{height:'48px', position: 'fixed', top: isMobile?  148 : 128, left: 0, right: 0, zIndex: 1100, backgroundColor: isDark ? theme.colorSchemes.dark.palette.neutral[800] : theme.colorSchemes.light.palette.neutral[100], px: headerPadding }}>
                 <Grid xs={4} sx={{...style}}>
                 <Typography color={isDark ? "danger" : "primary"} level='h2'  sx={{fontSize: headerFontSize,}}>SPANISH</Typography>
                 </Grid>
