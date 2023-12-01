@@ -3,7 +3,7 @@ import GeneralLoadingSpinner from "../../ui/loading/general-loading-spinner.comp
 import FlashCard from "../../FlashCard/flash-card.component";
 import Instructions from "../../FlashCard/instructions.component";
 
-const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
+const AnswerBox = ({ response, checks, isLoading, isSearchInitiated, handleSubmit }) => {
   
 
   return (
@@ -21,7 +21,7 @@ const AnswerBox = ({ response, checks, isLoading, isSearchInitiated }) => {
   ) : isLoading ? (
     <GeneralLoadingSpinner  />
   ) : (
-    <FlashCard response={response} checks={checks}  />
+    <FlashCard response={response} checks={checks} handleSubmit={handleSubmit}  />
   )}
 
 </Box>

@@ -40,9 +40,10 @@ const Word = ({ word, deleteWord, style, checks, theme, fontSize,  }) => {
             </Grid>
             <Grid xs={4} sx={style}>
                 <IconButton
+                    
                     variant="outlined"
                     color={isDark ? "danger" : "warning"}
-                    onClick={() => deleteWord(word)}
+                    onClick={(e) => { deleteWord(word)}}
                     sx={{
                         fontSize: '1em',
                     }}                

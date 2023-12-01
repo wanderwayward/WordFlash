@@ -1,7 +1,9 @@
-import {Sheet, List, ListItem, Alert, Grid} from '@mui/joy'
+import {Sheet, List, ListItem, Alert, Grid, Typography} from '@mui/joy'
 import { StyledTypography } from '../../utils/styledComponents';
 
-const FlashCard = ({ response, checks }) => {
+import SearchError from './search-error.component';
+
+const FlashCard = ({ response, checks, handleSubmit }) => {
 
   const { isMobile, isTablet, isLaptop } = checks;
 
@@ -88,15 +90,7 @@ const FlashCard = ({ response, checks }) => {
         </Grid>
       ) : 
       (
-      <Alert 
-        role="alert"
-        severity="error"
-        color="danger"
-        sx={{ textAlign: 'center' }}
-      >
-        {response.errorMessage}
-      </Alert>
-
+       <SearchError response={response} handleSubmit={handleSubmit} />
       )}
 
       </Sheet>
