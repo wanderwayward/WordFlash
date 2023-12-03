@@ -2,7 +2,7 @@ import { Grid, Select, Option, Typography } from "@mui/joy";
 
 const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort, mr, ml}) => {
 
-    const {isMobile, isTablet, isLaptop, isDark} = checks;
+    const {isMobile, isTablet, isLaptop, isDesktop, isDark} = checks;
 
 
     return (
@@ -42,7 +42,7 @@ const WordsControl = ({theme, checks, style, fontSize, handleView, handleSort, m
                         VIEW:
                     </Typography>
                 </Grid>
-                <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor:'inherit'}}>
+                <Grid xs={12} sm={6} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor:'inherit', pr: isTablet ? '2.5rem' : isLaptop ? '3rem' : isDesktop ? '4rem' : ''}}>
                     <Select placeholder="List" defaultValue="List" variant="soft" color="success" size={isTablet ? "sm" : "md"} onChange={handleView} sx={{width:'82%', textAlign:'center'}}>
                         <Option value="List">List</Option>
                         <Option value="Flashcards">Flashcards</Option>

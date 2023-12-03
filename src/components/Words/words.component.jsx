@@ -29,7 +29,7 @@ const Words = ({ words, deleteWord, style, theme, wordFontSize, headerFontSize, 
                 case 'Alphabetical-Flashcard':
                     return <AlphabeticalFlashCards words={words} style={style} checks={checks} deleteWord={deleteWord} wordFontSize={wordFontSize} theme={theme} headerPadding={headerPadding}/>;
                 case 'Classification-Flashcard':
-                    return <ClassificationFlashcards  isDark={isDark} words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize} />;
+                    return <ClassificationFlashcards  words={words} style={style} checks={checks} theme={theme}  wordFontSize={wordFontSize} headerPadding={headerPadding} deleteWord={deleteWord} classificationFontsize={classificationFontsize} />;
                 default:
                     return <GeneralLoadingSpinner style={{ pt: '175px' }} />;
             }

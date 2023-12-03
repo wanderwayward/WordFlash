@@ -25,10 +25,10 @@ const WordModal = forwardRef(({ word, checks }, ref) => {
           display:'flex',
           flexDirection:'column',
           justifyContent:'center',
-          marginTop: isMobile ? 10 : 2,
+          marginTop: 2,
           borderRadius: 10,
           py:2,
-          width: isMobile ? '100%' : isTablet ? '80%' : isLaptop ? '60%' : '40%',
+          width: isMobile ? '95%' : isTablet ? '80%' : isLaptop ? '60%' : '40%',
         }}>
 
       {word ? (

@@ -2,8 +2,9 @@ import { Box, Grid } from "@mui/joy"
 import { StyledTypographyClassification, StyledDivider } from "../../../../utils/styledComponents"
 import WordFlashcardView from "../word-flashcard-view/word-flashcard-view.component"
 
-const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize,  headerPadding, deleteWord, classificationFontsize, theme}) => {
+const ClassificationFlashcards = ({ words, style, checks, wordFontSize,  headerPadding, deleteWord, classificationFontsize, theme}) => {
 
+    const {isMobile, isTablet, isLaptop, isDark} = checks;
 
     return (
         <Box sx={{ pt: '155px', px:headerPadding}}>
@@ -16,9 +17,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                     ADJECTIVES 
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem', display: "flex", justifyContent:'space-between' }}>
                     {words.adjective.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                       <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}} >
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -35,9 +36,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         ADVERBS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.adverb.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -53,9 +54,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         ARTICLES
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.article.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -71,9 +72,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         CONJUNCTIONS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.conjunction.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -89,9 +90,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         EXPRESSIONS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.expression.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -107,9 +108,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         INTERJECTIONS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.interjection.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -125,9 +126,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         NOUNS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.noun.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -143,9 +144,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         PREPOSITIONS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.preposition.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -161,9 +162,9 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         PRONOUNS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.pronoun.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
+                        <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
@@ -178,11 +179,11 @@ const ClassificationFlashcards = ({ isDark, words, style, checks, wordFontSize, 
                         VERBS
                     </StyledTypographyClassification>
                 </Grid>
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem' }}>
                     {words.verb.map((word, index) => (
-                        <Grid xs={12} sm={6} lg={3} key={index} sx={{margin:'auto'}}>
-                            <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
-                        </Grid>    
+                    <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}}>
+                        <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
+                    </Grid>    
                     ))}
                 </Grid> 
                 <StyledDivider />

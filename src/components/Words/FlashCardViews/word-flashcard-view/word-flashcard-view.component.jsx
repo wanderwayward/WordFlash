@@ -7,7 +7,7 @@ import WordModal from "../../word-modal/word-modal.component";
 const WordFlashcardView = ({  word, deleteWord, style, checks, theme,   }) => {
 
    
-    const { isDark} = checks;
+    const { isMobile,  isDark} = checks;
 
     const [open, setOpen] = useState(false);
 
@@ -28,19 +28,19 @@ const WordFlashcardView = ({  word, deleteWord, style, checks, theme,   }) => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            height: '6em',
-            width: '10em',
+            height: isMobile ? '4em' :'6em',
+            width: isMobile ? '8em':'10em',
             border: 'none',
             boxShadow: 'none',
             borderRadius: '0.5em',
             p: 0,
         }}
         >
-            <StyledTypography variant="plain" color="primary" sx={{fontSize: '1em', }}>
+            <StyledTypography variant="plain" color="primary" sx={{fontSize: isMobile ? '.5rem': '1em', }}>
                 {word.originalWord.toUpperCase()}
             </StyledTypography>
             <StyledDivider  sx={{width: '50%', my: 1, }}/>
-            <StyledTypography variant="plain" color="primary" sx={{fontSize: '1em', }}>
+            <StyledTypography variant="plain" color="primary" sx={{fontSize: isMobile ? '.5rem': '1em', }}>
                 {word.englishTranslation.toUpperCase()}
             </StyledTypography>
             
