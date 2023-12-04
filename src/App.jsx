@@ -7,10 +7,12 @@ import Collection from '../src/Pages/Collection/collection.component';
 import AuthPage from './Pages/Authentication/authentication.component';
 import NavBar from './Pages/Navigation/navbar.component';
 import { ThemeValuesContext } from './contexts/theme-values.context';
+import { UserContext } from './contexts/user.context';
 
 const App = () => {
 
   const { theme } = useContext(ThemeValuesContext);
+  const user = useContext(UserContext);
 
   return (
     <CssVarsProvider defaultMode="system" theme={theme} modeStorageKey="identify-system-mode">
@@ -32,7 +34,7 @@ const App = () => {
                 <Routes>
                   
                   <Route path="/" element={<Chat />} />
-                  <Route path="/Collection" element={<Collection />} />
+                  <Route path="/Collection" element={ user ? <Collection /> : <AuthPage/>} />
                   <Route path="/Auth" element={<AuthPage />} />
 
                   

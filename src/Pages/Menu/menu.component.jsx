@@ -1,5 +1,6 @@
+
 import { useState, useContext } from 'react'
-import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import { Box, Drawer, IconButton, List, ListItemButton, ModalClose, Button, Link } from '@mui/joy';
 import { IoMenuSharp as Menu } from "react-icons/io5";
 import { UserContext } from '../../contexts/user.context';
@@ -10,6 +11,12 @@ const MenuDrawer = ({theme, checks}) => {
   const { user } = useContext(UserContext);
 
   const {isDark, isMobile, isTablet, isLaptop}= checks;
+
+  const navigate = useNavigate();
+
+  const handleSignIn = () => {
+    navigate('/Auth');
+  }
 
 
   return (
@@ -89,14 +96,14 @@ const MenuDrawer = ({theme, checks}) => {
                     Sign Out
                 </Button>
               : 
-                <Button
-                  color="success"
-                  variant="soft"
-                  href="/Auth"
-                  sx={{ textDecoration: 'none !important', color: 'inherit' }}
-                >
-                  Sign In
-                </Button>
+            <Button
+              color="success"
+              variant="soft"
+              onClick={() => navigate('/Auth')} 
+              sx={{ textDecoration: 'none !important', color: 'inherit' }}
+            >
+              Sign In
+            </Button>
               }
             </ListItemButton>
           </Box>
