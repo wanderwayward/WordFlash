@@ -30,13 +30,19 @@ const Chat = () => {
   });
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  console.log(backendUrl)
 
   const handleSubmit = async (e, word= null) => {
     e?.preventDefault();
+
+    console.log('handleSubmit', word, question)
+
     setIsSearchInitiated(true);
     setIsLoading(true);
     
     const query = word || question;
+
+    console.log('query', query)
     
     const apiResponse = await fetch(`${backendUrl}ask/`, {
       method: 'POST',
@@ -46,10 +52,15 @@ const Chat = () => {
       body: JSON.stringify({ question:query }),
     });
 
+    console.log('api response', apiResponse)
+
     if (apiResponse.ok) {
       const data = await apiResponse.json();
+      console.log('api response ok', data)
       setResponse(data.answer);
+      console.log('response has been set, begining upload')
       uploadWord(data.answer); 
+
     } else {
       setResponse({ ...response, errorMessage: 'Error getting response' });
     }
