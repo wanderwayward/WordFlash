@@ -12,7 +12,6 @@ const ThemeValuesProvider = ({ children }) => {
     const isDesktop = useMedia('(min-width: 1441px)'); // Desktops
     
     
-    console.log("Is mobile:", isMobile, "Is tablet:", isTablet, "Is laptop:", isLaptop, "Is desktop:", isDesktop)
 
 
 

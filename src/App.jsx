@@ -33,7 +33,7 @@ const App = () => {
         
                 <Routes>
                   
-                  <Route path="/" element={<Chat />} />
+                  <Route path="/" element={user ? <Chat /> : <AuthPage/>} />
                   <Route path="/Collection" element={ user ? <Collection /> : <AuthPage/>} />
                   <Route path="/Auth" element={<AuthPage />} />
 
