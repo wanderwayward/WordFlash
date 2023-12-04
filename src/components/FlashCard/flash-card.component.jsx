@@ -1,5 +1,5 @@
 import {Sheet, List, ListItem, Alert, Grid, Typography} from '@mui/joy'
-import { StyledTypography } from '../../utils/styledComponents';
+import { StyledTypography, StyledTypographyResponseWord } from '../../utils/styledComponents';
 
 import SearchError from './search-error.component';
 
@@ -7,7 +7,6 @@ const FlashCard = ({ response, checks, handleSubmit }) => {
 
   const { isMobile, isTablet, isLaptop } = checks;
 
-  const wordFontSize = isMobile ? '22px' : isTablet ? '30px' : isLaptop ? '35px' :  '38px';
   const answerTitleFontSize = isMobile ? '19px' : isTablet ? '27px' : isLaptop ? '30px' :  '32px';
   const answerFontSize = isMobile ? '16px' : isTablet ? '25px' : isLaptop ? '29px' :  '28px';
   const answerPadding = isMobile ? 2 : isTablet ? 4 : isLaptop ? 6 : 8;
@@ -32,19 +31,19 @@ const FlashCard = ({ response, checks, handleSubmit }) => {
           {/* Top Row */}
           <Grid xs={12} sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: isMobile ? 'space-around' : 'center', paddingTop:2, px: 2}}>
             <Grid xs={5} >
-              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize}}>
+              <StyledTypographyResponseWord checks={checks} color='danger' level="h3" >
                 {response.word.toUpperCase()}
-              </StyledTypography>
+              </StyledTypographyResponseWord>
             </Grid>
             <Grid xs={2}>
-              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize, flexShrink:2, px: isMobile ? 0 : 5}}>
+              <StyledTypography checks={checks}  color='danger' level="h3" sx={{flexShrink:2, px: isMobile ? 0 : 5}}>
                 -            
               </StyledTypography>
             </Grid>
             <Grid xs={5}>
-              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize}}>
+              <StyledTypographyResponseWord checks={checks}  color='danger' level="h3" >
                 {response.englishTranslation.toUpperCase()}
-              </StyledTypography>
+              </StyledTypographyResponseWord>
             </Grid>
           </Grid>
 

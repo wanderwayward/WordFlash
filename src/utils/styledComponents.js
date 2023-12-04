@@ -3,10 +3,23 @@ import { Typography, Divider } from "@mui/joy";
 
 export const StyledTypography = styled(Typography)(({ theme }) => ({
     textAlign: "center !important",
-    overflowX: 'hidden', 
-    textOverflow: 'ellipsis', 
-    whiteSpace: 'nowrap', 
+    
 }));
+
+
+export const StyledTypographyResponseWord = styled(Typography)(({ theme, checks }) => {
+    const { isMobile, isTablet, isLaptop } = checks;
+
+    return {
+        textAlign: 'center !important',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        display: '-webkit-box',
+        fontSize: isMobile ? '22px' : isTablet ? '30px' : isLaptop ? '35px' : '38px',
+        WebkitLineClamp: isMobile ? 3 : 2,
+        WebkitBoxOrient: 'vertical',
+    };
+});
 
 export const StyledTypographyClassification = styled(Typography)(({ theme }) => ({
     textAlign: "center !important",

@@ -35,12 +35,7 @@ async function getWordInformation(spanishWord) {
             "If the input is not a valid or existing Spanish word or phrase, or if it is nonsensical (such as random strings of letters with no meaning in Spanish), return a JSON object with the following fields: " +
             "errorType: 'language', " +
             "errorMessage: 'The input is not a valid or existing Spanish word or phrase.', " +
-            "alternativeWords: An array of up to 3 alternative REAL words or phrases that are STRICTLY in the Spanish language, STRICTLY pre-existing words. These alternatives should be selected based on their phonetic similarity to the original input, common misspellings, or semantic relevance within the Spanish language context. The goal is to provide suggestions that the user might have intended to input, focusing exclusively on Spanish vocabulary. This excludes any words or phrases from other languages, particularly English. For example, if the input is a non-existent word that resembles a Spanish word, the alternatives should be real Spanish words with similar phonetics or spelling."
-            
-            
-            
-            
-                      
+            "alternativeWords: An array of up to 3 alternative REAL words or phrases that are STRICTLY in the Spanish language, STRICTLY pre-existing words. These alternatives should be selected based on their phonetic similarity to the original input, common misspellings, or semantic relevance within the Spanish language context. The goal is to provide suggestions that the user might have intended to input, focusing exclusively on Spanish vocabulary. This excludes any words or phrases from other languages, particularly English. For example, if the input is a non-existent word that resembles a Spanish word, the alternatives should be real Spanish words with similar phonetics or spelling."                           
           },
           { role: "user", content: spanishWord },
         ],

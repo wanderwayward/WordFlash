@@ -1,6 +1,5 @@
 import {Sheet, Typography } from '@mui/joy';
 
-import { StyledTypography } from '../../utils/styledComponents';
 
 const Instructions = ({checks}) => {
     const { isDark, isMobile, isTablet, isLaptop } = checks;
