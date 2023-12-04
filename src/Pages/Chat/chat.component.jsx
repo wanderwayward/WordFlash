@@ -10,7 +10,7 @@ const Chat = () => {
   const { checks } = useContext(ThemeValuesContext);
   const { uploadWord } = useContext(WordsContext);
 
-  const { isMobile, isTablet } = checks;
+  const { isMobile } = checks;
 
 
   const [question, setQuestion] = useState('');
