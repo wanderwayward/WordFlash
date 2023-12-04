@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://word-flash.vercel.app' // frontend url
+  origin:[ 'https://word-flash.vercel.app', 'https://word-flash-ruben-aguirres-projects.vercel.app'] // frontend url
 }));
 
 app.use(express.json());
