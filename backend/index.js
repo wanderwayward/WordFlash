@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173' // frontend url
+  origin: 'https://word-flash.onrender.com' // frontend url
 }));
 
 app.use(express.json());
