@@ -29,6 +29,8 @@ const Chat = () => {
     alternativeWords: [],
   });
 
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
   const handleSubmit = async (e, word= null) => {
     e?.preventDefault();
     setIsSearchInitiated(true);
@@ -36,7 +38,7 @@ const Chat = () => {
     
     const query = word || question;
     
-    const apiResponse = await fetch('http://localhost:5000/ask/', {
+    const apiResponse = await fetch(`${backendUrl}ask/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
