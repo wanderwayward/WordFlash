@@ -44,7 +44,7 @@ const Chat = () => {
 
     console.log('query', query)
     
-    const apiResponse = await fetch(`${backendUrl}ask/`, {
+    const apiResponse = await fetch(`${backendUrl}/ask/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
