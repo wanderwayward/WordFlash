@@ -13,6 +13,7 @@ const App = () => {
 
   const { theme } = useContext(ThemeValuesContext);
   const user = useContext(UserContext);
+  console.log(user)
 
   return (
     <CssVarsProvider defaultMode="system" theme={theme} modeStorageKey="identify-system-mode">
