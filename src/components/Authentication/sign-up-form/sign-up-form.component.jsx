@@ -50,7 +50,7 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                     <Typography variant="h3" fontWeight="bold">Sign Up</Typography>
                 </Box>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <FormControl error={errors.displayName ? true : false} fullWidth>
+                    <FormControl error={errors.displayName ? true : false} >
                         <Input 
                             {...register("displayName", { required: true })}
                             placeholder="Display Name" 
@@ -59,7 +59,7 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                         />
                         {errors.name && <FormHelperText>Name is required</FormHelperText>}
                     </FormControl>
-                    <FormControl error={errors.email ? true : false} fullWidth>
+                    <FormControl error={errors.email ? true : false} >
                         <Input 
                             {...register("email", { required: true })}
                             placeholder="Email" 
@@ -70,7 +70,7 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                         />
                         {errors.email && <FormHelperText>Email is required</FormHelperText>}
                     </FormControl>
-                    <FormControl error={errors.password ? true : false} fullWidth>
+                    <FormControl error={errors.password ? true : false} >
                         <Input 
                             {...register("password", { required: true })}
                             placeholder="Password" 
@@ -81,13 +81,13 @@ const SignUpForm = ({ switchToSignIn, showSnackbar }) => {
                         {errors.password && <FormHelperText>Password is required</FormHelperText>}
                     </FormControl>
                     <Grid container spacing={1} justifyContent="center" marginY={2}>
-                        <Grid item xs={5}>
+                        <Grid  xs={5}>
                             <Button type="submit" variant="soft" color="success" >
                                 Sign Up with Email
                             </Button>
                         </Grid>
-                        <Grid item xs={1}></Grid>
-                        <Grid item xs={5}>
+                        <Grid  xs={1}></Grid>
+                        <Grid  xs={5}>
                             <Button variant="soft" color="success" onClick={()=>googleAuthHandler(setUser)}>
                                 Sign Up with Google
                             </Button>

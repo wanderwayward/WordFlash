@@ -52,7 +52,7 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                     <Typography variant="h3" fontWeight="bold">Sign In</Typography>
                 </Box>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <FormControl error={errors.email ? true : false} fullWidth>
+                    <FormControl error={errors.email ? true : false} >
                         <Input 
                             {...register("email", { required: true })}
                             placeholder="Email" 
@@ -62,7 +62,7 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                         />
                         {errors.email && <FormHelperText>Email is required</FormHelperText>}
                     </FormControl>
-                    <FormControl error={errors.password ? true : false} fullWidth>
+                    <FormControl error={errors.password ? true : false} >
                         <Input 
                         {...register("password", { required: true })}
                         placeholder="Password" 
@@ -74,13 +74,13 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
                          {errors.password && <FormHelperText>Password is required</FormHelperText>}
                     </FormControl>
                     <Grid container spacing={1} justifyContent="center"  marginY={2}>
-                        <Grid item xs={5}>
+                        <Grid  xs={5}>
                             <Button variant="soft" color="success" >
                                 Sign In with Email
                             </Button>
                         </Grid>
-                        <Grid item xs={1}> </Grid>
-                        <Grid item xs={5}>
+                        <Grid  xs={1}> </Grid>
+                        <Grid  xs={5}>
                             <Button variant="soft" color="success" onClick={() => googleAuthHandler(setUser)}>
                                 Sign In with Google
                             </Button>

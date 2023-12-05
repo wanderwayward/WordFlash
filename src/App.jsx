@@ -2,18 +2,19 @@ import { useContext } from 'react';
 import { Sheet, Grid, CssBaseline  } from '@mui/joy';
 import { CssVarsProvider } from '@mui/joy/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import { ThemeValuesContext } from './contexts/theme-values.context';
+
+import ProtectedRoute from './components/ui/protected-route/protected-route.component';
 import Chat from '../src/Pages/Chat/chat.component';
 import Collection from '../src/Pages/Collection/collection.component';
 import AuthPage from './Pages/Authentication/authentication.component';
 import NavBar from './Pages/Navigation/navbar.component';
-import { ThemeValuesContext } from './contexts/theme-values.context';
-import { UserContext } from './contexts/user.context';
+
 
 const App = () => {
 
   const { theme } = useContext(ThemeValuesContext);
-  const user = useContext(UserContext);
-  console.log(user)
 
   return (
     <CssVarsProvider defaultMode="system" theme={theme} modeStorageKey="identify-system-mode">
@@ -34,9 +35,9 @@ const App = () => {
         
                 <Routes>
                   
-                  <Route path="/" element={user ? <Chat /> : <AuthPage/>} />
-                  <Route path="/Collection" element={ user ? <Collection /> : <AuthPage/>} />
-                  <Route path="/Auth" element={<AuthPage />} />
+                <Route path="/" element={<ProtectedRoute><Chat /></ProtectedRoute>} />
+                <Route path="/Collection" element={<ProtectedRoute><Collection /></ProtectedRoute>} />
+                <Route path="/Auth" element={<AuthPage />} />
 
                   
                 </Routes>
