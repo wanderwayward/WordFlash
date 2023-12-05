@@ -51,8 +51,8 @@ const WordFlashcardView = ({  word, deleteWord, style, checks, theme,   }) => {
             }}
             sx={{
                 position: 'absolute',
-                top: '-.2em',
-                right: '-.3em',
+                top: '-.3rem',
+                right: '-.5rem',
                 color: isDark ? theme.colorSchemes.dark.palette.danger[300] :theme.colorSchemes.light.palette.warning[700],
                 '&:hover': {
                     backgroundColor: 'transparent',
