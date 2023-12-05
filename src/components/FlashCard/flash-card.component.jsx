@@ -22,7 +22,7 @@ const FlashCard = ({ response, checks, handleSubmit }) => {
           marginTop: isMobile ? 10 : 2,
           borderRadius: 10,
           py:2,
-          width: isMobile ? '100%' : isTablet ? '80%' : isLaptop ? '60%' : '40%',
+          width: isMobile ? '100%' : isTablet ? '95%' : isLaptop ? '60%' : '40%',
         }}>
 
       {!response.errorMessage ? (
