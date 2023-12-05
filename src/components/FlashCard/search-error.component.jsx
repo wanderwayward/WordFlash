@@ -12,8 +12,7 @@ const SearchError = ({response, handleSubmit, isMobile}) => {
             </Grid>
             <Grid xs={12} sx={{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', pt:2, px: 2}}>
 
-            {response.alternativeWords.length > 0 ?
-                 
+            {response.alternativeWords.length > 0 ?             
                 <>
                  <Grid xs={12} pb={3}>
                     <StyledTypography color="danger">
@@ -25,12 +24,8 @@ const SearchError = ({response, handleSubmit, isMobile}) => {
                         <Button key={index} sx={{mx:1}} variant="solid" color="warning" size={isMobile? 'md' : 'lg'} onClick={() => handleSubmit(null, word)}>{word}</Button>
                     ))}
                 </Grid>
-
                 </>
-
-
-            : null}            
-            
+            : null}                     
             </Grid>
         </Grid>
       )

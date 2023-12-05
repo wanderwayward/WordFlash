@@ -9,9 +9,7 @@ const Chat = () => {
 
   const { checks } = useContext(ThemeValuesContext);
   const { uploadWord } = useContext(WordsContext);
-
   const { isMobile } = checks;
-
 
   const [question, setQuestion] = useState('');
   const [isLoading, setIsLoading] = useState(false); 
@@ -30,7 +28,6 @@ const Chat = () => {
   });
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  console.log(backendUrl)
 
   const handleSubmit = async (e, word= null) => {
     e?.preventDefault();
@@ -61,12 +58,12 @@ const Chat = () => {
     <Box
       sx={{
         width: "100%",
-        height: "calc(100vh - 60px)", // Account for the navbar
+        height: "calc(100vh - 60px)", 
         display: "flex",
         flexDirection: "column",
       }}
     >
-      <Box sx={{ overflowY: 'auto', flexGrow: 1, }}> {/* Adjust flexGrow as needed */}
+      <Box sx={{ overflowY: 'auto', flexGrow: 1, }}> 
         <AnswerBox response={response} checks={checks} isLoading={isLoading} isSearchInitiated={isSearchInitiated} handleSubmit={handleSubmit}/>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', height: isMobile? '10%' : '7%', paddingBottom: isMobile ? 8 : 1}}> 

@@ -7,23 +7,22 @@ const AnswerBox = ({ response, checks, isLoading, isSearchInitiated, handleSubmi
   
 
   return (
-<Box sx={{ 
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    height: '100%', 
-    padding: 2,
-  }}
->
-  {!isSearchInitiated ? (
-    <Instructions checks={checks}  />
-  ) : isLoading ? (
-    <GeneralLoadingSpinner  />
-  ) : (
-    <FlashCard response={response} checks={checks} handleSubmit={handleSubmit}  />
-  )}
-
+    <Box sx={{ 
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100%', 
+        padding: 2,
+      }}
+    >
+      {!isSearchInitiated ? (
+        <Instructions checks={checks}  />
+      ) : isLoading ? (
+        <GeneralLoadingSpinner  />
+      ) : (
+        <FlashCard response={response} checks={checks} handleSubmit={handleSubmit}  />
+      )}
 </Box>
 
 )};

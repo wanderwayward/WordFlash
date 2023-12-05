@@ -7,7 +7,7 @@ const ClassificationFlashcards = ({ words, style, checks, wordFontSize,  headerP
     const {isMobile, isTablet, isLaptop, isDark} = checks;
 
     return (
-        <Box sx={{ pt: '155px', px:headerPadding}}>
+        <Box sx={{ pt: '155px'}}>
 
 
         {words.adjective.length > 0  ?
@@ -19,7 +19,7 @@ const ClassificationFlashcards = ({ words, style, checks, wordFontSize,  headerP
                 </Grid>
                 <Grid container spacing={3} sx={{ my: '.5rem', mx: isMobile ? '1rem' : isTablet ? '2.5rem' : isLaptop ? '4rem' : '7.8rem', display: "flex", justifyContent:'space-between' }}>
                     {words.adjective.map((word, index) => (
-                       <Grid xs={6} sm={4} md={3} lg={2} key={index} sx={{margin:'auto'}} >
+                       <Grid xs={6} sm={4} md={3} lg={2} key={index}  >
                             <WordFlashcardView word={word} key={index} style={style} checks={checks} deleteWord={deleteWord} fontSize={wordFontSize} theme={theme} />
                         </Grid>    
                     ))}
