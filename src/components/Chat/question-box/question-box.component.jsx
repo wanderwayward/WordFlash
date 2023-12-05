@@ -9,7 +9,7 @@ const QuestionBox = ({ question, setQuestion, handleSubmit, checks }) => {
       onSubmit={handleSubmit}
       p={1}
       sx={{
-        width: isMobile ? '100%' : isTablet ? '83%' : isLaptop ? '63%' : '43%',
+        width: isMobile ? '100%' : isTablet ? '83%' : isLaptop ? '75%' : '43%',
         display: 'flex',
         flexDirection: 'row',
         gap: 2
