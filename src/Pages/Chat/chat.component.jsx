@@ -69,7 +69,7 @@ const Chat = () => {
       <Box sx={{ overflowY: 'auto', flexGrow: 1, }}> {/* Adjust flexGrow as needed */}
         <AnswerBox response={response} checks={checks} isLoading={isLoading} isSearchInitiated={isSearchInitiated} handleSubmit={handleSubmit}/>
       </Box>
-      <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', height: '6vh', paddingBottom: isMobile ? 8 : 1}}> {/* Set a fixed height or percentage for QuestionBox */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%', height: isMobile? '10%' : '7%', paddingBottom: isMobile ? 8 : 1}}> 
         <QuestionBox question={question} setQuestion={setQuestion} handleSubmit={handleSubmit} checks={checks}/>  
       </Box>
     </Box>
