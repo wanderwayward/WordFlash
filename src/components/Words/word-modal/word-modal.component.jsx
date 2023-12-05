@@ -2,10 +2,9 @@ import { forwardRef } from 'react'
 import {Sheet, Grid, List, ListItem, Box} from '@mui/joy'
 
 import GeneralLoadingSpinner from '../../ui/loading//general-loading-spinner.component'
-import { StyledTypography } from '../../../utils/styledComponents'
+import { StyledTypography, StyledTypographyResponseWord } from '../../../utils/styledComponents'
 
 const WordModal = forwardRef(({ word, checks }, ref) => {
-    console.log('word', word);
 
     const { isMobile, isTablet, isLaptop } = checks;
 
@@ -37,9 +36,9 @@ const WordModal = forwardRef(({ word, checks }, ref) => {
           {/* Top Row */}
           <Grid xs={12} sx={{display:'flex', flexDirection:'row', alignItems:'center', justifyContent: isMobile ? 'space-around' : 'center', paddingTop:2, px: 2}}>
             <Grid xs={5} >
-              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize}}>
+              <StyledTypographyResponseWord checks={checks} color='danger' level="h3" >
                 {word.word.toUpperCase()}
-              </StyledTypography>
+              </StyledTypographyResponseWord>
             </Grid>
             <Grid xs={2}>
               <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize, flexShrink:2, px: isMobile ? 0 : 5}}>
@@ -47,15 +46,15 @@ const WordModal = forwardRef(({ word, checks }, ref) => {
               </StyledTypography>
             </Grid>
             <Grid xs={5}>
-              <StyledTypography  color='danger' level="h3" sx={{fontSize: wordFontSize}}>
+              <StyledTypographyResponseWord checks={checks}  color='danger' level="h3" >
                 {word.englishTranslation.toUpperCase()}
-              </StyledTypography>
+              </StyledTypographyResponseWord>
             </Grid>
           </Grid>
 
           {/* Second Row */}
           <Grid xs={12} sx={{mb:2, display:'flex', justifyContent:'center'}} >
-            <StyledTypography level="h5" color="danger" variant='soft' sx={{fontSize:'5px', width:'80%'}}>
+             <StyledTypography level="h5" color="danger" variant='soft' sx={{fontSize:'1rem', width:'80%'}}>
               Classification: {word.classification}
             </StyledTypography>
           </Grid>
@@ -87,7 +86,7 @@ const WordModal = forwardRef(({ word, checks }, ref) => {
           {/* Fifth Row */}
           { word.note ? (
           <Grid xs={12} sx={{mt:-2, display:'flex', justifyContent:'center'}} >
-          <StyledTypography level="h5" color="warning" variant='soft' sx={{fontSize:'5px', width:'80%', mt:2}}>
+          <StyledTypography level="h5" color="warning" variant='soft' sx={{fontSize:'1rem', width:'80%', mt:2}}>
               Nota: {word.note}
             </StyledTypography>
           </Grid> ) : null }
