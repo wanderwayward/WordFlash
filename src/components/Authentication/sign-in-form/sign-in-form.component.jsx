@@ -24,7 +24,7 @@ const SignIn = ({switchToSignUp, showSnackbar}) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const googleAuthHandler = handleGoogleAuthentication(showSnackbar, "Signed in with Google successfully", "Failed to sign in with Google");
+    const googleAuthHandler = handleGoogleAuthentication(showSnackbar, "Signed in with Google.", "Failed to sign in.");
  
 
     const onSubmit = async (data) => {

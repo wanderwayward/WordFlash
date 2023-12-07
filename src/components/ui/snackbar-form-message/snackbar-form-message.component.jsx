@@ -17,9 +17,21 @@ const SnackbarFormMessage = ({ open, message, severity, position, onClose }) => 
       autoHideDuration={3000}
       onClose={handleClose}
       anchorOrigin={position}
-      variant="soft"
+      variant="solid"
+      color="warning"
+      sx={{
+        height: "1vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
-      <MuiAlert elevation={6} variant="soft" onClose={handleClose} severity={severity}>
+      <MuiAlert elevation={6}  color="warning" variant="solid" onClose={handleClose} severity={severity}   sx={{
+        height: "1vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
         {message}
       </MuiAlert>
 
